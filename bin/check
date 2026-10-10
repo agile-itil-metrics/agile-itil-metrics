@@ -1,0 +1,103 @@
+#!/usr/bin/env python3
+"""Offline quality gates. Usage: bin/check [--strict] [--links]
+--strict  fail on unwritten (stub) topics
+--links   also resolve every Wikipedia link (needs network)"""
+import os, re, sys, urllib.request, urllib.parse
+root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+strict, links = "--strict" in sys.argv, "--links" in sys.argv
+errs, notes = [], []
+def err(m): errs.append(m)
+
+rows = [l.rstrip("\n").split("\t") for l in open(f"{root}/spec/topics.tsv")][1:]
+slugs = [r[2] for r in rows]
+# manifest agreement
+md = {}
+for line in open(f"{root}/spec/structure.md"):
+    m = re.match(r"\| (\d+\.\d+) \| `([^`]+)` \|", line)
+    if m: md[m.group(1)] = m.group(2)
+if md != {r[1]: r[2] for r in rows}: err("spec/structure.md and spec/topics.tsv disagree")
+if len(set(slugs)) != len(slugs): err("duplicate slugs in topics.tsv")
+# contiguous numbering
+byp = {}
+for r in rows: byp.setdefault(int(r[0]), []).append(int(r[1].split(".")[1]))
+for p, ns in byp.items():
+    if ns != list(range(len(ns))): err(f"part {p} numbering not contiguous from N.0")
+
+NONTEMPLATE_PART = 12
+TEMPLATE = ["Overview and motivation","Key principles","Metric definitions","Recommendations",
+ "Gaming vectors and guardrails","Trade-offs: pros and cons","Questions to discuss with your team",
+ "Four perspectives","In practice: an agile ITIL example","Sector lens","Business case: motivations, ROI, and TCO",
+ "Anti-patterns and pitfalls","Maturity model","Checklist","AI prompts","AI skills","Key takeaways",
+ "References and further reading"]
+PERSP = ["Product and delivery teams","Service and operations teams","Leadership and governance","Customers and users"]
+BANNED = ["not only","but also","load-bearing","It's important to note","In today's fast-paced","It's crucial to consider",
+          "It appears that","One could argue","revolutionary","game-changing","cutting-edge","seamless","best-in-class"]
+disk = os.path.join(root, "locales/en-001/topics")
+on_disk = sorted(os.listdir(disk)) if os.path.isdir(disk) else []
+for s in set(on_disk) - set(slugs): err(f"topic directory not in manifest: {s}")
+ids = {}
+written = 0
+for part, num, slug, _ in rows:
+    d = f"{disk}/{slug}"
+    if not os.path.isdir(d): err(f"{num} missing directory {slug}"); continue
+    idx = f"{d}/index.md"
+    if not os.path.isfile(idx): err(f"{num} missing index.md"); continue
+    rd = f"{d}/README.md"
+    if not os.path.islink(rd) or os.readlink(rd) != "index.md":
+        err(f"{num} README.md must be a relative symlink to index.md")
+    try:
+        pid = open(f"{d}/.locale-peer-id").read()
+        if not re.fullmatch(r"[0-9a-f]{32}\n", pid): err(f"{num} bad .locale-peer-id")
+        elif pid in ids: err(f"{num} duplicate peer id with {ids[pid]}")
+        ids[pid] = num
+    except OSError: err(f"{num} missing .locale-peer-id")
+    text = open(idx).read()
+    for ch, name in (("—","em-dash"),):
+        if ch in text: err(f"{num} contains {name}")
+    first = text.splitlines()[0] if text else ""
+    if not first.startswith("# "): err(f"{num} first line must be '# Title'")
+    if "<!-- stub -->" in text:
+        notes.append(f"{num} stub")
+        if strict: err(f"{num} is an unwritten stub")
+        continue
+    written += 1
+    for b in BANNED:
+        if b.lower() in text.lower(): err(f"{num} banned phrase: {b}")
+    if re.search(r"\d(?<!\d)–|–(?=\d)", "") : pass
+    if int(part) == NONTEMPLATE_PART and not num.endswith(".0"): continue
+    h2 = re.findall(r"^## (.+)$", text, re.M)
+    if num.endswith(".0"):
+        if h2 != ["Topics in this part","How these topics interrelate"]: err(f"{num} part intro sections wrong: {h2}")
+        continue
+    if h2 != TEMPLATE: err(f"{num} sections do not match template.\n   got:  {h2}")
+    sec = lambda n: (re.search(rf"^## {re.escape(n)}\n(.*?)(?=^## |\Z)", text, re.M|re.S) or [None,""])[1]
+    q = re.findall(r"^\*\*.+\?\*\*", sec("Questions to discuss with your team"), re.M)
+    if len(q) != 6: err(f"{num} needs exactly six bold questions, found {len(q)}")
+    if re.findall(r"^### (.+)$", sec("Four perspectives"), re.M) != PERSP: err(f"{num} four perspectives wrong")
+    cl = len(re.findall(r"^- \[ \]", sec("Checklist"), re.M))
+    if not 6 <= cl <= 12: err(f"{num} checklist has {cl} items (6-12)")
+    pr = sec("AI prompts")
+    n = len(re.findall(r"^```text", pr, re.M))
+    if not 3 <= n <= 5: err(f"{num} has {n} AI prompts (3-5)")
+    if "[" not in pr or "assumptions" not in pr.lower(): err(f"{num} AI prompts need [placeholders] and an assumptions request")
+    for l in re.findall(r"\]\(\.\./\.\./\.\./\.\./skills/([^/)]+)/SKILL\.md\)", sec("AI skills")):
+        if not os.path.isfile(f"{root}/skills/{l}/SKILL.md"): err(f"{num} skill link does not resolve: {l}")
+    md_def = sec("Metric definitions")
+    if md_def.count("\n|") < 5: err(f"{num} metric definitions table needs at least 3 rows")
+    body = re.sub(r"```.*?```", "", text, flags=re.S)
+    wl = set(re.findall(r"\]\((https://en\.wikipedia\.org/wiki/(?:[^()\s]|\([^()\s]*\))+)\)", body))
+    if not 5 <= len(wl) <= 12: err(f"{num} has {len(wl)} distinct Wikipedia links (5-12)")
+    refs = sec("References and further reading")
+    for u in wl:
+        if u not in refs: err(f"{num} Wikipedia link missing from references: {u}")
+    if links:
+        for u in wl:
+            try: urllib.request.urlopen(urllib.request.Request(u, headers={"User-Agent":"agile-itil-metrics-check"}), timeout=15)
+            except Exception as e: err(f"{num} link failed: {u} ({e})")
+    for m in re.finditer(r"\(see topic (\d+\.\d+)\)", text):
+        err(f"{num} cross-reference needs number and title: {m.group(0)}")
+for ref in ("AGENTS.md","CLAUDE.md","STYLE_GUIDE.md","README.md","tasks.md"):
+    if not os.path.isfile(f"{root}/{ref}"): err(f"missing {ref}")
+print(f"{len(rows)} topics in manifest, {written} written, {len(notes)} stubs")
+for e in errs: print("ERROR:", e)
+sys.exit(1 if errs else 0)

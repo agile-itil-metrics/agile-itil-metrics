@@ -1,0 +1,10 @@
+{
+  "default": {
+    "topics": "topics",
+    "front-matter": "front-matter",
+    "examples": "examples",
+    "contributing": "contributing",
+    "project": "project"
+  },
+  "locales": {}
+}
