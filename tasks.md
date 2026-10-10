@@ -18,4 +18,5 @@ Live checklist. Update in the same commit as the work. Backlog detail is in `spe
 
 - [x] 1.0 to 1.7 (first drafts; sources cited from memory need verification)
 - [x] Part 2, 2.0 to 2.9 (first drafts)
-- [ ] Parts 3 to 12
+- [x] Part 3, 3.0 to 3.7 (first drafts)
+- [ ] Parts 4 to 12
