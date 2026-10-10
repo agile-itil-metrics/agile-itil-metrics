@@ -16,6 +16,5 @@ Live checklist. Update in the same commit as the work. Backlog detail is in `spe
 
 ## Topics written
 
-- [ ] 1.0 to 1.7
-- [x] 1.2 Goodhart's law and the psychology of metrics
+- [x] 1.0 to 1.7 (first drafts; sources cited from memory need verification)
 - [ ] Parts 2 to 12
