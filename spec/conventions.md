@@ -41,7 +41,7 @@ Defined in [topic-template.md](topic-template.md). Section names and order are f
 - Short paragraphs of 2 to 4 sentences. Use tables for comparisons and metric definitions.
 - Stay vendor-neutral. Name products only as factual examples.
 - No hype words: revolutionary, game-changing, cutting-edge, seamless, disruptive, best-in-class.
-- Roughly 3,000 to 5,000 words per content topic, counting tables and references with `wc -w`, reached by depth, never by padding. Go shorter only when the topic is genuinely lighter.
+- Roughly 3,000 to 6,000 words per content topic, counting tables and references with `wc -w`, reached by depth, never by padding. Go shorter only when the topic is genuinely lighter.
 - **Every metric gets its gaming vector named,** with the guardrail that catches it. **(enforced: section 7 of the template must cover every metric in section 5)**
 - **Every metric states its clocks and boundaries.** Where does the measurement start and stop, and what is excluded?
 - **Prefer distributions to averages** for time measures. Show percentiles (for example the median and the 85th or 95th percentile) and say so.

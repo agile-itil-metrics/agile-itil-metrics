@@ -55,6 +55,6 @@ Appendices are reference material and do not follow the content template. They h
 - [ ] 5 to 12 Wikipedia links, each verified live and each repeated in the references.
 - [ ] No invented facts, figures, sources, or quotations. Version-sensitive claims (ITIL, ISO/IEC standards, Scrum Guide editions) are dated.
 - [ ] No em-dashes. No stock phrasing. Acronyms expanded on first use.
-- [ ] Roughly 3,000 to 5,000 words including tables and references (a `wc -w` count); shorter only for a genuinely lighter topic.
+- [ ] Roughly 3,000 to 6,000 words including tables and references (a `wc -w` count); shorter only for a genuinely lighter topic.
 - [ ] Cross-references carry both number and title.
 - [ ] Glossary and index entries added; `bin/check` passes.
