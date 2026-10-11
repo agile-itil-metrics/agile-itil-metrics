@@ -19,6 +19,8 @@ These are mechanical conversions of `en-001`, never hand-edited, produced by `bi
 | `en-gb` | British English | `-ize` to `-ise` family, `-or` to `-our`, `-er` to `-re`, `-se` to `-ce` for nouns, doubled-L forms, analogue, programme, and maths. |
 | `en-gb-oxendict` | British English, Oxford spelling | `en-gb`, then revert only the `-ise` family to `-ize`, keeping `-yse` forms (analyse) and every other British form. |
 
+Picker labels follow `<language> - <region>`: `en-gb` is "English - Great Britain" and `en-gb-oxendict` is "English - Great Britain, Oxford spelling".
+
 Locale conversion never touches fenced code blocks, inline code, link targets, proper nouns, or titles of cited works (for example, "Hospital Readmissions Reduction Program" stays as written).
 
 ## Translated locales

@@ -19,6 +19,22 @@ NON_LATIN = {"zh", "hi", "ar", "ur", "bn", "ja", "ko", "ru", "el", "fa", "he", "
 rows = list(csv.DictReader(open(os.path.join(root, "spec", "topics.tsv"), encoding="utf-8"), delimiter="\t"))
 canon = {r["slug"]: open(f"{LOC}/en-001/topics/{r['slug']}/.locale-peer-id").read() for r in rows}
 errors = []
+GENERATED = {"metric-definitions-and-formulas-reference", "references-and-further-reading", "index"}
+
+
+def signature(text):
+    body = re.sub(r"```.*?```", "", text, flags=re.S)
+    return {
+        "h2": len(re.findall(r"^## ", text, re.M)),
+        "h3": len(re.findall(r"^### ", text, re.M)),
+        "fences": len(re.findall(r"^```", text, re.M)),
+        "tablelines": len(re.findall(r"^\|", text, re.M)),
+        "checks": len(re.findall(r"^- \[ \]", text, re.M)),
+        "wiki": sorted(set(re.findall(r"\]\((https://en\.wikipedia\.org/wiki/[^)\s]*(?:\([^)\s]*\))?[^)\s]*)\)", body))),
+        "skills": len(re.findall(r"SKILL\.md\)", text)),
+        "numbered": len(re.findall(r"^\d+\. ", text, re.M)),
+        "bullets": len(re.findall(r"^- ", text, re.M)),
+    }
 
 
 def err(loc, msg):
@@ -66,6 +82,15 @@ for loc in targets:
             err(loc, f"{sub}: unwritten stub")
         if translated and os.path.isfile(f"{p}/index.md"):
             text = open(f"{p}/index.md", encoding="utf-8").read()
+            ckey = next((r["slug"] for r in rows if canon[r["slug"]] == open(f"{p}/.locale-peer-id").read()), None)
+            if ckey and ckey not in GENERATED and "<!-- stub -->" not in text:
+                a = signature(open(f"{LOC}/en-001/topics/{ckey}/index.md", encoding="utf-8").read())
+                b = signature(text)
+                for k in a:
+                    if a[k] != b[k]:
+                        err(loc, f"{sub}: structure differs from en-001 in {k}: {a[k] if k == 'wiki' and False else (len(a[k]) if isinstance(a[k], list) else a[k])} vs {len(b[k]) if isinstance(b[k], list) else b[k]}")
+            if "\u2014" in text:
+                err(loc, f"{sub}: contains an em-dash")
             if lang in NON_LATIN and not re.search(r"[^\x00-\x7f]", text.split("\n", 1)[0]):
                 err(loc, f"{sub}: headline not translated")
     urls = [f"{SITE}/{loc}/", f"{SITE}/{loc}/{quote(dirs.get('contents', 'contents'))}/"]

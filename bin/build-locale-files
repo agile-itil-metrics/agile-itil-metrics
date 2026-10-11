@@ -22,7 +22,7 @@ DEFAULT_STRINGS = {
     "tagline": "Measure agile IT services without distorting the work.",
     "intro": "A working book of 88 topics in 12 parts on measuring agile IT service management well. Every metric names its gaming vector and the guardrail that catches it. Metrics describe teams, services, and systems, never individuals.",
     "contents": "Contents",
-    "part": "Part",
+    "part_fmt": "Part {n}",
     "read": "Read on the web",
 }
 
@@ -69,7 +69,7 @@ for loc in targets:
         title = headline(os.path.join(base, slug, "index.md"))
         if r["part"] != part:
             part = r["part"]
-            out += ["", f"### {st['part']} {part}", ""]
+            out += ["", "### " + st["part_fmt"].format(n=part), ""]
         out.append(f"- [{r['number']} {title}]({topics_dir}/{slug}/index.md)")
         urls.append(f"{SITE}/{loc}/{quote(topics_dir)}/{quote(slug)}/")
     out += ["", f"[{st['read']}]({SITE}/{loc}/{quote(contents_dir)}/)", ""]

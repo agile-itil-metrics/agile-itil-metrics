@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+"""Create a translated locale's directories from locales/<locale>/slugs.tsv.
+
+    bin/scaffold-locale zh-cn
+
+Reads:  locales/<locale>/locale.json  ("dirs": translated directory names; "strings")
+        locales/<locale>/slugs.tsv    number <TAB> translated slug <TAB> translated title
+Writes: locales/<locale>/<dirs.topics>/<slug>/{index.md stub, README.md symlink,
+        .locale-peer-id copied from the en-001 topic}. Never overwrites a written
+topic. Then run bin/build-locale-files <locale>.
+"""
+import csv, json, os, sys
+
+root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+loc = sys.argv[1]
+base = f"{root}/locales/{loc}"
+cfg = json.load(open(f"{base}/locale.json", encoding="utf-8"))
+tdir = cfg["dirs"]["topics"]
+canon = {r["number"]: r["slug"] for r in csv.DictReader(open(f"{root}/spec/topics.tsv", encoding="utf-8"), delimiter="\t")}
+made = 0
+for line in open(f"{base}/slugs.tsv", encoding="utf-8"):
+    line = line.rstrip("\n")
+    if not line.strip():
+        continue
+    number, slug, title = line.split("\t")
+    d = f"{base}/{tdir}/{slug}"
+    os.makedirs(d, exist_ok=True)
+    idx = f"{d}/index.md"
+    if not os.path.isfile(idx):
+        open(idx, "w", encoding="utf-8").write(f"# {title}\n\n<!-- stub -->\n")
+        made += 1
+    rd = f"{d}/README.md"
+    if not os.path.islink(rd):
+        if os.path.lexists(rd):
+            os.remove(rd)
+        os.symlink("index.md", rd)
+    open(f"{d}/.locale-peer-id", "w").write(open(f"{root}/locales/en-001/topics/{canon[number]}/.locale-peer-id").read())
+print(f"{loc}: {len(canon)} topics expected, {made} new stubs")
