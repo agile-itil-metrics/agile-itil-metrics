@@ -280,7 +280,7 @@ and its culture.
 3. Forsgren, N., Storey, M.-A., Maddila, C., Zimmermann, T., Houck, B., and Butler, J., "The SPACE of Developer Productivity," *ACM Queue*, 19(1), 2021.
 4. Beyer, B., Jones, C., Petoff, J., and Murphy, N. R. (eds.), *Site Reliability Engineering: How Google Runs Production Systems*, O'Reilly Media, 2016.
 5. Vacanti, D., *Actionable Agile Metrics for Predictability: An Introduction*, Daniel S. Vacanti, Inc., 2015.
-6. Vacanti, D., and Yeret, Y., *The Kanban Guide*, Kanban University, 2020, https://kanbanguides.org/.
+6. Vacanti, D., Yeret, Y., et al., *The Kanban Guide*, 2020, https://kanbanguides.org/.
 7. AXELOS, *ITIL Foundation: ITIL 4 Edition*, TSO, 2019.
 8. Goodhart, C. A. E., "Problems of Monetary Management: The U.K. Experience," in *Papers in Monetary Economics*, Reserve Bank of Australia, 1975.
 9. Strathern, M., "'Improving ratings': audit in the British University system," *European Review*, 5(3), 1997.

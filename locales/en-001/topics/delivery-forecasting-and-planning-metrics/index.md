@@ -260,7 +260,7 @@ stakeholders to answer. Use plain language. List your assumptions.
 ## References and further reading
 
 1. Beck, K., et al., *Manifesto for Agile Software Development* and *Principles behind the Agile Manifesto*, 2001, https://agilemanifesto.org.
-2. Vacanti, D., *Actionable Agile Metrics for Productivity and Predictability*, ActionableAgile Press, 2015.
+2. Vacanti, D. S., *Actionable Agile Metrics for Predictability: An Introduction*, Daniel S. Vacanti, Inc., 2015.
 3. Humble, J., and Farley, D., *Continuous Delivery*, Addison-Wesley, 2010.
 4. Forsgren, N., Humble, J., and Kim, G., *Accelerate: The Science of Lean Software and DevOps*, IT Revolution, 2018.
 5. Cohn, M., *Agile Estimating and Planning*, Prentice Hall, 2005.

@@ -260,7 +260,7 @@ assume a single root cause. List your assumptions and questions for the team.
 ## References and further reading
 
 1. AXELOS (now PeopleCert), *ITIL 4 Practice Guide: Continual Improvement*, TSO, 2020.
-2. Deming, W. E., *Out of the Crisis*, MIT Press, 1982.
+2. Deming, W. E., *Out of the Crisis*, MIT Center for Advanced Engineering Study, 1982 (MIT Press edition, 2000).
 3. Imai, M., *Kaizen: The Key to Japan's Competitive Success*, McGraw-Hill, 1986.
 4. Goldratt, E. M., and Cox, J., *The Goal: A Process of Ongoing Improvement*, North River Press, 1984.
 5. Argyris, C., "Teaching smart people how to learn," *Harvard Business Review*, 69(3), 1991.

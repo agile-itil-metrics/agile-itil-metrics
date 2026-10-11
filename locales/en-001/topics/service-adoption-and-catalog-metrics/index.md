@@ -253,7 +253,7 @@ your assumptions and anything I need to confirm.
 ## References and further reading
 
 1. Rogers, E. M., *Diffusion of Innovations*, 5th ed., Free Press, 2003.
-2. Cannon, D. (lead author), *ITIL Service Strategy and Service Design* (service catalogue management), The Stationery Office, 2011.
+2. Hunnebeck, L., *ITIL Service Design* (service catalogue management), The Stationery Office, 2011.
 3. Hunt, A. and Thomas, D., *The Pragmatic Programmer*, Addison-Wesley, for the habit of removing what is no longer useful.
 4. Wikipedia, [Service catalog](https://en.wikipedia.org/wiki/Service_catalog).
 5. Wikipedia, [Product backlog](https://en.wikipedia.org/wiki/Product_backlog).

@@ -261,7 +261,7 @@ the data fields you would need that I did not mention.
 
 ## References and further reading
 
-1. Consortium for Service Innovation, *KCS v6 Practices Guide*, 2020 edition (check the Consortium's website for the current version).
+1. Consortium for Service Innovation, *KCS v6 Practices Guide*, first released 2016 and updated since, https://library.serviceinnovation.org/KCS/KCS_v6/KCS_v6_Practices_Guide (check the page for the current version).
 2. AXELOS, *ITIL Foundation: ITIL 4 Edition*, TSO, 2019.
 3. Nonaka, I., and Takeuchi, H., *The Knowledge-Creating Company*, Oxford University Press, 1995.
 4. Hansen, M. T., Nohria, N., and Tierney, T., "What's your strategy for managing knowledge?", *Harvard Business Review*, March-April 1999.

@@ -272,7 +272,7 @@ assumptions and the items you could not classify.
 ## References and further reading
 
 1. Schwaber, K., and Sutherland, J., *The Scrum Guide*, 2020, https://scrumguides.org/scrum-guide.html.
-2. Orosz, D., and Vacanti, D., *The Kanban Guide*, https://kanbanguides.org/.
+2. Vacanti, D., Yeret, Y., et al., *The Kanban Guide*, 2020, https://kanbanguides.org/.
 3. Vacanti, D., *Actionable Agile Metrics for Predictability: An Introduction*, Daniel S. Vacanti, Inc., 2015.
 4. Reinertsen, D. G., *The Principles of Product Development Flow: Second Generation Lean Product Development*, Celeritas Publishing, 2009.
 5. Cohn, M., *User Stories Applied: For Agile Software Development*, Addison-Wesley, 2004.

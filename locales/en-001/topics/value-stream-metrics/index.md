@@ -277,7 +277,7 @@ List your assumptions and the questions I should ask both teams.
 
 ## References and further reading
 
-1. Rother, M., and Shook, J., *Learning to See: Value Stream Mapping to Create Value and Eliminate Muda*, Lean Enterprise Institute, 1999.
+1. Rother, M., and Shook, J., *Learning to See: Value Stream Mapping to Add Value and Eliminate Muda*, Lean Enterprise Institute, 1999.
 2. Martin, K., and Osterling, M., *Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation*, McGraw-Hill, 2014.
 3. Womack, J. P., and Jones, D. T., *Lean Thinking: Banish Waste and Create Wealth in Your Corporation*, Simon and Schuster, 1996.
 4. Reinertsen, D. G., *The Principles of Product Development Flow: Second Generation Lean Product Development*, Celeritas Publishing, 2009.
