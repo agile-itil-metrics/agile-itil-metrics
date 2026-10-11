@@ -2,4 +2,4 @@
 
 <!-- stub -->
 
-> Not yet written. Scope: Practice adoption, behaviour change, and measuring a transformation without gaming it.
+> Not yet written. Scope: Practice adoption, behavior change, and measuring a transformation without gaming it.

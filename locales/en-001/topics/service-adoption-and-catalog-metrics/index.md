@@ -95,7 +95,7 @@ A healthy reading is a catalog where the most used items work well and are getti
 | Funnel metrics | Pinpoint where users drop out | Need instrumentation; can encourage optimizing the form at the expense of the outcome |
 | Survey on why | Explains behavior | Biased by who answers; hard to scale |
 
-The prose answer is to prefer voluntary adoption backed by a clear quality advantage, and to use mandates only where control or compliance require them, with the number labelled accordingly. Keep the catalog small enough to maintain, and put the tail in a searchable knowledge base, not in a hundred half-used items.
+The prose answer is to prefer voluntary adoption backed by a clear quality advantage, and to use mandates only where control or compliance require them, with the number labeled accordingly. Keep the catalog small enough to maintain, and put the tail in a searchable knowledge base, not in a hundred half-used items.
 
 ## Questions to discuss with your team
 

@@ -163,7 +163,7 @@ After the quarter (illustrative), the laptop 95th percentile falls from 15 to 9 
 
 **Enterprise.** An enterprise has hundreds of catalog items, many fulfillment groups, and layered approvals. Concentrate on the top items by volume and on the longest-waiting items by total wait. Standardize the clock definition across fulfillment groups before comparing them, and report cross-group handoffs separately (see topic 9.3, Collaboration and handoff metrics). Supplier fulfillment times belong in the same view, measured from the customer's request, not the supplier's receipt.
 
-**Government and public sector.** Public bodies add mandatory approvals, procurement rules, and records obligations, so some wait time is policy and should be labelled as such rather than counted as delay to remove. Publish targets per item in plain language where service commitments are public. Report in a way that a regulator or an oversight body can reproduce, with the definitions written down.
+**Government and public sector.** Public bodies add mandatory approvals, procurement rules, and records obligations, so some wait time is policy and should be labeled as such rather than counted as delay to remove. Publish targets per item in plain language where service commitments are public. Report in a way that a regulator or an oversight body can reproduce, with the definitions written down.
 
 ## Business case: motivations, ROI, and TCO
 

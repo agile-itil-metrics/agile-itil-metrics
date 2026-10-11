@@ -199,7 +199,7 @@ The return comes from better choices about where to spend. Work that nobody uses
 - [ ] Every service has at least one consumer-side measure.
 - [ ] Each lagging indicator has a leading indicator, with a written reason for the link.
 - [ ] Leading indicators are checked against results at least twice a year.
-- [ ] Proxies are labelled as proxies, with what they miss.
+- [ ] Proxies are labeled as proxies, with what they miss.
 - [ ] Every funded change has an intended outcome, a measure, and a review date.
 - [ ] Outcome measures attach to teams and services, never to individuals.
 

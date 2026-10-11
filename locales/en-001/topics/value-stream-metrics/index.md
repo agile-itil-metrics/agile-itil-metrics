@@ -72,7 +72,7 @@ Process time, wait time, and the stage lead times are sums and ratios over the s
 
 ### Keep the measurement honest
 
-**11. Join data across tools, and say what is estimated.** The stream usually crosses the ITSM tool, the issue tracker, and the pipeline. Join on an item identifier, document the join rule, and mark which stages come from system events and which from sampling. An estimate labelled as an estimate is far more useful than a precise-looking number of unknown origin.
+**11. Join data across tools, and say what is estimated.** The stream usually crosses the ITSM tool, the issue tracker, and the pipeline. Join on an item identifier, document the join rule, and mark which stages come from system events and which from sampling. An estimate labeled as an estimate is far more useful than a precise-looking number of unknown origin.
 
 **12. Review the map quarterly, and read raw items every time.** Streams drift as teams reorganize and tools change. Put the map and one decision on the agenda of a standing review with every stage represented (see topic 1.4, Metrics governance and ownership).
 
@@ -196,7 +196,7 @@ Return shows up as shorter and more predictable lead times, a rising rolled %C/A
 | Dimension | Initiate | Develop | Standardize | Manage | Orchestrate |
 | --- | --- | --- | --- | --- | --- |
 | Stream definition and clocks | Stream undefined; each team measures its own stage | One stream mapped by one team; clocks differ from other teams | Written start and stop for each major stream, from customer request to customer use | Clock rules reviewed, changes logged, restated history when definitions change | Definitions revised across teams and suppliers as the stream and demand change |
-| Process time and wait time | Only elapsed time is known | Sampled for one stream by hand | Collected from tool events with a documented state model and labelled estimates | Trended with percentiles, wait reductions funded and tracked | Waits across suppliers and teams managed jointly, with shared queues visible |
+| Process time and wait time | Only elapsed time is known | Sampled for one stream by hand | Collected from tool events with a documented state model and labeled estimates | Trended with percentiles, wait reductions funded and tracked | Waits across suppliers and teams managed jointly, with shared queues visible |
 | Quality along the stream | Rework noticed but not counted | Returns counted by some stages | Written acceptance conditions and stage %C/A shown to the owning teams | Rolled %C/A trended and paired with rework and failure measures | Acceptance conditions co-owned by sender and receiver and linked to customer outcomes |
 | Use in improvement | Mapping done once, then shelved | Occasional workshop leads to a local fix | Quarterly review with every stage present | Largest wait or return tackled each quarter with an owner | Improvement ideas arrive from every stage, with decisions logged and results checked |
 

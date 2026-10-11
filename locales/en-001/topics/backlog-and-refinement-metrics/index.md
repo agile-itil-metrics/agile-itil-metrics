@@ -192,7 +192,7 @@ The return comes from avoided waste and clearer promises. Teams that keep a read
 ## Checklist
 
 - [ ] Each backlog has a named owner and a stated purpose.
-- [ ] Held ideas and customer promises are labelled and reported separately.
+- [ ] Held ideas and customer promises are labeled and reported separately.
 - [ ] Every item has a mandatory entry date and a leave reason from a controlled list.
 - [ ] The team has a short written definition of ready.
 - [ ] Backlog age is reported as median, 85th percentile, and oldest item.

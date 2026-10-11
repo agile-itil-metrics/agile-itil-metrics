@@ -186,7 +186,7 @@ The return should be argued from your own data. Use manual touch time and volume
 
 | Dimension | 1 Initiate | 2 Develop | 3 Standardize | 4 Manage | 5 Orchestrate |
 | --- | --- | --- | --- | --- | --- |
-| Self-service success and deflection | Portal visits and ticket counts reported; no outcome definition | Success defined for some routes; deflection quoted without method | One written success definition; fall-through measured; deflection labelled as an estimate | Success and fall-through trended with exit feedback; deflection estimated by comparison | Outcomes shared with product teams and suppliers; fall-through topics drive funded fixes |
+| Self-service success and deflection | Portal visits and ticket counts reported; no outcome definition | Success defined for some routes; deflection quoted without method | One written success definition; fall-through measured; deflection labeled as an estimate | Success and fall-through trended with exit feedback; deflection estimated by comparison | Outcomes shared with product teams and suppliers; fall-through topics drive funded fixes |
 | Automation coverage and reliability | Automation ad hoc; no list of candidates | Some flows automated by individual teams; failures handled informally | Candidate list, owners, and failure measures defined for every automated flow | Coverage, failure rate, and upkeep effort reviewed and funded on a cadence | Automation coordinated across teams and suppliers; flows retired and revised routinely |
 | Shift-left effect and use | Volume reported without context | Level distribution tracked by a few teams | Level distribution and category mix reported beside handling time | Freed capacity planned and tracked; leadership reads mix effects correctly | Capacity and learning flow back into services and catalog design across the organization |
 
@@ -194,7 +194,7 @@ The return should be argued from your own data. Use manual touch time and volume
 
 - [ ] Self-service success is defined by outcome, with a written start, stop, and exclusions.
 - [ ] Fall-through rate is measured for the top self-service routes.
-- [ ] Any deflection figure states its method and is labelled as an estimate.
+- [ ] Any deflection figure states its method and is labeled as an estimate.
 - [ ] No target is set on deflection.
 - [ ] A one-question exit prompt or equivalent feedback exists for key routes.
 - [ ] A written automation candidate list exists and is reviewed each quarter.

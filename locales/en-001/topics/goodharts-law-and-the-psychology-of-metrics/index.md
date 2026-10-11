@@ -20,7 +20,7 @@ Gaming is usually not dishonesty. It is the ordinary response of capable people 
 
 - **Pressure.** Someone's bonus, review, contract renewal, or reputation depends on the number. Even without a formal link, people infer what leadership cares about from what leadership charts.
 - **Surrogation.** [Surrogation](https://en.wikipedia.org/wiki/Surrogation) is the tendency to treat the measure as if it were the thing it stands for. Researchers who studied it in organizations found that incentive pay tied to a measure makes this more likely. A team that tracks "tickets closed" begins to believe the goal is closed tickets, not solved problems.
-- **Fear.** When a bad number brings blame, people hide bad news. Incidents get downgraded, outages get relabelled as "planned maintenance," and defects get logged as feature requests.
+- **Fear.** When a bad number brings blame, people hide bad news. Incidents get downgraded, outages get relabeled as "planned maintenance," and defects get logged as feature requests.
 - **Local optimization.** A team improves the part of the system it is judged on and pushes cost onto a part it is not. The service desk closes fast and the second line inherits the repeats.
 
 Understanding these forces matters because the remedy is not stricter policing. It is changing the conditions that make gaming rational.
@@ -144,7 +144,7 @@ Leaders set the incentives, often without intending to. A question asked in a re
 
 ### Customers and users
 
-Users experience the effect of gaming as a service that looks good on paper and feels poor in practice: a ticket closed that was not fixed, an outage labelled planned, a survey that never reached them. Users are also the best guardrail. Their feedback, in the form of surveys, complaints, and comments, should sit beside the operational numbers, and it should be read in full, not reduced to a score (see topic 6.1, Customer satisfaction metrics).
+Users experience the effect of gaming as a service that looks good on paper and feels poor in practice: a ticket closed that was not fixed, an outage labeled planned, a survey that never reached them. Users are also the best guardrail. Their feedback, in the form of surveys, complaints, and comments, should sit beside the operational numbers, and it should be read in full, not reduced to a score (see topic 6.1, Customer satisfaction metrics).
 
 ## In practice: an agile ITIL example
 
@@ -162,7 +162,7 @@ Three months later the headline compliance number drops to 88 percent, which fee
 
 **Startup.** Small teams have few metrics and strong trust, which helps. The danger is importing a large enterprise dashboard too soon. Start with two or three measures that the founders actually use, write down their definitions, and keep them away from individual performance conversations.
 
-**Small business.** Resources are thin, and the person running IT often reports directly to the owner. A single customer complaint can outweigh any dashboard. Keep the set small, favour direct feedback from users, and treat vendor-supplied reports with some caution, since the vendor has its own incentives.
+**Small business.** Resources are thin, and the person running IT often reports directly to the owner. A single customer complaint can outweigh any dashboard. Keep the set small, favor direct feedback from users, and treat vendor-supplied reports with some caution, since the vendor has its own incentives.
 
 **Enterprise.** Scale multiplies both the demand for comparable numbers and the pressure to game them. Use a small standard set with written definitions, keep team working views separate from roll-ups, and avoid comparing teams that work on different kinds of services. A metric register and a review cadence become essential.
 
