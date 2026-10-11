@@ -10,15 +10,15 @@ Legend: `[ ]` todo, `[~]` in progress, `[x]` done. **(P)** parallelizable.
 - [x] Write the specification: index, structure, topic template, conventions, maturity model, locales
 - [x] Generate the manifest and `topics.tsv` from one source
 - [ ] Add `AGENTS.md`, `AGENTS/` role cards, `CLAUDE.md`, `STYLE_GUIDE.md`
-- [ ] Add the special files for public repos (see `special-files-for-public-repos`)
+- [x] Add the special files for public repos
 - [ ] Write `bin/check`: manifest agreement, template section order, counts, hard rules, skill links
-- [ ] Write `bin/build-readme` and `bin/build-llms`
-- [ ] Write `bin/localize` for the English spelling variants
+- [x] Write `bin/build-readme` and `bin/build-llms`
+- [x] Write `bin/localize` for the English spelling variants
 - [ ] Stub every topic directory with `index.md`, `README.md` symlink, and `.locale-peer-id`
 
 ## Phase 1: Research and evidence base **(P)**
 
-- [ ] Write `_sources/research-notes.md` from the *Agile ITIL Guide* research notes, then add metrics sources
+- [x] Write `_sources/research-notes.md`
 - [ ] Catalogue the canonical sources per part: Kanban Guide, DORA, SPACE, Google SRE books, ITIL 4 measurement and reporting practice, ISO/IEC 20000, KCS, FinOps Framework
 - [ ] Verify the ITIL 5 position against the owner's own publications and date it
 - [ ] Decide the overlap policy with `software-engineering-metrics` (summarize and cite instead of duplicating)

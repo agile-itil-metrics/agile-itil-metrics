@@ -1,0 +1,93 @@
+#!/usr/bin/env python3
+"""Verify every locale under locales/.
+
+    bin/check-locales [locale ...]
+
+For each locale: index.md, README.md symlink, .locale-peer-id, and sitemap.xml
+exist; the sitemap lists exactly the locale's routes; every one of the 88 topics
+is present with index.md, a README.md symlink, and a .locale-peer-id equal to the
+en-001 topic's; and, for a translated locale, the directory names and topic slugs
+are translated (in the locale's script where it is not Latin), not copied.
+"""
+import csv, json, os, re, sys
+from urllib.parse import quote
+
+root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+LOC = os.path.join(root, "locales")
+SITE = "https://agile-itil-metrics.github.io"
+NON_LATIN = {"zh", "hi", "ar", "ur", "bn", "ja", "ko", "ru", "el", "fa", "he", "th"}
+rows = list(csv.DictReader(open(os.path.join(root, "spec", "topics.tsv"), encoding="utf-8"), delimiter="\t"))
+canon = {r["slug"]: open(f"{LOC}/en-001/topics/{r['slug']}/.locale-peer-id").read() for r in rows}
+errors = []
+
+
+def err(loc, msg):
+    errors.append(f"{loc}: {msg}")
+
+
+targets = sys.argv[1:] or sorted(d for d in os.listdir(LOC) if os.path.isdir(f"{LOC}/{d}"))
+for loc in targets:
+    d = f"{LOC}/{loc}"
+    lang = loc.split("-")[0]
+    translated = lang != "en"
+    for f in ("index.md", "sitemap.xml", ".locale-peer-id"):
+        if not os.path.isfile(f"{d}/{f}"):
+            err(loc, f"missing {f}")
+    if not os.path.islink(f"{d}/README.md") or os.readlink(f"{d}/README.md") != "index.md":
+        err(loc, "README.md must be a symlink to index.md")
+    dirs = {}
+    if os.path.isfile(f"{d}/locale.json"):
+        dirs = json.load(open(f"{d}/locale.json", encoding="utf-8")).get("dirs", {})
+    if translated:
+        for k in ("topics", "contents"):
+            v = dirs.get(k)
+            if not v or v == k:
+                err(loc, f"directory name '{k}' is not translated (locale.json dirs)")
+            elif lang in NON_LATIN and v.isascii():
+                err(loc, f"directory name '{k}' = {v} is romanized, not in the locale's script")
+    tdir = dirs.get("topics", "topics")
+    base = f"{d}/{tdir}"
+    if not os.path.isdir(base):
+        err(loc, f"missing topics directory {tdir}")
+        continue
+    ids = {}
+    for sub in sorted(os.listdir(base)):
+        p = f"{base}/{sub}"
+        if not os.path.isdir(p):
+            continue
+        for f in ("index.md", ".locale-peer-id"):
+            if not os.path.isfile(f"{p}/{f}"):
+                err(loc, f"{sub}: missing {f}")
+        if not os.path.islink(f"{p}/README.md") or os.readlink(f"{p}/README.md") != "index.md":
+            err(loc, f"{sub}: README.md must be a symlink to index.md")
+        if os.path.isfile(f"{p}/.locale-peer-id"):
+            ids[open(f"{p}/.locale-peer-id").read()] = sub
+        if os.path.isfile(f"{p}/index.md") and "<!-- stub -->" in open(f"{p}/index.md", encoding="utf-8").read():
+            err(loc, f"{sub}: unwritten stub")
+        if translated and os.path.isfile(f"{p}/index.md"):
+            text = open(f"{p}/index.md", encoding="utf-8").read()
+            if lang in NON_LATIN and not re.search(r"[^\x00-\x7f]", text.split("\n", 1)[0]):
+                err(loc, f"{sub}: headline not translated")
+    urls = [f"{SITE}/{loc}/", f"{SITE}/{loc}/{quote(dirs.get('contents', 'contents'))}/"]
+    for r in rows:
+        sub = ids.get(canon[r["slug"]])
+        if not sub:
+            err(loc, f"missing topic {r['number']} {r['slug']}")
+            continue
+        if translated:
+            if sub == r["slug"]:
+                err(loc, f"{r['number']}: slug not translated: {sub}")
+            elif lang in NON_LATIN and sub.isascii():
+                err(loc, f"{r['number']}: slug romanized, not in script: {sub}")
+        urls.append(f"{SITE}/{loc}/{quote(tdir)}/{quote(sub)}/")
+    if len(ids) != len(rows):
+        err(loc, f"{len(ids)} topics with peer ids, expected {len(rows)}")
+    if os.path.isfile(f"{d}/sitemap.xml"):
+        got = re.findall(r"<loc>([^<]+)</loc>", open(f"{d}/sitemap.xml", encoding="utf-8").read())
+        if got != urls:
+            err(loc, f"sitemap.xml differs from the locale's routes ({len(got)} vs {len(urls)} urls)")
+    print(f"checked {loc}")
+for e in errors:
+    print("ERROR:", e)
+print(f"{len(errors)} error(s)")
+sys.exit(1 if errors else 0)

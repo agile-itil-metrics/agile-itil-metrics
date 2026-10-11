@@ -1,0 +1,87 @@
+#!/usr/bin/env python3
+"""Write each locale's own files: index.md (translated README), README.md symlink,
+.locale-peer-id, and sitemap.xml (the locale's routes on the published site).
+
+    bin/build-locale-files            # all locales under locales/
+    bin/build-locale-files zh-cn ...  # only these
+
+A locale's directory names come from locales/<locale>/locale.json ("dirs"), and
+its UI words for the index page from "strings". English locales use the defaults.
+The topic list comes from each locale's own topic headlines, matched by
+.locale-peer-id, so links and titles never drift. See spec/locales.md.
+"""
+import csv, json, os, sys, uuid
+from urllib.parse import quote
+
+root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SITE = "https://agile-itil-metrics.github.io"
+CANON = "en-001"
+LOCALES = os.path.join(root, "locales")
+DEFAULT_STRINGS = {
+    "title": "Agile ITIL Metrics",
+    "tagline": "Measure agile IT services without distorting the work.",
+    "intro": "A working book of 88 topics in 12 parts on measuring agile IT service management well. Every metric names its gaming vector and the guardrail that catches it. Metrics describe teams, services, and systems, never individuals.",
+    "contents": "Contents",
+    "part": "Part",
+    "read": "Read on the web",
+}
+
+
+def load(loc):
+    p = os.path.join(LOCALES, loc, "locale.json")
+    d = json.load(open(p, encoding="utf-8")) if os.path.isfile(p) else {}
+    return d.get("dirs", {}), {**DEFAULT_STRINGS, **d.get("strings", {})}
+
+
+def headline(path):
+    with open(path, encoding="utf-8") as f:
+        return f.readline().strip()[2:].strip()
+
+
+rows = list(csv.DictReader(open(os.path.join(root, "spec", "topics.tsv"), encoding="utf-8"), delimiter="\t"))
+canon_ids = {r["slug"]: open(os.path.join(LOCALES, CANON, "topics", r["slug"], ".locale-peer-id")).read().strip() for r in rows}
+
+# The locale index shares one peer id across locales, assigned once.
+idfile = os.path.join(LOCALES, CANON, ".locale-peer-id")
+if not os.path.isfile(idfile):
+    open(idfile, "w").write(uuid.uuid4().hex + "\n")
+locale_id = open(idfile).read()
+
+targets = sys.argv[1:] or sorted(d for d in os.listdir(LOCALES) if os.path.isdir(os.path.join(LOCALES, d)))
+for loc in targets:
+    dirs, st = load(loc)
+    topics_dir = dirs.get("topics", "topics")
+    contents_dir = dirs.get("contents", "contents")
+    base = os.path.join(LOCALES, loc, topics_dir)
+    by_id = {}
+    for d in sorted(os.listdir(base)):
+        pid = os.path.join(base, d, ".locale-peer-id")
+        if os.path.isfile(pid):
+            by_id[open(pid).read().strip()] = d
+    out = [f"# {st['title']}", "", f"**{st['tagline']}**", "", st["intro"], "", f"## {st['contents']}", ""]
+    urls = [f"{SITE}/{loc}/"]
+    urls.append(f"{SITE}/{loc}/{quote(contents_dir)}/")
+    part = None
+    for r in rows:
+        slug = by_id.get(canon_ids[r["slug"]])
+        if not slug:
+            continue
+        title = headline(os.path.join(base, slug, "index.md"))
+        if r["part"] != part:
+            part = r["part"]
+            out += ["", f"### {st['part']} {part}", ""]
+        out.append(f"- [{r['number']} {title}]({topics_dir}/{slug}/index.md)")
+        urls.append(f"{SITE}/{loc}/{quote(topics_dir)}/{quote(slug)}/")
+    out += ["", f"[{st['read']}]({SITE}/{loc}/{quote(contents_dir)}/)", ""]
+    d = os.path.join(LOCALES, loc)
+    open(os.path.join(d, "index.md"), "w", encoding="utf-8").write("\n".join(out))
+    rd = os.path.join(d, "README.md")
+    if not os.path.islink(rd):
+        if os.path.lexists(rd):
+            os.remove(rd)
+        os.symlink("index.md", rd)
+    open(os.path.join(d, ".locale-peer-id"), "w").write(locale_id)
+    sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    sm += [f"  <url><loc>{u}</loc></url>" for u in urls] + ["</urlset>", ""]
+    open(os.path.join(d, "sitemap.xml"), "w", encoding="utf-8").write("\n".join(sm))
+    print(f"{loc}: index.md, sitemap.xml ({len(urls)} urls)")

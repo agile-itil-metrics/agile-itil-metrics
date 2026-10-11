@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+title: "Agile ITIL Metrics"
+message: "If you use this book, please cite it using the metadata below."
+type: dataset
+authors:
+  - given-names: "Joel Parker"
+    family-names: "Henderson"
+    email: "joel@joelparkerhenderson.com"
+abstract: >-
+  A working book on measuring agile IT service management well: 88 topics in
+  12 parts covering flow, service desk, change, reliability, experience,
+  assets, security, people, AI, and building a metrics program. Every metric
+  names its gaming vector and the guardrail that catches it.
+keywords:
+  - agile
+  - ITIL
+  - IT service management
+  - metrics
+  - Goodhart's law
+  - DORA
+  - AI skills
+  - AI prompts
+license: CC-BY-4.0
+repository-code: "https://github.com/agile-itil-metrics/agile-itil-metrics"
+url: "https://agile-itil-metrics.github.io"
