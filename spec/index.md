@@ -18,7 +18,7 @@ Write for a reader holding a book, topic by topic. Do not write for a navigation
 
 A practical handbook for measuring the work of teams that build and run IT services the agile way. It is the metrics companion to the *Agile ITIL Guide* (`~/git/agile-itil-guide/agile-itil-guide`), which holds the practices; this book holds the measures of those practices.
 
-- **Premise:** agile delivery (continuous software delivery, continuous collaboration, continuous improvement, and projects built around motivated individuals; practiced through Kanban, Lean, Extreme Programming, DevOps, Scrum, and other methods) and IT service management as codified by ITIL are complements. They also measure different things in different ways. Agile measures flow, learning, and working software delivered continuously. ITIL measures service levels, incidents, changes, assets, and value co-created with customers. This book joins the two into one coherent, humane metrics set.
+- **Premise:** agile ways of working, which aim at continuous delivery, continuous stakeholder involvement, continuous improvement, ongoing evolution, sustainable pace, and projects built around motivated individuals, and IT service management as codified by ITIL are complements. They also measure different things in different ways. Agile measures flow, learning, and working software delivered continuously. ITIL measures service levels, incidents, changes, assets, and value co-created with customers. This book joins the two into one coherent, humane metrics set.
 - **Audience:** delivery teams, service desk and operations staff, product and service owners, agile coaches and team facilitators, IT managers and CIOs, and people preparing for ITIL or agile certification.
 - **Centre of gravity:** worldwide and vendor-neutral. Commercial companies, the public sector, nonprofits, and managed-service providers are all first-class readers. Named frameworks and tools are examples, never endorsements.
 - **Guardrail:** [Goodhart's law](https://en.wikipedia.org/wiki/Goodhart%27s_law): a measure that becomes a target stops being a good measure. Topic 1.2 sets it, and every metric family in the book carries its own gaming vector and guardrail as a condition of using the metric at all.
@@ -26,19 +26,24 @@ A practical handbook for measuring the work of teams that build and run IT servi
 
 ## The agile stance
 
-This book treats agile as a small set of aims, drawn from the Agile Manifesto and its principles, and not as a set of ceremonies. The aims, in the order the book leans on them:
+This book treats agile as a small set of aims, drawn from the Agile Manifesto and its principles, and not as a set of ceremonies or branded methods. The aims, in the order the book leans on them:
 
-1. **Continuous software delivery** of valuable software, so that change reaches users steadily and safely.
-2. **Continuous collaboration among stakeholders**: developers, operations, service desk, product and service owners, suppliers, and users work together every day, not at handoffs.
+1. **Continuous delivery** of valuable software, so that change reaches users steadily and safely.
+2. **Continuous stakeholder involvement**: developers, operations, service desk, product and service owners, suppliers, auditors, and users work together every day, not at handoffs.
 3. **Continuous improvement**: the team regularly reflects on how to become more effective and adjusts its way of working.
-4. **Projects built around motivated individuals**: give people the environment and support they need, and trust them to get the work done. Metrics serve this aim by helping people see their own work; they are never used to rank or police them.
+4. **Ongoing evolution**: requirements, services, and ways of working keep changing, and changing needs are welcomed, not resisted.
+5. **Sustainable pace**: sponsors, teams, and users can keep going at a constant pace indefinitely, without heroics, burnout, or a permanent state of urgency.
+6. **Projects built around motivated individuals**: give people the environment and support they need, and trust them to get the work done. Metrics serve this aim by helping people see their own work; they are never used to rank or police them.
 
 Writing consequences for every topic:
 
-- Describe practices by these aims. Name Scrum, sprints, story points, and burndown charts only where a source or a reader's context requires it, and then as one example among several. The Kanban Guide and DORA research are cited for flow and delivery measures, since they do not depend on fixed time-boxes.
-- Prefer "continuous software delivery", "continuous collaboration", "continuous improvement", "planning cadence", and "review cadence" to "iteration", "sprint", "burndown", and "frequent releases".
-- Do not make time-boxed events, velocity, or release counts the centre of a measure. Where a team uses them, they are that team's local convention, and the topic says so.
-- Frame improvement metrics around learning and removing obstacles, and frame people metrics around support and trust.
+- **Never say "agile delivery".** It is wrong, misleading, and cargo cult: agile is a set of values and principles, and delivery is something you do continuously. Say "continuous delivery" (or "continuous software delivery"). Enforced by `bin/check`.
+- **De-emphasize "sprint", "Scrum", and "Kanban".** They are particular brands of practice. They are not agile in themselves, and copying their rituals without the aims behind them is cargo cult. Describe practices by the aims above. Name them only where a cited source or a reader's context requires it, and then as one local convention among several. The Kanban Guide and DORA research may be cited as sources for flow and delivery measures, since they do not depend on fixed time-boxes.
+- **Conditional phrasing is allowed.** You may name a practice when the sentence makes clear it is the reader's own choice, for example "If your team chooses to use sprints, ...", "If your team chooses to use Scrum, ...", or "If your team chooses to use Kanban, ...". Keep such passages short and secondary to the aims, and give the aim behind the practice. `bin/check` accepts the banned terms only inside a sentence of this form ("if", "where", or "when" a team "chooses to use" the practice).
+- **Avoid "iteration", "burndown", and "frequent releases"** as the way to describe how work moves. Prefer "continuous delivery", "planning cadence", and "review cadence". `bin/check` rejects "sprint", "burndown", and "iteration" outside the references unless the sentence is conditional on the team's own choice.
+- **Prefer the vocabulary of the aims**: continuous stakeholder involvement, continuous improvement, ongoing evolution, sustainable pace, motivated individuals, flow, feedback, and learning.
+- **Do not make time-boxed events, velocity, or release counts the centre of a measure.** Where a team uses them, they are that team's local convention, and the topic says so.
+- **Frame improvement metrics around learning and removing obstacles, and people metrics around support, trust, and sustainable pace.**
 
 ## Sibling projects
 
@@ -107,8 +112,9 @@ The enforceable version is in [conventions.md](conventions.md).
 5. **Define terms on first use** in each topic, and link key concepts to Wikipedia once per topic, after verifying the article exists.
 6. **Name the gaming vector.** A topic that presents a metric without saying how it gets gamed and what pairs with it to catch that is not finished.
 7. **Metrics are for teams, not for ranking people.** No topic recommends individual league tables, or tying a single number to pay or discipline.
-8. **The spec is the source of truth.** Change the spec and the topics together.
-9. **Checks must pass.** Run `bin/check` before you consider a change done.
+8. **Agile stance.** Never say "agile delivery"; say "continuous delivery". De-emphasize sprint, Scrum, and Kanban; emphasize continuous stakeholder involvement, continuous improvement, ongoing evolution, and sustainable pace.
+9. **The spec is the source of truth.** Change the spec and the topics together.
+10. **Checks must pass.** Run `bin/check` before you consider a change done.
 
 ## The usual workflow
 

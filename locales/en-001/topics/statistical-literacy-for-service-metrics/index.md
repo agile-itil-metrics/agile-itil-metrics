@@ -12,7 +12,7 @@ Sample size is the second problem. A team that resolves 12 priority 1 incidents 
 
 Variation is the third problem. Every process produces numbers that wobble from week to week without anything having changed. Walter Shewhart, working on manufacturing quality in the 1920s, separated this routine wobble from signals that deserve investigation, and gave us the [control chart](https://en.wikipedia.org/wiki/Control_chart). Applying charts like this to a process is called [statistical process control](https://en.wikipedia.org/wiki/Statistical_process_control). Part of that last mistake is [regression toward the mean](https://en.wikipedia.org/wiki/Regression_toward_the_mean): an extreme value tends to be followed by a less extreme one, so the week after a terrible week looks like a recovery whether or not anyone did anything.
 
-Agile flow practice, such as the Kanban Guide's use of cycle time percentiles and work item age, already asks for distributions and forecasts expressed as likelihoods (see topic 2.1, Kanban flow measures). In ITIL 4, the measurement and reporting practice and the continual improvement practice both depend on measures that mean what they appear to mean, and service level management depends on targets that are set against realistic variation. Statistical literacy is the shared layer under both. It also supports the guardrail in topic 1.2, Goodhart's law and the psychology of metrics: a team that shows the whole distribution has fewer places to hide a manipulated average.
+Agile flow practice, such as the Kanban Guide's use of cycle time percentiles and work item age, already asks for distributions and forecasts expressed as likelihoods (see topic 2.1, Flow measures). In ITIL 4, the measurement and reporting practice and the continual improvement practice both depend on measures that mean what they appear to mean, and service level management depends on targets that are set against realistic variation. Statistical literacy is the shared layer under both. It also supports the guardrail in topic 1.2, Goodhart's law and the psychology of metrics: a team that shows the whole distribution has fewer places to hide a manipulated average.
 
 Common-cause variation is built into a process, and special-cause variation comes from something specific that changed or went wrong. A service level agreement (SLA) is a documented commitment to a customer, and a service level objective (SLO) is a target for a measure.
 
@@ -49,7 +49,7 @@ Where a contract names a mean, report the contractual figure and show the median
 
 **2. Show the shape as well as the summary.** A histogram or a scatter plot of resolution time by close date shows clusters, long tails, and sudden shifts that no summary shows. When the picture and the number disagree, believe the picture and investigate the number.
 
-**3. Add the age of the oldest open item.** Percentiles of finished work look backward and ignore everything still stuck. Report the oldest open item and how many open items are already older than your high percentile (see topic 2.1, Kanban flow measures). This is the single most useful corrective for averages that improve because hard items are left to age.
+**3. Add the age of the oldest open item.** Percentiles of finished work look backward and ignore everything still stuck. Report the oldest open item and how many open items are already older than your high percentile (see topic 2.1, Flow measures). This is the single most useful corrective for averages that improve because hard items are left to age.
 
 ### Respect small samples and uncertainty
 
@@ -121,7 +121,7 @@ Rehearse the wording on a real example: "Between 70 and 95 percent, on 12 incide
 
 ### Product and delivery teams
 
-Delivery teams use cycle time and throughput to forecast, and they gain most from percentile-based forecasts rather than averages (see topic 2.1, Kanban flow measures). A forecast stated as a range with a likelihood is easier to defend than a date. Resist reading one period's change as a trend (see topic 2.5, Delivery forecasting and planning metrics).
+Delivery teams use cycle time and throughput to forecast, and they gain most from percentile-based forecasts rather than averages (see topic 2.1, Flow measures). A forecast stated as a range with a likelihood is easier to defend than a date. Resist reading one period's change as a trend (see topic 2.5, Delivery forecasting and planning metrics).
 
 ### Service and operations teams
 

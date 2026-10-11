@@ -133,7 +133,7 @@ Ask responders when they last searched for a known error and what they found. Lo
 
 ### Product and delivery teams
 
-Delivery teams own most permanent fixes, and they feel the pull of feature work. They gain from seeing the incident cost of a recurring fault next to the effort of fixing it, and from having a clear place for fix items in the backlog. They should resist treating problem work as an interruption and instead reserve a visible share of capacity for it. The retrospective is a natural place to spot patterns and open problems (see topic 2.1, Kanban flow measures).
+Delivery teams own most permanent fixes, and they feel the pull of feature work. They gain from seeing the incident cost of a recurring fault next to the effort of fixing it, and from having a clear place for fix items in the backlog. They should resist treating problem work as an interruption and instead reserve a visible share of capacity for it. The retrospective is a natural place to spot patterns and open problems (see topic 2.1, Flow measures).
 
 ### Service and operations teams
 

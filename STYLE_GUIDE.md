@@ -8,7 +8,7 @@ Calm, plain, practical. Address the reader as "you" for guidance. Lead with the 
 
 ## Agile stance
 
-Emphasize continuous software delivery, continuous collaboration among stakeholders, continuous improvement, and building projects around motivated individuals (see `spec/index.md`, "The agile stance"). De-emphasize sprints, Scrum events, burndown charts, iterations, and frequent releases: mention them only where a source or the reader's context needs them, and as one example among several.
+Emphasize continuous delivery, continuous stakeholder involvement, continuous improvement, ongoing evolution, sustainable pace, and building projects around motivated individuals (see `spec/index.md`, "The agile stance"). Never write "agile delivery": write "continuous delivery". De-emphasize sprint, Scrum, and Kanban: they are brands of practice, not agile in themselves. Mention them only where a source or the reader's context needs them, and as one example among several. Do not use "sprint", "burndown", or "iteration" outside the references, except conditionally: "If your team chooses to use sprints, ...", "If your team chooses to use Scrum, ...", "If your team chooses to use Kanban, ...".
 
 ## Language (en-001)
 

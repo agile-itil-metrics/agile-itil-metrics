@@ -27,7 +27,7 @@ Legend: `[ ]` todo, `[~]` in progress, `[x]` done. **(P)** parallelizable.
 
 - [ ] Topics 1.0 to 1.7. Topic 1.2 (Goodhart's law) first, because every other topic cites it.
 
-## Phase 3: Author Part 2, Flow and Agile Delivery Metrics **(P)**
+## Phase 3: Author Part 2, Flow and Continuous Delivery Metrics **(P)**
 
 - [ ] Topics 2.0 to 2.9
 

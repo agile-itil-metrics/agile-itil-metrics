@@ -116,7 +116,7 @@ Governance can turn into a ritual. Ask which parts of the current approach peopl
 
 ### Product and delivery teams
 
-Delivery teams own working measures such as work item age and cycle time, and they should agree the definitions in their working agreements. When a metric moves up into a portfolio report, the team should know the owner, the definition, and the audience. Teams get most value from a short register entry for each reported measure, and from the right to challenge a definition that no longer fits how the work flows (see topic 2.1, Kanban flow measures).
+Delivery teams own working measures such as work item age and cycle time, and they should agree the definitions in their working agreements. When a metric moves up into a portfolio report, the team should know the owner, the definition, and the audience. Teams get most value from a short register entry for each reported measure, and from the right to challenge a definition that no longer fits how the work flows (see topic 2.1, Flow measures).
 
 ### Service and operations teams
 

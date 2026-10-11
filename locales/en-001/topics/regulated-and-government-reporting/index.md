@@ -10,7 +10,7 @@ The [public sector](https://en.wikipedia.org/wiki/Public_sector) has particular 
 
 Regulated private-sector organizations, such as those in finance, health, energy, and telecommunications, share many of these features. They face incident notification duties, resilience reporting, and supervisory reviews. The common thread is that someone outside the delivery team defines what must be reported and by when.
 
-Agile delivery and ITIL practice both have something to offer. The agile aim of continuous collaboration with stakeholders extends to oversight bodies, who are stakeholders with legitimate needs, and early conversations about what they require can prevent rework. The agile habit of delivering small, working increments continuously suits reporting: reports that are produced automatically from systems of record are more accurate and cheaper than those assembled by hand each quarter. ITIL's measurement and reporting practice, and its service level management, give the vocabulary for defining what is measured and shared.
+Continuous delivery and ITIL practice both have something to offer. The agile aim of continuous collaboration with stakeholders extends to oversight bodies, who are stakeholders with legitimate needs, and early conversations about what they require can prevent rework. The agile habit of delivering small, working increments continuously suits reporting: reports that are produced automatically from systems of record are more accurate and cheaper than those assembled by hand each quarter. ITIL's measurement and reporting practice, and its service level management, give the vocabulary for defining what is measured and shared.
 
 Reporting obligations create three well-known hazards.
 

@@ -10,7 +10,7 @@ Requests matter for metrics because they are predictable demand. An incident is 
 
 The unit of analysis is the **catalog item**: one named thing a user can ask for in the [service catalog](https://en.wikipedia.org/wiki/Service_catalog) (ITIL's term is "service catalogue"; the rest of this topic says "service catalog"). Per-item measures are far more useful than a single blended number, because a request for a password reset and a request for a server build have different clocks, different owners, and different reasonable targets. A blended average hides both.
 
-The agile and ITIL views meet here with little friction. ITIL asks whether the service delivers the agreed outcome within the agreed time. Agile flow practice asks how long work takes to flow from request to done, how much sits in queues, and how much work is in progress at once. A request is a work item moving through a workflow, so the tools of [Kanban](https://en.wikipedia.org/wiki/Kanban), such as cycle time and work-item age, apply directly (see topic 2.1, Kanban flow measures). The vocabulary differs. The arithmetic is the same.
+The agile and ITIL views meet here with little friction. ITIL asks whether the service delivers the agreed outcome within the agreed time. Agile flow practice asks how long work takes to flow from request to done, how much sits in queues, and how much work is in progress at once. A request is a work item moving through a workflow, so the tools of flow measurement, such as cycle time and work-item age, apply directly (see topic 2.1, Flow measures). The vocabulary differs. The arithmetic is the same.
 
 Three terms recur. **Fulfillment time** is the elapsed time from the moment the user submits the request to the moment the user confirms, or the system records, that the thing was delivered. **Hands-on time** is the time someone is actively working on the request, and **wait time** is everything else, including approvals and waiting for the user. The difference between them is what a request model should shrink. **Automation share** is the portion of requests fulfilled without a person touching them after submission.
 
@@ -32,8 +32,8 @@ Finally, a warning from the psychology of measurement. When a team is judged on 
 
 | Metric | Definition | Formula | Unit | Data source | ITIL practice | Agile counterpart | Cadence |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Request fulfillment time | Elapsed time to deliver a request, shown as a median and a 95th percentile per catalog item | clock starts when the user submits the request, stops when the user confirms delivery or the delivery is recorded; requests cancelled by the user are excluded; time waiting for the user is reported separately, not removed | working days or hours | ITSM tool request history | Service request management | Cycle time on a Kanban board (see topic 2.2, Lead time, cycle time, and flow efficiency) | Weekly, trended monthly |
-| Fulfillment within target | Share of requests delivered within the target agreed for their catalog item | requests fulfilled within target / requests fulfilled in the period; clock as above, items still open are excluded and counted in backlog age instead | percent | ITSM tool request history; catalog item target table | Service level management | Service level expectation in Kanban | Monthly |
+| Request fulfillment time | Elapsed time to deliver a request, shown as a median and a 95th percentile per catalog item | clock starts when the user submits the request, stops when the user confirms delivery or the delivery is recorded; requests cancelled by the user are excluded; time waiting for the user is reported separately, not removed | working days or hours | ITSM tool request history | Service request management | Cycle time on the team board (see topic 2.2, Lead time, cycle time, and flow efficiency) | Weekly, trended monthly |
+| Fulfillment within target | Share of requests delivered within the target agreed for their catalog item | requests fulfilled within target / requests fulfilled in the period; clock as above, items still open are excluded and counted in backlog age instead | percent | ITSM tool request history; catalog item target table | Service level management | Service level expectation | Monthly |
 | Request backlog and age | Number of open requests and how old the oldest are, by catalog item | open requests at the end of the period (count); age of each open request = report date minus submission date; report the count, the median age, and the oldest age | count and days | ITSM tool open request queue | Service request management | Work in progress and aging work items (see topic 2.3, Work in process and queueing) | Weekly |
 | Approval wait time | Time a request spends waiting for an approval | clock starts when the approval is requested, stops when it is granted or declined; requests with no approval step are excluded | hours | ITSM tool approval log | Service request management; change enablement | Blocked time or a "waiting" column on the board | Monthly |
 | Request volume by catalog item | Number of requests submitted for each item, with its share of all requests | requests submitted per item in the period; requests resubmitted as duplicates, if identified, are excluded; report the count and the share of total | count and percent | ITSM tool request records | Service catalog management | Demand analysis for backlog shaping | Monthly |
@@ -56,7 +56,7 @@ Fulfillment time counts working time only if the team has agreed a calendar and 
 
 **4. Show the median and the 95th percentile, with a count.** Put both on one chart per item, with the number of requests behind each point. A median of two days with a 95th percentile of twenty tells you that most users are well served and that a tail needs investigation, which an average of four days hides. When the count is small, say so and show the individual requests instead of a percentile.
 
-**5. Make age visible for open requests.** Fulfillment time is only known after a request finishes, so it lags. A list of the oldest open requests per item, sorted by age, tells a team where to look today. In Kanban terms this is work-item age against the item's usual cycle time, and it is the single most actionable view a request queue can have.
+**5. Make age visible for open requests.** Fulfillment time is only known after a request finishes, so it lags. A list of the oldest open requests per item, sorted by age, tells a team where to look today. In flow terms this is work-item age against the item's usual cycle time, and it is the single most actionable view a request queue can have.
 
 **6. Split elapsed time into hands-on, approval, and waiting-for-user time.** Take a sample of fulfilled requests for one item and break each one into the time spent in each state. Most teams find that active work is a small share of the elapsed time. The finding moves the improvement conversation from "work faster" to "remove the queue between steps", which is the core idea in the study of queues and flow (see topic 2.3, Work in process and queueing).
 
@@ -283,7 +283,6 @@ your assumptions.
 10. Wikipedia, [ITIL](https://en.wikipedia.org/wiki/ITIL).
 11. Wikipedia, [Process automation](https://en.wikipedia.org/wiki/Process_automation).
 12. Wikipedia, [Service catalog](https://en.wikipedia.org/wiki/Service_catalog).
-13. Wikipedia, [Kanban](https://en.wikipedia.org/wiki/Kanban).
-14. Wikipedia, [Percentile](https://en.wikipedia.org/wiki/Percentile).
-15. Wikipedia, [Service-level agreement](https://en.wikipedia.org/wiki/Service-level_agreement).
-16. Wikipedia, [Goodhart's law](https://en.wikipedia.org/wiki/Goodhart%27s_law).
+13. Wikipedia, [Percentile](https://en.wikipedia.org/wiki/Percentile).
+14. Wikipedia, [Service-level agreement](https://en.wikipedia.org/wiki/Service-level_agreement).
+15. Wikipedia, [Goodhart's law](https://en.wikipedia.org/wiki/Goodhart%27s_law).

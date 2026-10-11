@@ -23,14 +23,14 @@ The scope column says what the topic owns. Each concept has one **home topic**, 
 | 1.6 | `statistical-literacy-for-service-metrics` | Statistical literacy for service metrics | Percentiles over averages, skewed distributions, small samples, control charts, and honest uncertainty for ticket and flow data. |
 | 1.7 | `measurement-frameworks` | Measurement frameworks | Goal-Question-Metric, objectives and key results (OKRs), balanced scorecard, critical success factors and key performance indicators, and how they combine with ITIL practices. |
 
-## Part 2: Flow and Agile Delivery Metrics
+## Part 2: Flow and Continuous Delivery Metrics
 
 *How work moves through agile teams that also run services.*
 
 | Topic | Slug | Title | Scope |
 | --- | --- | --- | --- |
-| 2.0 | `flow-metrics` | Introduction to Part 2: Flow and Agile Delivery Metrics | Part introduction: framing, topics in this part, how they interrelate. |
-| 2.1 | `kanban-flow-measures` | Kanban flow measures | Work in progress, throughput, work item age, and cycle time as defined by the Kanban Guide, applied to project and service work. |
+| 2.0 | `flow-metrics` | Introduction to Part 2: Flow and Continuous Delivery Metrics | Part introduction: framing, topics in this part, how they interrelate. |
+| 2.1 | `flow-measures` | Flow measures | Work in progress, throughput, work item age, and cycle time, with the Kanban Guide as one source among several, applied to project and service work. |
 | 2.2 | `lead-time-cycle-time-and-flow-efficiency` | Lead time, cycle time, and flow efficiency | Definitions that hold up across teams, where the clocks start and stop, and how to expose waiting time. |
 | 2.3 | `work-in-process-and-queueing` | Work in process and queueing | Little's law, utilization and queue growth, WIP limits, and why a fully busy service team is a slow one. |
 | 2.4 | `value-stream-metrics` | Value stream metrics | Value stream mapping measures, process time, wait time, percent complete and accurate, and ITIL value streams. |
@@ -146,7 +146,7 @@ The scope column says what the topic owns. Each concept has one **home topic**, 
 | Topic | Slug | Title | Scope |
 | --- | --- | --- | --- |
 | 10.0 | `metrics-in-the-age-of-ai` | Introduction to Part 10: Metrics in the Age of AI | Part introduction: framing, topics in this part, how they interrelate. |
-| 10.1 | `ai-in-service-management-measurement` | AI in service management measurement | Where AI enters ITSM and agile delivery, and which baselines to capture before it does. |
+| 10.1 | `ai-in-service-management-measurement` | AI in service management measurement | Where AI enters ITSM and continuous delivery, and which baselines to capture before it does. |
 | 10.2 | `measuring-ai-assisted-work` | Measuring AI-assisted work | Adoption, acceptance, rework, quality, and outcome measures for AI-assisted delivery and support. |
 | 10.3 | `ai-agent-and-chatbot-metrics` | AI agent and chatbot metrics | Containment, deflection quality, escalation, resolution accuracy, and user trust. |
 | 10.4 | `metric-inflation-and-quality-dilution` | Metric inflation and quality dilution | How AI inflates volume and speed measures, and the paired quality measures that catch it. |

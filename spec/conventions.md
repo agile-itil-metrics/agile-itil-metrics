@@ -40,7 +40,7 @@ Defined in [topic-template.md](topic-template.md). Section names and order are f
 - Lead with the point. Give guidance, not a survey. Be opinionated where the evidence supports it, and neutral between frameworks.
 - Short paragraphs of 2 to 4 sentences. Use tables for comparisons and metric definitions.
 - Stay vendor-neutral. Name products only as factual examples.
-- **Agile stance.** Follow the aims in [index.md](index.md), "The agile stance": emphasize continuous software delivery, continuous collaboration among stakeholders, continuous improvement, and projects built around motivated individuals; de-emphasize sprints, Scrum events, burndowns, iterations, and frequent releases.
+- **Agile stance.** Follow [index.md](index.md), "The agile stance": emphasize continuous delivery, continuous stakeholder involvement, continuous improvement, ongoing evolution, sustainable pace, and projects built around motivated individuals. **Never write "agile delivery"** (write "continuous delivery"). **De-emphasize sprint, Scrum, and Kanban**, and do not use "sprint", "burndown", or "iteration" outside the references, except in a sentence that is conditional on the team's own choice, such as "If your team chooses to use sprints, ...". **(enforced)**
 - No hype words: revolutionary, game-changing, cutting-edge, seamless, disruptive, best-in-class.
 - Roughly 3,000 to 6,000 words per content topic, counting tables and references with `wc -w`, reached by depth, never by padding. Go shorter only when the topic is genuinely lighter.
 - **Every metric gets its gaming vector named,** with the guardrail that catches it. **(enforced: section 7 of the template must cover every metric in section 5)**

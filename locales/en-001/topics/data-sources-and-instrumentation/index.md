@@ -67,7 +67,7 @@ Timestamp completeness counts only closed items, so a backlog of old open items 
 
 ### Design the status model
 
-**8. Keep the status model small, shared, and documented.** Each extra status invites a different interpretation by each team. Define what each state means in one sentence, who may move work into it, and which transitions are allowed. Work item age and flow measures depend on this model (see topic 2.1, Kanban flow measures), and cross-team comparison depends on teams using the same words for the same states. When the data surprises you, suspect the workflow first: log every change to a workflow or field with its date and reason, and count undocumented statuses as a drift signal.
+**8. Keep the status model small, shared, and documented.** Each extra status invites a different interpretation by each team. Define what each state means in one sentence, who may move work into it, and which transitions are allowed. Work item age and flow measures depend on this model (see topic 2.1, Flow measures), and cross-team comparison depends on teams using the same words for the same states. When the data surprises you, suspect the workflow first: log every change to a workflow or field with its date and reason, and count undocumented statuses as a drift signal.
 
 ### Keep the pipeline honest
 

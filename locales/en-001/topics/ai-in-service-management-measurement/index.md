@@ -2,4 +2,4 @@
 
 <!-- stub -->
 
-> Not yet written. Scope: Where AI enters ITSM and agile delivery, and which baselines to capture before it does.
+> Not yet written. Scope: Where AI enters ITSM and continuous delivery, and which baselines to capture before it does.

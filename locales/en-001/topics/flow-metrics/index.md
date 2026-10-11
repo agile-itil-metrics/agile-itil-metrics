@@ -1,4 +1,4 @@
-# Introduction to Part 2: Flow and Agile Delivery Metrics
+# Introduction to Part 2: Flow and Continuous Delivery Metrics
 
 **Flow metrics show how work actually moves through a team that builds and runs services, so that you can find where it waits, decide what to change, and check that the change helped.**
 
@@ -10,7 +10,7 @@ Flow data is skewed, and it is easy to misuse. Time measures should be read as d
 
 ## Topics in this part
 
-- **2.1 Kanban flow measures**: work in progress, throughput, work item age, and cycle time as defined by the Kanban Guide, applied to project and service work.
+- **2.1 Flow measures**: work in progress, throughput, work item age, and cycle time, applied to project and service work.
 - **2.2 Lead time, cycle time, and flow efficiency**: definitions that hold up across teams, where the clocks start and stop, and how to expose waiting time.
 - **2.3 Work in process and queueing**: Little's law, utilization and queue growth, work in process (WIP) limits, and why a fully busy service team is a slow one.
 - **2.4 Value stream metrics**: value stream mapping measures, process time, wait time, percent complete and accurate, and ITIL value streams.
@@ -22,7 +22,7 @@ Flow data is skewed, and it is easy to misuse. Time measures should be read as d
 
 ## How these topics interrelate
 
-The first four topics form the core of the part. Topic 2.1 (see topic 2.1, Kanban flow measures) defines the basic quantities: work in progress, throughput, work item age, and cycle time. Topic 2.2 (see topic 2.2, Lead time, cycle time, and flow efficiency) fixes where the clocks start and stop, which any comparison depends on. Topic 2.3 (see topic 2.3, Work in process and queueing) explains why those quantities move together, and topic 2.4 (see topic 2.4, Value stream metrics) widens the view from one team's board to the whole path from request to value.
+The first four topics form the core of the part. Topic 2.1 (see topic 2.1, Flow measures) defines the basic quantities: work in progress, throughput, work item age, and cycle time. Topic 2.2 (see topic 2.2, Lead time, cycle time, and flow efficiency) fixes where the clocks start and stop, which any comparison depends on. Topic 2.3 (see topic 2.3, Work in process and queueing) explains why those quantities move together, and topic 2.4 (see topic 2.4, Value stream metrics) widens the view from one team's board to the whole path from request to value.
 
 Several topics act as guardrails for others. Throughput and speed measures can be inflated by splitting work into smaller pieces or by rushing it, so they should be read alongside rework and quality signals. Pull request size and review time in topic 2.7 (see topic 2.7, Pull request and code review metrics) are early indicators of delay and rework. The delivery outcomes in topic 2.8 (see topic 2.8, DORA metrics) pair speed measures with stability measures, so that faster delivery is not bought with more failure. Velocity in topic 2.5 (see topic 2.5, Delivery forecasting and planning metrics) is a planning aid for one team, and it should be checked against forecast accuracy and the flow measures rather than read as output.
 

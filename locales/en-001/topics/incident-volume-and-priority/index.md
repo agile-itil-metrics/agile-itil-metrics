@@ -8,7 +8,7 @@ An incident, in [ITIL](https://en.wikipedia.org/wiki/ITIL) 4 terms, is an unplan
 
 Volume on its own is a poor guide. A rise in incidents can mean the service got worse, or that more people are using it, or that monitoring improved and now sees faults that used to go unreported. A fall can mean reliability work paid off, or that users stopped bothering to report. This topic is about reading volume with enough context to tell those stories apart: normalizing against usage, splitting by category and service, and watching the mix of priorities and the rate of repeats.
 
-Priority is the second half of the topic. ITIL practice commonly derives priority from two inputs: impact (how much of the business is affected) and urgency (how quickly the business needs the fix). The pair is mapped to a priority level that sets the expected response. Agile teams have a close counterpart in how they triage a backlog: severity and urgency labels on defects, and a "class of service" in [Kanban](https://en.wikipedia.org/wiki/Kanban_(development)) that decides what jumps the queue. The words differ; the question is the same: what must be handled first, and why.
+Priority is the second half of the topic. ITIL practice commonly derives priority from two inputs: impact (how much of the business is affected) and urgency (how quickly the business needs the fix). The pair is mapped to a priority level that sets the expected response. Agile teams have a close counterpart in how they triage a backlog: severity and urgency labels on defects, and a "class of service" on a flow board that decides what jumps the queue. The words differ; the question is the same: what must be handled first, and why.
 
 The ITIL view treats incidents as records owned by a service desk and resolver groups, with categories, priorities, and service level targets. The agile view treats unplanned work as an interruption to flow that competes with planned work (see topic 2.9, Operational work and unplanned work). Both views benefit from the same measures, if the measures describe the system and not the people inside it. The [service desk](https://en.wikipedia.org/wiki/Help_desk_software) is where most records start, and its own metrics are covered separately (see topic 3.1, Service desk metrics). How fast incidents are responded to and resolved is covered in topic 3.3, Incident response and resolution time. Major incidents have their own measures (see topic 3.4, Major incident metrics).
 
@@ -67,7 +67,7 @@ Two notes on the definitions. The first is that "priority" in this table is the 
 
 **8. Report the mix and the reclassification rate together.** A healthy mix has a small number of the highest-priority incidents and a broad base of lower ones. If the top level grows, ask whether harm grew or whether customers learned that "critical" gets attention. The reclassification rate shows how well the matrix fits: frequent changes at closing mean the rule is unclear or the first assessment is rushed. Review a sample of reclassified records each month in the group that owns the matrix.
 
-**9. Keep priority and the agile class of service aligned.** Where delivery teams receive incident-driven work, use the same words and the same matrix, or publish a clear mapping. A team that calls a defect "high" while operations calls the same defect "medium" will lose time to translation. Reserve an explicit allowance for expedited work so the interrupt is visible in the flow measures (see topic 2.1, Kanban flow measures).
+**9. Keep priority and the agile class of service aligned.** Where delivery teams receive incident-driven work, use the same words and the same matrix, or publish a clear mapping. A team that calls a defect "high" while operations calls the same defect "medium" will lose time to translation. Reserve an explicit allowance for expedited work so the interrupt is visible in the flow measures (see topic 2.1, Flow measures).
 
 ### Look for repeats and patterns
 
@@ -281,9 +281,8 @@ invent patterns in data I have not shown you. List your assumptions.
 7. Goodhart, C. A. E., "Problems of Monetary Management: The U.K. Experience," in *Papers in Monetary Economics*, Reserve Bank of Australia, 1975.
 8. Wikipedia, [ITIL](https://en.wikipedia.org/wiki/ITIL).
 9. Wikipedia, [Incident management](https://en.wikipedia.org/wiki/Incident_management).
-10. Wikipedia, [Kanban (development)](https://en.wikipedia.org/wiki/Kanban_(development)).
-11. Wikipedia, [Help desk software](https://en.wikipedia.org/wiki/Help_desk_software).
-12. Wikipedia, [Control chart](https://en.wikipedia.org/wiki/Control_chart).
-13. Wikipedia, [Seasonality](https://en.wikipedia.org/wiki/Seasonality).
-14. Wikipedia, [Pareto principle](https://en.wikipedia.org/wiki/Pareto_principle).
-15. Wikipedia, [Root cause analysis](https://en.wikipedia.org/wiki/Root_cause_analysis).
+10. Wikipedia, [Help desk software](https://en.wikipedia.org/wiki/Help_desk_software).
+11. Wikipedia, [Control chart](https://en.wikipedia.org/wiki/Control_chart).
+12. Wikipedia, [Seasonality](https://en.wikipedia.org/wiki/Seasonality).
+13. Wikipedia, [Pareto principle](https://en.wikipedia.org/wiki/Pareto_principle).
+14. Wikipedia, [Root cause analysis](https://en.wikipedia.org/wiki/Root_cause_analysis).

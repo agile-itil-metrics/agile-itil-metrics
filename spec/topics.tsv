@@ -7,16 +7,16 @@ part	number	slug	part_title
 1	1.5	data-sources-and-instrumentation	Foundations of Measurement
 1	1.6	statistical-literacy-for-service-metrics	Foundations of Measurement
 1	1.7	measurement-frameworks	Foundations of Measurement
-2	2.0	flow-metrics	Flow and Agile Delivery Metrics
-2	2.1	kanban-flow-measures	Flow and Agile Delivery Metrics
-2	2.2	lead-time-cycle-time-and-flow-efficiency	Flow and Agile Delivery Metrics
-2	2.3	work-in-process-and-queueing	Flow and Agile Delivery Metrics
-2	2.4	value-stream-metrics	Flow and Agile Delivery Metrics
-2	2.5	delivery-forecasting-and-planning-metrics	Flow and Agile Delivery Metrics
-2	2.6	backlog-and-refinement-metrics	Flow and Agile Delivery Metrics
-2	2.7	pull-request-and-code-review-metrics	Flow and Agile Delivery Metrics
-2	2.8	dora-metrics	Flow and Agile Delivery Metrics
-2	2.9	operational-work-and-unplanned-work	Flow and Agile Delivery Metrics
+2	2.0	flow-metrics	Flow and Continuous Delivery Metrics
+2	2.1	flow-measures	Flow and Continuous Delivery Metrics
+2	2.2	lead-time-cycle-time-and-flow-efficiency	Flow and Continuous Delivery Metrics
+2	2.3	work-in-process-and-queueing	Flow and Continuous Delivery Metrics
+2	2.4	value-stream-metrics	Flow and Continuous Delivery Metrics
+2	2.5	delivery-forecasting-and-planning-metrics	Flow and Continuous Delivery Metrics
+2	2.6	backlog-and-refinement-metrics	Flow and Continuous Delivery Metrics
+2	2.7	pull-request-and-code-review-metrics	Flow and Continuous Delivery Metrics
+2	2.8	dora-metrics	Flow and Continuous Delivery Metrics
+2	2.9	operational-work-and-unplanned-work	Flow and Continuous Delivery Metrics
 3	3.0	service-desk-incident-and-request-metrics	Service Desk, Incident, and Request Metrics
 3	3.1	service-desk-metrics	Service Desk, Incident, and Request Metrics
 3	3.2	incident-volume-and-priority	Service Desk, Incident, and Request Metrics

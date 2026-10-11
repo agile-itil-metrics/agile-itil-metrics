@@ -35,10 +35,10 @@ The book has 12 parts, written in English (World), locale `en-001`. Unwritten to
 - Topic 1.6: [Statistical literacy for service metrics](locales/en-001/topics/statistical-literacy-for-service-metrics/)
 - Topic 1.7: [Measurement frameworks](locales/en-001/topics/measurement-frameworks/)
 
-**Part 2: Flow and Agile Delivery Metrics**
+**Part 2: Flow and Continuous Delivery Metrics**
 
-- Topic 2.0: [Introduction to Part 2: Flow and Agile Delivery Metrics](locales/en-001/topics/flow-metrics/)
-- Topic 2.1: [Kanban flow measures](locales/en-001/topics/kanban-flow-measures/)
+- Topic 2.0: [Introduction to Part 2: Flow and Continuous Delivery Metrics](locales/en-001/topics/flow-metrics/)
+- Topic 2.1: [Flow measures](locales/en-001/topics/flow-measures/)
 - Topic 2.2: [Lead time, cycle time, and flow efficiency](locales/en-001/topics/lead-time-cycle-time-and-flow-efficiency/)
 - Topic 2.3: [Work in process and queueing](locales/en-001/topics/work-in-process-and-queueing/)
 - Topic 2.4: [Value stream metrics](locales/en-001/topics/value-stream-metrics/)

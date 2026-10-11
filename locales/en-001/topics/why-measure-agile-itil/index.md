@@ -136,7 +136,7 @@ The constraint forces priorities. Ask each person to write three, then compare. 
 
 ### Product and delivery teams
 
-Delivery teams benefit most from fast, local feedback: how long work waits, where it queues, how often changes cause problems. They should keep a rich working view for themselves and publish a small set outward. Teams should resist the pull to measure output volume as a proxy for value, and should pair speed measures with quality measures from the start (see topic 2.1, Kanban flow measures).
+Delivery teams benefit most from fast, local feedback: how long work waits, where it queues, how often changes cause problems. They should keep a rich working view for themselves and publish a small set outward. Teams should resist the pull to measure output volume as a proxy for value, and should pair speed measures with quality measures from the start (see topic 2.1, Flow measures).
 
 ### Service and operations teams
 

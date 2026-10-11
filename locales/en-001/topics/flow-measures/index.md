@@ -1,22 +1,22 @@
-# Kanban flow measures
+# Flow measures
 
 **Four plain counts and clocks, work in progress, throughput, work item age, and cycle time, tell a team where its work is stuck and what it can promise, provided each one is defined the same way for project work and service work and read as a distribution rather than an average.**
 
 ## Overview and motivation
 
-Most delivery and service dashboards report what finished last month. Flow measures add the view that matters while the work is still moving: how much is in progress right now, how old each item is, how fast items finish, and how long they take. The [Kanban](https://en.wikipedia.org/wiki/Kanban_(development)) method gives these four measures precise definitions. The Kanban Guide (kanbanguides.org, current version as of October 2026) names them as the measures a team uses to inspect and adapt its workflow, and this topic follows those definitions.
+Most delivery and service dashboards report what finished last month. Flow measures add the view that matters while the work is still moving: how much is in progress right now, how old each item is, how fast items finish, and how long they take. The flow literature gives these four measures precise definitions. The Kanban Guide (kanbanguides.org, current version as of October 2026) is one clear source: it names them as the measures a team uses to inspect and adapt its workflow, and this topic follows those definitions without requiring any particular method or board.
 
 The four definitions are short. **Work in progress (WIP)** is the number of work items that have started but not finished. **Throughput** is the number of work items finished per unit of time. **Work item age** is the elapsed time between when a work item started and the current time, so it applies only to items still in progress. **Cycle time** is the elapsed time between when a work item started and when it finished, counting both days inclusive in the Guide's wording. A **work item** is a unit of work the team has chosen to track as one thing, such as a user story, an incident, a service request, or a change. A **workflow** is the set of states between "started" and "finished," and the team's written **definition of workflow** says which states those are.
 
 Two of the four are about the system as a whole (WIP and throughput) and two are about individual items (age and cycle time). The pair for finished items is throughput and cycle time. The pair for unfinished items is WIP and age. This split matters because the finished-item measures are lagging: they tell you how things went. The unfinished-item measures are leading: they tell you what is about to happen, while there is still time to act. Work item age is the most underused of the four, and it is usually the first one worth adding to a board.
 
-The relationship among the first three is not accidental. [Little's law](https://en.wikipedia.org/wiki/Little%27s_law), a result from [queueing theory](https://en.wikipedia.org/wiki/Queueing_theory), says that in a stable system the average number of items in the system equals the average arrival rate multiplied by the average time each item spends there. In Kanban terms, average WIP is tied to average throughput and average cycle time. The law holds only under conditions the topic returns to in Recommendations (see topic 2.3, Work in process and queueing, for the full treatment). The practical consequence is simple: if throughput stays roughly constant, more work in progress means longer cycle times.
+The relationship among the first three is not accidental. [Little's law](https://en.wikipedia.org/wiki/Little%27s_law), a result from [queueing theory](https://en.wikipedia.org/wiki/Queueing_theory), says that in a stable system the average number of items in the system equals the average arrival rate multiplied by the average time each item spends there. In flow terms, average WIP is tied to average throughput and average cycle time. The law holds only under conditions the topic returns to in Recommendations (see topic 2.3, Work in process and queueing, for the full treatment). The practical consequence is simple: if throughput stays roughly constant, more work in progress means longer cycle times.
 
-Agile and ITIL views meet here with different vocabularies. In agile practice, flow measures belong to the team's board and are used in a Kanban cadence, a regular review with stakeholders, or a team reflection on how to improve. In ITIL 4, the same numbers describe how incident management, service request management, and change enablement move records through states, and they feed the measurement and reporting practice and service level management. An incident is a work item. A service request is a work item. Both have a start, a finish, and an age in between. The ITIL service desk and the delivery team are doing the same kind of work from a measurement standpoint: items arrive, wait, get worked, and leave.
+Agile and ITIL views meet here with different vocabularies. In agile practice, flow measures belong to the team's board and are used in a regular review with stakeholders and in the team's own reflection on how to improve. In ITIL 4, the same numbers describe how incident management, service request management, and change enablement move records through states, and they feed the measurement and reporting practice and service level management. An incident is a work item. A service request is a work item. Both have a start, a finish, and an age in between. The ITIL service desk and the delivery team are doing the same kind of work from a measurement standpoint: items arrive, wait, get worked, and leave.
 
 The measures also connect to [lean software development](https://en.wikipedia.org/wiki/Lean_software_development), which treats waiting as the main source of waste, and to the [cumulative flow diagram](https://en.wikipedia.org/wiki/Cumulative_flow_diagram), a chart of cumulative arrivals and departures that shows WIP, throughput, and cycle time at a glance. The chart is optional. The four measures can be computed from a table of items with two dates each.
 
-Because cycle time and age are durations with a long right tail, a single average misleads. A [percentile](https://en.wikipedia.org/wiki/Percentile) such as the 85th tells a team "85 percent of items finish within this many days," which is a usable forecast and a usable promise (see topic 1.6, Statistical literacy for service metrics). The Kanban Guide calls such a promise a **service level expectation (SLE)**: how long a typical item should take, stated as a time and a probability. An SLE is a team's own forecast. It is not a [service level agreement](https://en.wikipedia.org/wiki/Service-level_agreement), which is a negotiated commitment with a customer (see topic 5.1, SLA, OLA, and XLA metrics).
+Because cycle time and age are durations with a long right tail, a single average misleads. A [percentile](https://en.wikipedia.org/wiki/Percentile) such as the 85th tells a team "85 percent of items finish within this many days," which is a usable forecast and a usable promise (see topic 1.6, Statistical literacy for service metrics). The flow literature calls such a promise a **service level expectation (SLE)**: how long a typical item should take, stated as a time and a probability. An SLE is a team's own forecast. It is not a [service level agreement](https://en.wikipedia.org/wiki/Service-level_agreement), which is a negotiated commitment with a customer (see topic 5.1, SLA, OLA, and XLA metrics).
 
 ## Key principles
 
@@ -34,20 +34,20 @@ Every row counts items on one team's workflow. Items still in progress are exclu
 
 | Metric | Definition | Formula | Unit | Data source | ITIL practice | Agile counterpart | Cadence |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Work in progress (WIP) | Work items started but not finished | Count of items whose started timestamp is set and whose finished timestamp is empty, at a stated moment (for example the end of each day); backlog items not yet started and finished items are excluded | items | Issue tracker or ITSM tool state history | Incident management; service request management; change enablement | Kanban WIP limit; team backlog in progress | Daily snapshot, reviewed weekly |
-| Throughput | Work items finished per unit of time | Count of items whose finished timestamp falls in the period (for example a calendar week, Monday to Sunday); items finished and then reopened count again only if they are new items | items per week | Issue tracker or ITSM tool state history | Incident management; service request fulfilment | Kanban throughput; completed items | Weekly |
-| Work item age | Elapsed time an unfinished item has been in progress | Current time minus the started timestamp, for items still in progress; clock runs through blocked time; items not yet started are excluded | days | Issue tracker or ITSM tool state history | Incident management; problem management | Kanban work item age; daily team check-in | Daily, reviewed at each team check-in |
-| Cycle time | Elapsed time from start to finish of a finished item | Finished timestamp minus started timestamp, in calendar days, inclusive; clock starts at the first move into a started state and stops at the move into a finished state; report the median and the 85th and 95th percentiles | days | Issue tracker or ITSM tool state history | Incident management; service request fulfilment; change enablement | Kanban cycle time; item duration | Weekly, with a rolling 8 to 12 week window |
-| SLE attainment | Share of finished items that met the team's service level expectation | Finished items with cycle time at or below the SLE / all items finished in the window; items still open are excluded | percent | Derived from cycle time | Service level management | Kanban service level expectation | Monthly |
-| Blocked time share | Share of in-progress days that items spent flagged as blocked | Item-days in a blocked state / item-days in progress, over the window; the clock for both starts at the started timestamp | percent | Issue tracker flags or a blocked status in the ITSM tool | Incident management; problem management; supplier management | Kanban blockers; impediments raised in daily team check-ins | Weekly |
+| Work in progress (WIP) | Work items started but not finished | Count of items whose started timestamp is set and whose finished timestamp is empty, at a stated moment (for example the end of each day); backlog items not yet started and finished items are excluded | items | Issue tracker or ITSM tool state history | Incident management; service request management; change enablement | WIP limit; team backlog in progress | Daily snapshot, reviewed weekly |
+| Throughput | Work items finished per unit of time | Count of items whose finished timestamp falls in the period (for example a calendar week, Monday to Sunday); items finished and then reopened count again only if they are new items | items per week | Issue tracker or ITSM tool state history | Incident management; service request fulfilment | Throughput; completed items | Weekly |
+| Work item age | Elapsed time an unfinished item has been in progress | Current time minus the started timestamp, for items still in progress; clock runs through blocked time; items not yet started are excluded | days | Issue tracker or ITSM tool state history | Incident management; problem management | Work item age; daily team check-in | Daily, reviewed at each team check-in |
+| Cycle time | Elapsed time from start to finish of a finished item | Finished timestamp minus started timestamp, in calendar days, inclusive; clock starts at the first move into a started state and stops at the move into a finished state; report the median and the 85th and 95th percentiles | days | Issue tracker or ITSM tool state history | Incident management; service request fulfilment; change enablement | Cycle time; item duration | Weekly, with a rolling 8 to 12 week window |
+| SLE attainment | Share of finished items that met the team's service level expectation | Finished items with cycle time at or below the SLE / all items finished in the window; items still open are excluded | percent | Derived from cycle time | Service level management | Service level expectation | Monthly |
+| Blocked time share | Share of in-progress days that items spent flagged as blocked | Item-days in a blocked state / item-days in progress, over the window; the clock for both starts at the started timestamp | percent | Issue tracker flags or a blocked status in the ITSM tool | Incident management; problem management; supplier management | Blockers; impediments raised in daily team check-ins | Weekly |
 
-Cycle time here is the Kanban Guide's definition. It differs from the ITIL idea of resolution time, which is often measured from the moment a ticket is opened and may exclude time on hold. A team that wants to compare both must label them, and topic 2.2 treats the clocks in detail (see topic 2.2, Lead time, cycle time, and flow efficiency). SLE attainment and blocked time share are derived from the four core measures and are included because they are how a team uses those measures day to day.
+Cycle time here follows the flow-literature definition. It differs from the ITIL idea of resolution time, which is often measured from the moment a ticket is opened and may exclude time on hold. A team that wants to compare both must label them, and topic 2.2 treats the clocks in detail (see topic 2.2, Lead time, cycle time, and flow efficiency). SLE attainment and blocked time share are derived from the four core measures and are included because they are how a team uses those measures day to day.
 
 ## Recommendations
 
 ### Define the workflow and the items
 
-**1. Write the definition of workflow before you chart anything.** List the states, say which one means "started" and which one means "finished," and state who may move an item between them. The Kanban Guide calls this the definition of workflow, and every measure in this topic depends on it. If two teams define "started" differently, their cycle times cannot be compared.
+**1. Write the definition of workflow before you chart anything.** List the states, say which one means "started" and which one means "finished," and state who may move an item between them. The flow literature calls this the definition of workflow, and every measure in this topic depends on it. If two teams define "started" differently, their cycle times cannot be compared.
 
 **2. Choose a work item size that the team can finish in days, not months.** A work item is whatever the team tracks as one unit: a story, an incident, a request. Very large items hide their own age and make throughput lumpy. Use a stable rule such as "one item is one thing a customer or user could notice," and avoid splitting items just to improve a count.
 
@@ -94,7 +94,7 @@ A healthy reading shows WIP at or below the limit most days, age mostly under th
 
 | Approach | Strength | Weakness |
 | --- | --- | --- |
-| Kanban flow measures (WIP, throughput, age, cycle time) | Simple, tool-independent, and based on counts and dates; support probabilistic forecasting | Need consistent definitions and clean timestamps; say nothing about value or quality |
+| Flow measures (WIP, throughput, age, cycle time) | Simple, tool-independent, and based on counts and dates; support probabilistic forecasting | Need consistent definitions and clean timestamps; say nothing about value or quality |
 | Estimate-based measures such as story points | Include a view of effort and complexity; fit planned work | Subjective and team-specific; cannot be compared across teams |
 | Average-based service metrics such as mean time to resolve | Easy to compute and explain | Distorted by outliers and skew; hide the long tail |
 | Percentile-based cycle time and SLE | Reflect what customers experience; support a clear promise | Need enough history; harder to explain to people used to averages |
@@ -130,7 +130,7 @@ Delivery teams use flow measures to see their own system. They get the most from
 
 ### Service and operations teams
 
-Service teams handle arrivals they do not control. Flow measures show how interrupts, handoffs, and waiting on others stretch the time to finish. They benefit from separate views for incidents, requests, and planned change, and from blocked time reported by reason. They should keep the ITIL clocks that contracts require while using the Kanban clocks to run the team.
+Service teams handle arrivals they do not control. Flow measures show how interrupts, handoffs, and waiting on others stretch the time to finish. They benefit from separate views for incidents, requests, and planned change, and from blocked time reported by reason. They should keep the ITIL clocks that contracts require while using the flow clocks to run the team.
 
 ### Leadership and governance
 
@@ -210,7 +210,7 @@ The return shows up in predictability and in fewer surprises. A team that can st
 ```text
 Here is the workflow for [team or service]: [list of states and transitions,
 with a one-line meaning for each if known]. We want to compute work in progress,
-throughput, work item age, and cycle time using the Kanban Guide definitions.
+throughput, work item age, and cycle time using the flow-literature definitions.
 Identify which state should start the clock and which should stop it, any state
 where the clock could be paused or misread, and any state that two teams might
 interpret differently. Do not guess how our tool is configured. List your
@@ -272,12 +272,11 @@ test each risk.
 3. Forsgren, N., Humble, J., and Kim, G., *Accelerate: The Science of Lean Software and DevOps*, IT Revolution, 2018.
 4. Anderson, D. J., *Kanban: Successful Evolutionary Change for Your Technology Business*, Blue Hole Press, 2010.
 5. Little, J. D. C., "A Proof for the Queuing Formula: L = λW," *Operations Research*, 9(3), 1961.
-6. Wikipedia, [Kanban (development)](https://en.wikipedia.org/wiki/Kanban_(development)).
-7. Wikipedia, [Little's law](https://en.wikipedia.org/wiki/Little%27s_law).
-8. Wikipedia, [Queueing theory](https://en.wikipedia.org/wiki/Queueing_theory).
-9. Wikipedia, [Lean software development](https://en.wikipedia.org/wiki/Lean_software_development).
-10. Wikipedia, [Cumulative flow diagram](https://en.wikipedia.org/wiki/Cumulative_flow_diagram).
-11. Wikipedia, [Percentile](https://en.wikipedia.org/wiki/Percentile).
-12. Wikipedia, [Service-level agreement](https://en.wikipedia.org/wiki/Service-level_agreement).
-13. Wikipedia, [Run chart](https://en.wikipedia.org/wiki/Run_chart).
-14. Wikipedia, [Control chart](https://en.wikipedia.org/wiki/Control_chart).
+6. Wikipedia, [Little's law](https://en.wikipedia.org/wiki/Little%27s_law).
+7. Wikipedia, [Queueing theory](https://en.wikipedia.org/wiki/Queueing_theory).
+8. Wikipedia, [Lean software development](https://en.wikipedia.org/wiki/Lean_software_development).
+9. Wikipedia, [Cumulative flow diagram](https://en.wikipedia.org/wiki/Cumulative_flow_diagram).
+10. Wikipedia, [Percentile](https://en.wikipedia.org/wiki/Percentile).
+11. Wikipedia, [Service-level agreement](https://en.wikipedia.org/wiki/Service-level_agreement).
+12. Wikipedia, [Run chart](https://en.wikipedia.org/wiki/Run_chart).
+13. Wikipedia, [Control chart](https://en.wikipedia.org/wiki/Control_chart).

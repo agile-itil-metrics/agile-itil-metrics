@@ -11,9 +11,9 @@ Teams that run live services have an extra difficulty. Their capacity is shared 
 There are two broad ways to forecast delivery:
 
 - **From estimates.** The team sizes items in some unit, adds up the sizes, and divides by a rate. Many teams use relative sizing such as [story points](https://en.wikipedia.org/wiki/Story_point), and the rate is called [velocity](https://en.wikipedia.org/wiki/Velocity_(software_development)). It is quick to start, depends on the team's estimating habits, and is only meaningful inside one team.
-- **From flow data.** The team uses its own record of finished work: how many items it completes per week (throughput) and how long items take from start to finish (cycle time). Because these are counts and elapsed times, not opinions, they resist drift and can be combined with simulation to give a range of outcomes. This approach comes from the [Kanban](https://en.wikipedia.org/wiki/Kanban) tradition and works with any way of organizing work, including teams that deliver continuously without any fixed planning period.
+- **From flow data.** The team uses its own record of finished work: how many items it completes per week (throughput) and how long items take from start to finish (cycle time). Because these are counts and elapsed times, not opinions, they resist drift and can be combined with simulation to give a range of outcomes. This approach comes from the flow tradition, which includes the Kanban Guide, and works with any way of organizing work, including teams that deliver continuously without any fixed planning period.
 
-This topic leans toward the second approach, because continuous software delivery produces a steady stream of finished items that flow data describes directly (see topic 2.1, Kanban flow measures, and topic 2.2, Lead time, cycle time, and flow efficiency). It still covers the first, because many teams use estimates, and because the misuse of velocity is among the most common ways delivery metrics go wrong.
+This topic leans toward the second approach, because continuous software delivery produces a steady stream of finished items that flow data describes directly (see topic 2.1, Flow measures, and topic 2.2, Lead time, cycle time, and flow efficiency). It still covers the first, because many teams use estimates, and because the misuse of velocity is among the most common ways delivery metrics go wrong.
 
 Forecasts are [forecasting](https://en.wikipedia.org/wiki/Forecasting) of an uncertain future, and uncertainty is the point. The [cone of uncertainty](https://en.wikipedia.org/wiki/Cone_of_Uncertainty) idea says that early estimates are the least certain. The [planning fallacy](https://en.wikipedia.org/wiki/Planning_fallacy) says people underestimate how long their own plans will take even when they know similar plans ran late. Good forecasting measures names this and measures how often forecasts hit.
 
@@ -51,7 +51,7 @@ Define the clocks. A forecast is "made" when it is recorded and shared with stak
 
 **2. Report percentiles of outcomes.** Say "50 percent likely by 14 March, 85 percent likely by 4 April, 95 percent likely by 18 April." Each percentile is an honest statement of risk, and stakeholders can choose how much margin they need. A single date hides that choice (see topic 1.6, Statistical literacy for service metrics).
 
-**3. Use cycle time percentiles for single items.** For one item, the 85th percentile of past cycle times answers "how long might this take?" better than any estimate. Show it on the board, as a line against which the age of in-progress items can be compared (see topic 2.1, Kanban flow measures).
+**3. Use cycle time percentiles for single items.** For one item, the 85th percentile of past cycle times answers "how long might this take?" better than any estimate. Show it on the board, as a line against which the age of in-progress items can be compared (see topic 2.1, Flow measures).
 
 **4. Keep item sizes roughly even.** Throughput-based forecasting works best when items are small and similar enough to count. Teams get there by slicing work into the smallest piece that still delivers value, a habit of continuous software delivery in its own right. If items vary widely, track separate series for different work types.
 
@@ -269,9 +269,8 @@ stakeholders to answer. Use plain language. List your assumptions.
 8. Wikipedia, [Capacity planning](https://en.wikipedia.org/wiki/Capacity_planning).
 9. Wikipedia, [Story point](https://en.wikipedia.org/wiki/Story_point).
 10. Wikipedia, [Velocity (software development)](https://en.wikipedia.org/wiki/Velocity_(software_development)).
-11. Wikipedia, [Kanban](https://en.wikipedia.org/wiki/Kanban).
-12. Wikipedia, [Forecasting](https://en.wikipedia.org/wiki/Forecasting).
-13. Wikipedia, [Cone of Uncertainty](https://en.wikipedia.org/wiki/Cone_of_Uncertainty).
-14. Wikipedia, [Planning fallacy](https://en.wikipedia.org/wiki/Planning_fallacy).
-15. Wikipedia, [Goodhart's law](https://en.wikipedia.org/wiki/Goodhart%27s_law).
-16. Wikipedia, [Monte Carlo method](https://en.wikipedia.org/wiki/Monte_Carlo_method).
+11. Wikipedia, [Forecasting](https://en.wikipedia.org/wiki/Forecasting).
+12. Wikipedia, [Cone of Uncertainty](https://en.wikipedia.org/wiki/Cone_of_Uncertainty).
+13. Wikipedia, [Planning fallacy](https://en.wikipedia.org/wiki/Planning_fallacy).
+14. Wikipedia, [Goodhart's law](https://en.wikipedia.org/wiki/Goodhart%27s_law).
+15. Wikipedia, [Monte Carlo method](https://en.wikipedia.org/wiki/Monte_Carlo_method).

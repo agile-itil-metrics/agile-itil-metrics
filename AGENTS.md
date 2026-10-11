@@ -35,7 +35,7 @@ This repository is a book: *Agile ITIL Metrics*, 88 Markdown topics in 12 parts.
 10. **Do not reproduce copyrighted framework text** (ITIL, ISO/IEC, Scrum Guide). Summarize and cite.
 11. **`.locale-peer-id` files are immutable.**
 12. **One writer per file.**
-13. **Agile stance.** Emphasize continuous software delivery, continuous collaboration, continuous improvement, and projects built around motivated individuals. De-emphasize sprints, Scrum, burndowns, iterations, and frequent releases (see `spec/index.md`).
+13. **Agile stance.** Emphasize continuous delivery, continuous stakeholder involvement, continuous improvement, ongoing evolution, sustainable pace, and motivated individuals. Never write "agile delivery" (write "continuous delivery"). De-emphasize sprint, Scrum, and Kanban; mention them only conditionally ("If your team chooses to use sprints, ...") (see `spec/index.md`).
 
 ## Workflow: write one topic
 
