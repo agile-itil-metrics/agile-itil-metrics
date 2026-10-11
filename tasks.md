@@ -20,4 +20,5 @@ Live checklist. Update in the same commit as the work. Backlog detail is in `spe
 - [x] Part 2, 2.0 to 2.9 (first drafts)
 - [x] Part 3, 3.0 to 3.7 (first drafts)
 - [x] Part 4, 4.0 to 4.6 (first drafts)
-- [ ] Parts 5 to 12
+- [x] Part 5, 5.0 to 5.7 (first drafts)
+- [ ] Parts 6 to 12
