@@ -102,7 +102,7 @@ A healthy reading is a rotation whose median shift is quiet and whose worst shif
 | Rotation-level reporting | Matches how the work is organized; safe to share widely | Can hide a person who is struggling; needs a supportive conversation channel next to it |
 | Hard cap on toil (for example the SRE book's aim of keeping toil below 50 percent of time) | A clear signal that triggers a response | A number can be met by reclassification; a cap needs management backing |
 
-The central tensionThe central tension is between acceptance and investment. It is easy to treat high load as the normal price of an important service and ask people to absorb it, and it is easy to set a cap that nobody has the power to enforce. The way through is to pair every measure with a decision: a threshold at which the team stops and takes action, a named owner for the action, and a date to look again. Rotation-level numbers are safe and sometimes too coarse. When someone is struggling, the conversation belongs with that person and their manager, using their own account of the week.
+The central tension is between acceptance and investment. It is easy to treat high load as the normal price of an important service and ask people to absorb it, and it is easy to set a cap that nobody has the power to enforce. The way through is to pair every measure with a decision: a threshold at which the team stops and takes action, a named owner for the action, and a date to look again. Rotation-level numbers are safe and sometimes too coarse. When someone is struggling, the conversation belongs with that person and their manager, using their own account of the week.
 
 ## Questions to discuss with your team
 
