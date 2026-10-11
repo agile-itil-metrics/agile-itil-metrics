@@ -34,7 +34,7 @@ The scope column says what the topic owns. Each concept has one **home topic**, 
 | 2.2 | `lead-time-cycle-time-and-flow-efficiency` | Lead time, cycle time, and flow efficiency | Definitions that hold up across teams, where the clocks start and stop, and how to expose waiting time. |
 | 2.3 | `work-in-process-and-queueing` | Work in process and queueing | Little's law, utilization and queue growth, WIP limits, and why a fully busy service team is a slow one. |
 | 2.4 | `value-stream-metrics` | Value stream metrics | Value stream mapping measures, process time, wait time, percent complete and accurate, and ITIL value streams. |
-| 2.5 | `velocity-and-sprint-metrics` | Velocity and sprint metrics | Story points and velocity, sprint goal success, forecast accuracy, and why velocity must never be compared across teams. |
+| 2.5 | `delivery-forecasting-and-planning-metrics` | Delivery forecasting and planning metrics | Forecasting delivery from flow data, planning against capacity, forecast accuracy, goal success, and where team-specific planning measures such as velocity fit and where they mislead. |
 | 2.6 | `backlog-and-refinement-metrics` | Backlog and refinement metrics | Backlog size and age, ready work, refinement coverage, and how product and service backlogs differ. |
 | 2.7 | `pull-request-and-code-review-metrics` | Pull request and code review metrics | Review time, pull request size, and rework as signals of flow, with the gaming vectors that follow. |
 | 2.8 | `dora-metrics` | DORA metrics | Change lead time, deployment frequency, failed deployment recovery time, change fail rate, and deployment rework rate, with the research's own cautions. |

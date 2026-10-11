@@ -145,7 +145,7 @@ Ask for the evidence: recurrence, reopening, user comments, and any later incide
 
 ### Product and delivery teams
 
-Product teams that run their own services see incident time as a cost of unplanned work that displaces planned work. Track how much of each sprint or flow period is taken by incidents, and treat repeated incidents as backlog items for the owning team. Release practices that make rollback quick shorten restoration, so incident time is partly a delivery measure (see topic 2.9, Operational work and unplanned work).
+Product teams that run their own services see incident time as a cost of unplanned work that displaces planned work. Track how much of each flow period is taken by incidents, and treat repeated incidents as backlog items for the owning team. Release practices that make rollback quick shorten restoration, so incident time is partly a delivery measure (see topic 2.9, Operational work and unplanned work).
 
 ### Service and operations teams
 

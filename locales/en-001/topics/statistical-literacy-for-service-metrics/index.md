@@ -121,7 +121,7 @@ Rehearse the wording on a real example: "Between 70 and 95 percent, on 12 incide
 
 ### Product and delivery teams
 
-Delivery teams use cycle time and throughput to forecast, and they gain most from percentile-based forecasts rather than averages (see topic 2.1, Kanban flow measures). A forecast stated as a range with a likelihood is easier to defend than a date. Resist reading one sprint's change as a trend (see topic 2.5, Velocity and sprint metrics).
+Delivery teams use cycle time and throughput to forecast, and they gain most from percentile-based forecasts rather than averages (see topic 2.1, Kanban flow measures). A forecast stated as a range with a likelihood is easier to defend than a date. Resist reading one period's change as a trend (see topic 2.5, Delivery forecasting and planning metrics).
 
 ### Service and operations teams
 

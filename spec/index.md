@@ -18,11 +18,27 @@ Write for a reader holding a book, topic by topic. Do not write for a navigation
 
 A practical handbook for measuring the work of teams that build and run IT services the agile way. It is the metrics companion to the *Agile ITIL Guide* (`~/git/agile-itil-guide/agile-itil-guide`), which holds the practices; this book holds the measures of those practices.
 
-- **Premise:** agile delivery (Scrum, Kanban, Lean, Extreme Programming, DevOps) and IT service management as codified by ITIL are complements. They also measure different things in different ways. Agile measures flow, learning, and working software. ITIL measures service levels, incidents, changes, assets, and value co-created with customers. This book joins the two into one coherent, humane metrics set.
-- **Audience:** delivery teams, service desk and operations staff, product and service owners, Scrum Masters and agile coaches, IT managers and CIOs, and people preparing for ITIL or agile certification.
+- **Premise:** agile delivery (continuous software delivery, continuous collaboration, continuous improvement, and projects built around motivated individuals; practiced through Kanban, Lean, Extreme Programming, DevOps, Scrum, and other methods) and IT service management as codified by ITIL are complements. They also measure different things in different ways. Agile measures flow, learning, and working software delivered continuously. ITIL measures service levels, incidents, changes, assets, and value co-created with customers. This book joins the two into one coherent, humane metrics set.
+- **Audience:** delivery teams, service desk and operations staff, product and service owners, agile coaches and team facilitators, IT managers and CIOs, and people preparing for ITIL or agile certification.
 - **Centre of gravity:** worldwide and vendor-neutral. Commercial companies, the public sector, nonprofits, and managed-service providers are all first-class readers. Named frameworks and tools are examples, never endorsements.
 - **Guardrail:** [Goodhart's law](https://en.wikipedia.org/wiki/Goodhart%27s_law): a measure that becomes a target stops being a good measure. Topic 1.2 sets it, and every metric family in the book carries its own gaming vector and guardrail as a condition of using the metric at all.
 - **Distinctive features:** every content topic has a metric definitions table, a gaming vectors table, six discussion questions, four points of view, a fictional worked example, AI prompts, and links to AI skills.
+
+## The agile stance
+
+This book treats agile as a small set of aims, drawn from the Agile Manifesto and its principles, and not as a set of ceremonies. The aims, in the order the book leans on them:
+
+1. **Continuous software delivery** of valuable software, so that change reaches users steadily and safely.
+2. **Continuous collaboration among stakeholders**: developers, operations, service desk, product and service owners, suppliers, and users work together every day, not at handoffs.
+3. **Continuous improvement**: the team regularly reflects on how to become more effective and adjusts its way of working.
+4. **Projects built around motivated individuals**: give people the environment and support they need, and trust them to get the work done. Metrics serve this aim by helping people see their own work; they are never used to rank or police them.
+
+Writing consequences for every topic:
+
+- Describe practices by these aims. Name Scrum, sprints, story points, and burndown charts only where a source or a reader's context requires it, and then as one example among several. The Kanban Guide and DORA research are cited for flow and delivery measures, since they do not depend on fixed time-boxes.
+- Prefer "continuous software delivery", "continuous collaboration", "continuous improvement", "planning cadence", and "review cadence" to "iteration", "sprint", "burndown", and "frequent releases".
+- Do not make time-boxed events, velocity, or release counts the centre of a measure. Where a team uses them, they are that team's local convention, and the topic says so.
+- Frame improvement metrics around learning and removing obstacles, and frame people metrics around support and trust.
 
 ## Sibling projects
 
@@ -78,7 +94,7 @@ The authoritative list is [structure.md](structure.md). This overview deliberate
 
 ## How the two traditions are joined
 
-Each metric topic names, in its metric definitions table, both its **ITIL practice** (for example incident management, change enablement, service level management) and its **agile counterpart** (for example cycle time, work item age, sprint goal success). A metric that has only one side gets a sentence explaining why. This is how the book stays neutral between frameworks: no "agile good, ITIL bad" or the reverse.
+Each metric topic names, in its metric definitions table, both its **ITIL practice** (for example incident management, change enablement, service level management) and its **agile counterpart** (for example cycle time, work item age, delivery goal success). A metric that has only one side gets a sentence explaining why. This is how the book stays neutral between frameworks: no "agile good, ITIL bad" or the reverse.
 
 ## Golden rules
 

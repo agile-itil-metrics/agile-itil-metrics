@@ -6,11 +6,11 @@ It is the metrics companion to the [Agile ITIL Guide](https://agile-itil.github.
 
 ## Who this is for
 
-Delivery teams, service desk and operations staff, product and service owners, Scrum Masters and agile coaches, IT managers and CIOs, and anyone preparing for agile or ITIL certification.
+Delivery teams, service desk and operations staff, product and service owners, agile coaches and team facilitators, IT managers and CIOs, and anyone preparing for agile or ITIL certification.
 
 ## The idea
 
-Agile delivery measures flow, learning, and working software. ITIL measures service levels, incidents, changes, assets, and value co-created with customers. This book joins the two into one small, balanced, humane set of measures. The guardrail for the whole book is [Goodhart's law](https://en.wikipedia.org/wiki/Goodhart%27s_law): a measure that becomes a target stops being a good measure. Metrics here describe teams, services, and systems. They are never used to rank people.
+Agile aims for continuous software delivery, continuous collaboration among stakeholders, continuous improvement, and projects built around motivated individuals. Its measures follow flow, learning, and working software delivered continuously. ITIL measures service levels, incidents, changes, assets, and value co-created with customers. This book joins the two into one small, balanced, humane set of measures. The guardrail for the whole book is [Goodhart's law](https://en.wikipedia.org/wiki/Goodhart%27s_law): a measure that becomes a target stops being a good measure. Metrics here describe teams, services, and systems. They are never used to rank people.
 
 ## How to use this book
 
@@ -42,7 +42,7 @@ The book has 12 parts, written in English (World), locale `en-001`. Unwritten to
 - Topic 2.2: [Lead time, cycle time, and flow efficiency](locales/en-001/topics/lead-time-cycle-time-and-flow-efficiency/)
 - Topic 2.3: [Work in process and queueing](locales/en-001/topics/work-in-process-and-queueing/)
 - Topic 2.4: [Value stream metrics](locales/en-001/topics/value-stream-metrics/)
-- Topic 2.5: [Velocity and sprint metrics](locales/en-001/topics/velocity-and-sprint-metrics/)
+- Topic 2.5: [Delivery forecasting and planning metrics](locales/en-001/topics/delivery-forecasting-and-planning-metrics/)
 - Topic 2.6: [Backlog and refinement metrics](locales/en-001/topics/backlog-and-refinement-metrics/)
 - Topic 2.7: [Pull request and code review metrics](locales/en-001/topics/pull-request-and-code-review-metrics/)
 - Topic 2.8: [DORA metrics](locales/en-001/topics/dora-metrics/)

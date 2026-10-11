@@ -102,7 +102,7 @@ A healthy reading shows the type mix shifting slowly toward standard changes wit
 | --- | --- | --- |
 | Pre-authorized standard changes | Fast, consistent, cheap to audit; frees the change authority for risky work | Needs up-front design; classification can drift; broad procedures hide risk |
 | Peer review recorded in the pipeline | Review by people who know the code; produces a record automatically; scales with volume | Quality depends on review culture; small teams may lack an independent reviewer; some regulators expect a separate approver |
-| Central change advisory board | Cross-team visibility; catches schedule collisions and shared-dependency risk | Slow when used as a gate on every change; encourages larger, less frequent releases; creates a queue |
+| Central change advisory board | Cross-team visibility; catches schedule collisions and shared-dependency risk | Slow when used as a gate on every change; encourages larger batches of change delivered less often; creates a queue |
 | Approval lead time as a headline metric | Easy to explain; exposes a real source of delay | Easy to game; can push approvers to hurry; says nothing about quality of the decision |
 | Automated approval share as a target | Rewards investment in tooling and recorded evidence | Can reward weak automated checks; may exclude changes that genuinely need human judgment |
 

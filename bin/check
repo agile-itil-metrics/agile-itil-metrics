@@ -2,10 +2,25 @@
 """Offline quality gates. Usage: bin/check [--strict] [--links]
 --strict  fail on unwritten (stub) topics
 --links   also resolve every Wikipedia link (needs network)"""
-import os, re, sys, urllib.request, urllib.parse
+import os, re, sys, urllib.request, urllib.error, urllib.parse
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 strict, links = "--strict" in sys.argv, "--links" in sys.argv
 errs, notes = [], []
+LINKS = {}
+def fetch(u, tries=4):
+    import time
+    last = None
+    for i in range(tries):
+        try:
+            urllib.request.urlopen(urllib.request.Request(u, headers={"User-Agent": "agile-itil-metrics-check"}), timeout=20)
+            return True
+        except urllib.error.HTTPError as e:
+            if e.code == 404: return "HTTP 404"
+            last = e
+        except Exception as e:
+            last = e
+        time.sleep(2 * (i + 1))
+    return last
 def err(m): errs.append(m)
 
 rows = [l.rstrip("\n").split("\t") for l in open(f"{root}/spec/topics.tsv")][1:]
@@ -92,8 +107,8 @@ for part, num, slug, _ in rows:
         if u not in refs: err(f"{num} Wikipedia link missing from references: {u}")
     if links:
         for u in wl:
-            try: urllib.request.urlopen(urllib.request.Request(u, headers={"User-Agent":"agile-itil-metrics-check"}), timeout=15)
-            except Exception as e: err(f"{num} link failed: {u} ({e})")
+            if u not in LINKS: LINKS[u] = fetch(u)
+            if LINKS[u] is not True: err(f"{num} link failed: {u} ({LINKS[u]})")
     for m in re.finditer(r"\(see topic (\d+\.\d+)\)", text):
         err(f"{num} cross-reference needs number and title: {m.group(0)}")
 for ref in ("AGENTS.md","CLAUDE.md","STYLE_GUIDE.md","README.md","tasks.md"):

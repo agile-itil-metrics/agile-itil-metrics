@@ -35,6 +35,7 @@ This repository is a book: *Agile ITIL Metrics*, 88 Markdown topics in 12 parts.
 10. **Do not reproduce copyrighted framework text** (ITIL, ISO/IEC, Scrum Guide). Summarize and cite.
 11. **`.locale-peer-id` files are immutable.**
 12. **One writer per file.**
+13. **Agile stance.** Emphasize continuous software delivery, continuous collaboration, continuous improvement, and projects built around motivated individuals. De-emphasize sprints, Scrum, burndowns, iterations, and frequent releases (see `spec/index.md`).
 
 ## Workflow: write one topic
 

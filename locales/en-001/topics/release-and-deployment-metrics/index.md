@@ -6,7 +6,7 @@
 
 Many teams use the words "deployment" and "release" as if they meant the same thing. They do not, and the difference is the most useful idea in this topic. A **deployment** is the act of putting a version of the software into an environment, usually production, as described in the article on [software deployment](https://en.wikipedia.org/wiki/Software_deployment). A **release** is the moment a change becomes available to its intended users, a decision that [release management](https://en.wikipedia.org/wiki/Release_management) exists to govern. When the two happen together, a deployment is a release and one number describes both. When they are separated, the team can deploy often and quietly, and release deliberately.
 
-The separation matters because the two events carry different risks. A deployment carries technical risk: the new build might fail to start, might break a dependency, or might need a rollback. A release carries business and user risk: the change might confuse customers, or might need to land on an agreed date. Teams that couple the two events accept both risks at once, which pushes them toward large, infrequent releases. Teams that separate them take the technical risk in small steps and the user risk in controlled steps.
+The separation matters because the two events carry different risks. A deployment carries technical risk: the new build might fail to start, might break a dependency, or might need a rollback. A release carries business and user risk: the change might confuse customers, or might need to land on an agreed date. Teams that couple the two events accept both risks at once, which pushes them toward large batches of change released rarely. Teams that separate them take the technical risk in small steps and the user risk in controlled steps.
 
 The main tool for separation is the [feature toggle](https://en.wikipedia.org/wiki/Feature_toggle), also called a feature flag: a switch in configuration that turns a behavior on or off without a new deployment. Related techniques include the [canary release](https://en.wikipedia.org/wiki/Canary_release), which exposes a change to a small share of traffic first, and [blue-green deployment](https://en.wikipedia.org/wiki/Blue-green_deployment), which keeps two production environments and switches traffic between them. All of them let you answer two separate questions: is the new version running safely, and who should see the new behavior and when.
 
@@ -100,7 +100,7 @@ A healthy reading shows deployments running ahead of releases for services that 
 | Approach | Strength | Weakness |
 | --- | --- | --- |
 | Deploy continuously and release by flag | Small technical risk per deployment; release timing becomes a business choice; quick switch-off | Needs flag discipline and tooling; adds code paths that must be tested and removed |
-| Couple deployment and release | Simple to explain; one event to count; no flag debt | Every release carries both technical and user risk, which encourages big, infrequent releases |
+| Couple deployment and release | Simple to explain; one event to count; no flag debt | Every release carries both technical and user risk, which encourages big batches released rarely |
 | Scheduled release train | Predictable for support and regulators | Changes wait for the next train; the count reflects the calendar, not the capability |
 | Progressive rollout by percentage | Limits the effect of a bad release; produces evidence at each stage | Needs good telemetry and a health check; mixed versions may run side by side for a while |
 | Count both deployments and releases | Shows decoupling and waiting | Requires a flag audit log or release records to be joined to the pipeline |
@@ -167,7 +167,7 @@ The decision, recorded in the decision log, has four parts. Support and marketin
 
 ## Business case: motivations, ROI, and TCO
 
-The motivation for these measures is to reduce the risk and the delay between finishing a change and delivering its value. Large infrequent releases carry more change per event, so a failure is harder to diagnose and harder to reverse. Separating deployment from release gives the team a way to take technical risk early and in small amounts, and to take user risk deliberately. The measures show whether the separation is real, and where change is waiting.
+The motivation for these measures is to reduce the risk and the delay between finishing a change and delivering its value. Large batches released rarely carry more change per event, so a failure is harder to diagnose and harder to reverse. Separating deployment from release gives the team a way to take technical risk early and in small amounts, and to take user risk deliberately. The measures show whether the separation is real, and where change is waiting.
 
 The costs are moderate. Collecting deployment and release events needs the pipeline log and the flag audit log joined to version control and the issue tracker, which is a one-time integration followed by occasional maintenance (see topic 1.5, Data sources and instrumentation). The flag practice itself has running costs: the platform or library, the register, testing both paths of a flagged change, and the cleanup of expired flags. The main hidden cost is flag debt, which the stale flag count keeps visible.
 

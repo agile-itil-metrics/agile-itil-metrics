@@ -46,8 +46,8 @@ The metrics below describe the ledger of deferred repairs. Clocks and boundaries
 | Incidents linked to open known errors | Incidents whose cause is an open known error, a direct measure of the interest paid in service disruption | incidents in the period linked to a known error that was open when the incident started / all incidents in the period; incidents with no cause link are reported as unlinked, not counted | percent, plus count | ITSM tool incident-to-problem links | Incident management; problem management | Escaped defects; production bug inflow | Monthly |
 | Debt stock | Number and estimated size of registered technical debt items that remain open | open items in the debt register at period end; size is the sum of coarse effort bands (hours, days, weeks) assigned at registration; unregistered or suspected debt is excluded | count, and effort bands | Debt register in the tracker, tagged by service | Continual improvement; service design | Product backlog items labeled as debt | Monthly |
 | Debt interest | Extra work caused by open debt and known errors, in team time | hours logged in the period against work items tagged with a debt or known error reference (workarounds, manual steps, rework, and extra effort on affected changes) / total team working hours in the period; the repair work itself is excluded and counted under capacity share | percent of working time | Time or effort tags on work items, kept at team level | Continual improvement; problem management | Unplanned work and rework share | Monthly |
-| Debt capacity share | Share of delivery capacity spent on retiring debt and known errors | capacity (item count or effort) of completed work items tagged as debt repair or known error fix / all completed work items in the period; items with no tag are excluded | percent | Tracker, completed items by tag | Continual improvement; change enablement | Sprint or cycle capacity allocation | Per sprint or cycle, reviewed monthly |
-| Debt net change | Whether the ledger is growing or shrinking | debt and known error items registered in the period minus items resolved in the period; resolved means fix released, not merged; items closed as "will not fix" are counted in a separate line | count (signed) | Debt register and known error records | Continual improvement | Backlog burn-up by category | Monthly |
+| Debt capacity share | Share of delivery capacity spent on retiring debt and known errors | capacity (item count or effort) of completed work items tagged as debt repair or known error fix / all completed work items in the period; items with no tag are excluded | percent | Tracker, completed items by tag | Continual improvement; change enablement | Capacity allocation | Per planning period, reviewed monthly |
+| Debt net change | Whether the ledger is growing or shrinking | debt and known error items registered in the period minus items resolved in the period; resolved means fix released, not merged; items closed as "will not fix" are counted in a separate line | count (signed) | Debt register and known error records | Continual improvement | Backlog change by category | Monthly |
 
 Accepted risk is a legitimate way to close a known error, because some problems are not worth fixing. It is listed separately so that closing items does not quietly improve the age figure. The 6-month review window in workaround coverage is an example. A team sets the window to match how fast its systems change and writes it in the metric register.
 
@@ -69,7 +69,7 @@ Accepted risk is a legitimate way to close a known error, because some problems 
 
 ### Protect capacity and decide
 
-**6. Reserve a standing share of capacity, and report it.** Agree with the product owner a share of each cycle for repair work, set by the trend in the ledger and revisited each quarter. Report the debt capacity share beside the planned-work figures, so leaders see repair work as a deliberate investment. A reserved share also protects the team from a tradeoff argument every sprint, which the feature backlog usually wins.
+**6. Reserve a standing share of capacity, and report it.** Agree with the product owner a share of each cycle for repair work, set by the trend in the ledger and revisited each quarter. Report the debt capacity share beside the planned-work figures, so leaders see repair work as a deliberate investment. A reserved share also protects the team from a tradeoff argument at every planning conversation, which the feature backlog usually wins.
 
 **7. Rank repair against features with one common currency.** Put known errors and debt items into the same prioritization conversation as features, expressed as cost of delay and payback time. A fix that removes a weekly incident, and returns its effort in a quarter, competes on its merits. Ranking by loudness, seniority, or the date of registration gives poor results (see topic 4.4, Change failure and rework).
 
@@ -101,9 +101,9 @@ A healthy reading shows a ledger that is visible, specific, and moving in a dire
 | --- | --- | --- |
 | One merged ledger of known errors and debt | Single prioritization; operations and delivery see the same costs | Needs shared tooling or links; ownership across two functions must be settled |
 | A standing capacity share for repair | Predictable; protects repair work from feature pressure | Can be spent on low-value items if ranking is weak |
-| Repair work scheduled only when it wins the sprint debate | Flexible; responds to the current priority | Features nearly always win; the ledger grows until a crisis |
+| Repair work scheduled only when it wins the priority debate | Flexible; responds to the current priority | Features nearly always win; the ledger grows until a crisis |
 | Interest estimated from incidents and tagged work | Ties debt to observable cost; supports ranking | Rough numbers; depends on honest tagging and incident links |
-| A dedicated repair sprint or "debt week" | Focus and visible progress | Episodic; the ledger refills between events; interrupts planned commitments |
+| A dedicated repair push or "debt week" | Focus and visible progress | Episodic; the ledger refills between events; interrupts planned commitments |
 
 Choose the lightest arrangement that keeps the oldest high-interest items moving. A small team can run the ledger on one board with a label and a monthly review. Larger organizations need links between tools and an agreed ranking method. The aim is a deliberate decision about each item, not an empty list.
 
@@ -131,7 +131,7 @@ Ask for the ways each number could be flattered: unregistered debt, easy items f
 
 ### Product and delivery teams
 
-Delivery teams see debt first, usually while changing code. They gain from a register that is easy to add to and from a protected share of capacity, so repair work does not depend on winning an argument each sprint. They should register shortcuts when they take them, tag work caused by weak spots, and avoid using debt as a label for any work they would rather not do (see topic 2.2, Lead time, cycle time, and flow efficiency, for the lead time effects of debt).
+Delivery teams see debt first, usually while changing code. They gain from a register that is easy to add to and from a protected share of capacity, so repair work does not depend on winning an argument at each planning conversation. They should register shortcuts when they take them, tag work caused by weak spots, and avoid using debt as a label for any work they would rather not do (see topic 2.2, Lead time, cycle time, and flow efficiency, for the lead time effects of debt).
 
 ### Service and operations teams
 

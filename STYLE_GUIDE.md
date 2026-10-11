@@ -6,6 +6,10 @@ The spec ([`spec/conventions.md`](spec/conventions.md)) overrides this file.
 
 Calm, plain, practical. Address the reader as "you" for guidance. Lead with the point. Short paragraphs of 2 to 4 sentences. Tables for comparisons and metric definitions. Neutral between agile and ITIL: name the trade-off, never the winner.
 
+## Agile stance
+
+Emphasize continuous software delivery, continuous collaboration among stakeholders, continuous improvement, and building projects around motivated individuals (see `spec/index.md`, "The agile stance"). De-emphasize sprints, Scrum events, burndown charts, iterations, and frequent releases: mention them only where a source or the reader's context needs them, and as one example among several.
+
 ## Language (en-001)
 
 American-adjacent spelling with `-ize`, `color`, `program`, `catalog`, `license`. Dates written out ("9 October 2026"). Metric units. Double quotation marks, punctuation outside unless part of the quotation. ITIL's "service catalogue" appears once in parentheses on first use per topic.

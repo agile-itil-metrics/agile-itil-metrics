@@ -45,7 +45,7 @@ The metrics below are not service or delivery measures. They are measures of the
 | Reopen rate | Share of closed tickets or work items reopened within a stated window | items reopened within 14 days / items closed in the period | percent | ITSM tool or issue tracker status history | Incident management; problem management | Definition of done; escaped defects | Monthly |
 | Definition change count | Number of changes to metric definitions or status workflows in a period, with reasons | count of entries in the definition change log | count | Metric register change log | Measurement and reporting | Working agreements | Quarterly |
 | Metric use rate | Share of reported metrics that were cited in a decision during the period | metrics cited in a recorded decision / metrics reported | percent | Decision log or review notes | Continual improvement | Retrospective actions | Quarterly |
-| Perception gap | Difference between a satisfaction survey result and a ticket-derived service level for the same service | survey-derived rate minus tracker-derived rate | percentage points | Survey tool and ITSM tool | Service level management | Sprint review feedback | Quarterly |
+| Perception gap | Difference between a satisfaction survey result and a ticket-derived service level for the same service | survey-derived rate minus tracker-derived rate | percentage points | Survey tool and ITSM tool | Service level management | Stakeholder review feedback | Quarterly |
 
 Reopen rate counts only items that were reopened in the same record. An item closed and then re-raised as a new ticket does not appear. Part of the point of the next section is that the guardrail needs its own guardrail, such as linking duplicate tickets to their originals.
 
@@ -132,7 +132,7 @@ Ask for evidence: when was it last used in a decision? If nobody can remember, r
 
 ### Product and delivery teams
 
-Delivery teams meet gaming through velocity, throughput, and deployment counts. [Velocity](https://en.wikipedia.org/wiki/Velocity_(software_development)) in particular is a planning tool for one team, not a measure of productivity, and comparing teams by it leads to inflated estimates. Delivery teams should keep their working measures for themselves, publish a small set outward, and pair each speed measure with a quality measure (see topic 2.5, Velocity and sprint metrics).
+Delivery teams meet gaming through velocity, throughput, and deployment counts. [Velocity](https://en.wikipedia.org/wiki/Velocity_(software_development)) in particular is a planning tool for one team, not a measure of productivity, and comparing teams by it leads to inflated estimates. Delivery teams should keep their working measures for themselves, publish a small set outward, and pair each speed measure with a quality measure (see topic 2.5, Delivery forecasting and planning metrics).
 
 ### Service and operations teams
 

@@ -32,7 +32,7 @@ This topic gives you the definitions, the data hygiene, and the habits that keep
 
 | Metric | Definition | Formula | Unit | Data source | ITIL practice | Agile counterpart | Cadence |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| CSAT | Share of responses that are satisfied, for a defined interaction type | responses rated 4 or 5 on a five-point scale / valid responses | percent | Post-interaction survey tied to the ticket or release | Service desk; incident management; service level management | Sprint review feedback | Weekly or monthly |
+| CSAT | Share of responses that are satisfied, for a defined interaction type | responses rated 4 or 5 on a five-point scale / valid responses | percent | Post-interaction survey tied to the ticket or release | Service desk; incident management; service level management | Stakeholder review feedback | Weekly or monthly |
 | NPS | Promoters minus detractors for a defined service and audience | percent answering 9 or 10 minus percent answering 0 to 6 | points, range -100 to 100 | Relationship survey, sent at a fixed interval | Continual improvement; service level management | Product outcome review | Quarterly |
 | CES | Average or share-favorable rating of how easy it was to get something done | favorable responses / valid responses, or mean rating | percent or mean | Post-interaction survey tied to the ticket, request, or release | Service request management; service desk | Usability feedback in refinement | Monthly |
 | Survey response rate | Share of invited users who responded | responses received / surveys delivered | percent | Survey tool and ticket system | Measurement and reporting | Feedback participation in reviews | Monthly |
@@ -125,7 +125,7 @@ Name the figure, its source, its method, and its audience, then compare each wit
 
 ### Product and delivery teams
 
-Product teams use satisfaction feedback to decide what to fix or build next, and short surveys after a release give a faster read than the next quarterly review. Delivery teams should connect comments to backlog items, show users what changed, and avoid treating a score as a sprint goal. A rise in effort or confusion comments after a release is a signal to look at the release, not at the survey.
+Product teams use satisfaction feedback to decide what to fix or build next, and short surveys after a release give a faster read than the next quarterly review. Delivery teams should connect comments to backlog items, show users what changed, and avoid treating a score as a delivery goal. A rise in effort or confusion comments after a release is a signal to look at the release, not at the survey.
 
 ### Service and operations teams
 

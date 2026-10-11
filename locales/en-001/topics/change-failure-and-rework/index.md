@@ -61,7 +61,7 @@ Two notes on the table. The fail rate and the rework rate overlap but differ: a 
 
 ### Measure rework as failure demand
 
-**Track rework as the work created by earlier failure.** The idea of failure demand comes from service design: demand that exists because something was not done right the first time. In delivery terms, count the deployments and work items whose only purpose is to correct a recent change. This links directly to the planned and unplanned split (see topic 2.9, Operational work and unplanned work). Use the share of capacity spent on rework as the conversation starter with the product owner, because it turns an abstract rate into a trade-off about the next sprint.
+**Track rework as the work created by earlier failure.** The idea of failure demand comes from service design: demand that exists because something was not done right the first time. In delivery terms, count the deployments and work items whose only purpose is to correct a recent change. This links directly to the planned and unplanned split (see topic 2.9, Operational work and unplanned work). Use the share of capacity spent on rework as the conversation starter with the product owner, because it turns an abstract rate into a trade-off about what to work on next.
 
 ### Report rates with counts, distributions, and a window
 
@@ -119,7 +119,7 @@ List rollback, hotfix, roll-forward fix, manual workaround, and feature toggle o
 Walk through the last three or four. Ask what made each one urgent, what was known earlier, and what a better standard path would have looked like. Separate real emergencies from late discoveries and slow approvals. Agree on one fix to the ordinary path that would remove a recurring reason for emergency.
 
 **5. How much of our week goes to fixing recent changes?**
-Estimate the share of capacity spent on rework over the last two sprints, using the tracker rather than memory. Compare the estimate with the tracker. Talk about what the number costs in planned work and how the product owner would use it. Pick one failure pattern and one experiment to reduce it.
+Estimate the share of capacity spent on rework over the last four weeks, using the tracker rather than memory. Compare the estimate with the tracker. Talk about what the number costs in planned work and how the product owner would use it. Pick one failure pattern and one experiment to reduce it.
 
 **6. If our fail rate fell by half next quarter, would we believe it?**
 Imagine the headline and ask what else would have to be true: link rate stable, deployment frequency steady, recovery quick, and no new categories of "maintenance." Discuss which of these checks the team already makes and which are missing. Agree how a sudden improvement will be investigated before it is celebrated.
