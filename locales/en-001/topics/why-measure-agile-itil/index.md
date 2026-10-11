@@ -80,7 +80,7 @@ Measurement effort deliberately counts only manual work. Time spent reading the 
 
 ### Build the habit
 
-**7. Review on a cadence that matches the decision.** Flow measures suit a weekly or per-iteration conversation. Service level and cost measures suit a monthly or quarterly one. A metric reviewed at the wrong rhythm either creates noise or misses the moment when action would have helped.
+**7. Review on a cadence that matches the decision.** Flow measures suit a weekly conversation, or one held at each step of continuous software delivery. Service level and cost measures suit a monthly or quarterly one. A metric reviewed at the wrong rhythm either creates noise or misses the moment when action would have helped.
 
 **8. Close the loop with improvement work.** A review that ends with "interesting" has wasted its data. End each review with one or two named actions, an owner, and a date, and track their completion. ITIL's continual improvement practice and the agile retrospective are two names for the same discipline (see topic 9.5, Continual improvement metrics).
 
@@ -158,7 +158,7 @@ Leadership asks why customers complain about slow checkout when the delivery tea
 
 The view shows four things for the last twelve weeks. Change lead time has a median of 2 days and an 85th percentile of 9 days. The change fail rate is 8 percent. Incidents on checkout number 14, of which 6 share one cause, a slow database query introduced by a recent release. The median time to restore is 40 minutes, but the page-load time at the 95th percentile has crept up over six weeks, a pattern the availability figure does not show because the service stayed technically up.
 
-The group sees what was hidden. Availability was measured as "the checkout responds," while users experience "the checkout responds quickly enough." The product team and operations team agree to add a latency indicator for checkout with an objective set by the product owner after reading customer comments, to treat the repeated incident cause as a problem record with an owner, and to review the joined view fortnightly. They record one decision: pause new checkout features for one iteration to fix the query and add a performance check to the release pipeline.
+The group sees what was hidden. Availability was measured as "the checkout responds," while users experience "the checkout responds quickly enough." The product team and operations team agree to add a latency indicator for checkout with an objective set by the product owner after reading customer comments, to treat the repeated incident cause as a problem record with an owner, and to review the joined view fortnightly. They record one decision: pause new checkout features for a stretch of continuous software delivery to fix the query and add a performance check to the release pipeline.
 
 A gaming risk appears within a month. The operations team notices that two of the 14 incidents had been opened as "service requests" because the request category carries no resolution target. The team realizes that a target on incidents had nudged people to categorize borderline cases as requests. They add the recategorized share to the view and sample ten tickets each month. After the change, the 95th percentile page-load time falls, repeat incidents drop, and the team keeps the view because it has changed a decision.
 

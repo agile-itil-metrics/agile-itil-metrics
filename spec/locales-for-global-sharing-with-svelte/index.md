@@ -75,17 +75,19 @@ Nothing in the site assumes slugs match across locales.
 ## Locale picker (labels + ordering)
 
 - Labels live in `locales.js`'s `LOCALE_LABELS`, one entry per code, in that
-  language (e.g. `'fr-001': 'Français (Monde)'`). Falls back to the raw code
-  via `localeLabel()` if a code has no label yet.
-- Header `PickerBar` order comes from `content.js`'s `locales()` (sorted by
-  code) — the `-001` suffix happens to sort before any letter-starting
-  regional suffix, so variants already come first there.
-- Home page's locale list (`+page.server.js`) sorts explicitly: default
-  locale first, then grouped by language name (label text before the `(`),
-  with the `-001`/World variant sorted before its regional siblings within
-  each group, then alphabetically by label. This does NOT fall out of
-  alphabetical-by-label sort on its own (e.g. "España" < "Mundo") — it needs
-  the explicit `-001` check.
+  language, formatted `<language> - <region>` (a spaced hyphen, no
+  parentheses), e.g. `'fr-001': 'Français - Monde'`, `'en-us': 'English - United
+  States'`. Falls back to the raw code via `localeLabel()` if a code has no
+  label yet.
+- Every list of locales is sorted by locale code, plain lexical order of the
+  code string (e.g. `ar-001`, `cy-gb`, `en-001`, `en-gb`, `en-gb-oxendict`,
+  `en-us`). This applies to the header `PickerBar` (`content.js`'s
+  `locales()`), the home page's locale list (`+page.server.js`), and any
+  other place the site lists locales. Sorting is by code, never by label text,
+  so it does not depend on the language of the label or on any special case
+  for the `-001` variant.
+- The default locale gets no special position in the list; it is marked as
+  the current choice by the picker itself.
 
 ## Bug fixes (regression watch-list)
 
