@@ -28,3 +28,11 @@ Live checklist. Update in the same commit as the work. Backlog detail is in `spe
 - [x] Part 10, 10.0 to 10.5 (first drafts)
 - [x] Part 11, 11.0 to 11.5 (first drafts)
 - [x] Part 12, 12.0 to 12.7 (appendices; 12.2, 12.6, and 12.7 generated from the topics)
+
+## Translations
+
+- [x] en-001 (source), en-us, en-gb, en-gb-oxendict (via `bin/localize`)
+- [x] zh-cn (88/88, `bin/check-locales zh-cn` clean) and zh-001 (copy), published
+- [ ] hi-in, then hi-001
+- [ ] cy-gb, then cy-001
+- [ ] ar-001
