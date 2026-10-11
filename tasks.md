@@ -24,4 +24,5 @@ Live checklist. Update in the same commit as the work. Backlog detail is in `spe
 - [x] Part 6, 6.0 to 6.5 (first drafts)
 - [x] Part 7, 7.0 to 7.7 (first drafts)
 - [x] Part 8, 8.0 to 8.5 (first drafts)
-- [ ] Parts 9 to 12 (apply the agile stance in spec/index.md)
+- [x] Part 9, 9.0 to 9.6 (first drafts)
+- [ ] Parts 10 to 12 (apply the agile stance in spec/index.md)
