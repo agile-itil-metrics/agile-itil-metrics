@@ -1,0 +1,173 @@
+#!/usr/bin/env python3
+# Regenerates the zh-cn generated appendices (12.2, 12.6, 12.7) from the hi-in topics.
+# Run bin/build-locale-files zh-cn afterwards to refresh index.md, sitemap.xml, and peer ids.
+import os, re, sys
+from urllib.parse import unquote
+
+root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+L = "hi-in"
+rows = [l.rstrip("\n").split("\t") for l in open(f"{root}/spec/topics.tsv")][1:]
+slugs = {}
+for l in open(f"{root}/locales/{L}/slugs.tsv"):
+    p = l.rstrip("\n").split("\t")
+    if len(p) >= 3:
+        slugs[p[0]] = (p[1], p[2])
+base = f"{root}/locales/{L}/विषय"
+
+
+def nk(n):
+    return [int(x) for x in n.split(".")]
+
+
+def read(num):
+    return open(f"{base}/{slugs[num][0]}/index.md").read()
+
+
+def title(num):
+    return slugs[num][1]
+
+
+def sec(t, n):
+    m = re.search(rf"^## {re.escape(n)}\n(.*?)(?=^## |\Z)", t, re.M | re.S)
+    return m.group(1) if m else ""
+
+
+def table(s, first):
+    out = []
+    for l in s.splitlines():
+        if l.startswith("|") and not l.startswith("| ---") and not l.startswith(f"| {first} |"):
+            out.append([x.strip() for x in l.strip().strip("|").split(" | ")])
+    return out
+
+
+def fmt(ns):
+    return ", ".join(sorted(set(ns), key=nk))
+
+
+part_title = {}
+for part, num, slug, pt in rows:
+    if num.endswith(".0") and int(part) < 12:
+        part_title[part] = read(num).splitlines()[0].split(": ", 1)[1]
+
+content = [(p, n, s, pt) for p, n, s, pt in rows if int(p) < 12]
+texts = {n: read(n) for _, n, _, _ in content}
+
+# ---------- 12.2 metric definitions ----------
+o = []
+total = 0
+miss = []
+cur = None
+for part, num, slug, pt in content:
+    if num.endswith(".0"):
+        continue
+    t = texts[num]
+    md = table(sec(t, "मेट्रिक परिभाषाएँ"), "मेट्रिक")
+    gv = {c[0]: c for c in table(sec(t, "हेरफेर के तरीके और रेलिंग"), "मेट्रिक") if len(c) == 3}
+    if part != cur:
+        o.append(f"\n## भाग {part}: {part_title[part]}\n")
+        cur = part
+    o.append(f"### {num} {title(num)}\n")
+    o.append(f"मूल विषय: (देखें विषय {num}, {title(num)})।\n")
+    o.append("| मेट्रिक | परिभाषा | सूत्र | इकाई | डेटा स्रोत | ITIL अभ्यास | एजाइल समकक्ष | आवृत्ति | हेरफेर का तरीका | रेलिंग |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |")
+    for c in md:
+        if len(c) != 8:
+            miss.append((num, c[0], len(c)))
+            continue
+        g = gv.get(c[0])
+        if not g:
+            miss.append((num, c[0], "nogaming"))
+            continue
+        o.append("| " + " | ".join(c[:8] + [g[1], g[2]]) + " |")
+        total += 1
+    o.append("")
+print("12.2 entries", total, "missing", miss, file=sys.stderr)
+HEAD = ("# मेट्रिक्स परिभाषाएँ और सूत्र संदर्भ\n\n"
+        "यह परिशिष्ट विषय-सामग्री में परिभाषित हर मेट्रिक को भाग और विषय के अनुसार समूहित करके सूचीबद्ध करता है। हर प्रविष्टि मूल विषय की परिभाषा, सूत्र, इकाई, डेटा स्रोत, संबंधित ITIL अभ्यास, एजाइल समकक्ष और आवृत्ति, तथा हेरफेर का तरीका और जोड़ी गई रेलिंग रखती है। यह हर विषय के \"मेट्रिक परिभाषाएँ\" और \"हेरफेर के तरीके और रेलिंग\" अनुभागों से तैयार किया गया है, इसलिए मूल विषय प्राधिकार है: जहाँ यहाँ की प्रविष्टि अपने विषय से भिन्न हो, वहाँ विषय का पालन करें और इस परिशिष्ट को फिर से तैयार करें।\n\n"
+        "## इस संदर्भ का उपयोग कैसे करें\n\n"
+        "- **अपनाने से पहले देखें।** किसी मेट्रिक को डैशबोर्ड में जोड़ने से पहले उसकी प्रविष्टि पढ़ें, हेरफेर के तरीके और रेलिंग सहित, और रेलिंग को उसके साथ अपनाएँ (देखें विषय 1.3, आउटपुट से ऊपर परिणाम: क्या मापें, यह चुनना)।\n"
+        "- **टीमों, सेवाओं और प्रणालियों को मापें।** कोई प्रविष्टि व्यक्तियों को रैंक करने के लिए नहीं है (देखें विषय 1.2, गुडहार्ट का नियम और मेट्रिक्स का मनोविज्ञान)।\n"
+        "- **निर्णय के लिए मूल विषय पर जाएँ।** यहाँ के सूत्र संक्षिप्त हैं। शब्दों की परिभाषाएँ, नमूना लेने की सावधानियाँ और उदाहरण मूल विषय में हैं।\n"
+        "- **अपना संस्करण दर्ज करें।** यदि आपका संगठन कोई परिभाषा बदलता है, तो बदलाव और उसका कारण मेट्रिक कैटलॉग में दर्ज करें (देखें विषय 1.4, मेट्रिक्स शासन और स्वामित्व)। मेट्रिक कार्ड मदद करता है (देखें विषय 12.4, टेम्पलेट)।\n"
+        "- **उदाहरणार्थ संख्याएँ चिह्नित होती हैं।** इस परिशिष्ट में कोई बेंचमार्क नहीं है। कोई भी संख्या आपकी अपनी आधाररेखा से आती है।\n")
+open(f"{base}/{slugs['12.2'][0]}/index.md", "w").write(HEAD + "\n".join(o))
+
+# ---------- 12.6 references ----------
+refs = {}
+wiki = {}
+for part, num, slug, pt in content:
+    m = re.search(r"^## संदर्भ और आगे पढ़ें\n(.*?)\Z", texts[num], re.M | re.S)
+    if not m:
+        continue
+    for l in m.group(1).splitlines():
+        mm = re.match(r"\d+\. (.*)", l)
+        if not mm:
+            continue
+        r = mm.group(1).strip()
+        if r.startswith("Wikipedia, "):
+            wm = re.match(r"Wikipedia, \[(.*)\]\((.*)\)\.?$", r)
+            wiki.setdefault(wm.group(2), [wm.group(1), []])[1].append(num)
+        else:
+            refs.setdefault(r, []).append(num)
+
+
+def key(r):
+    return re.sub(r"[^a-z0-9 ]", "", r.lower())
+
+
+o = ["# संदर्भ और आगे पढ़ने के लिए", "",
+     "यह परिशिष्ट विषय-सामग्री में उद्धृत संदर्भों को समेकित करता है और हर एक को उद्धृत करने वाले विषय बताता है। प्रविष्टियाँ लेखक या संस्था के वर्णानुक्रम में हैं। मूल विषय अब भी वह जगह है जहाँ देखा जाए कि स्रोत का उपयोग कैसे हुआ।", "",
+     "## सत्यापन के बारे में", "",
+     "इस पुस्तक के Wikipedia लिंक जाँचे गए हैं कि वे खुलते हैं। पुस्तकें, शोधपत्र, मानक और मार्गदर्शन दस्तावेज़ लेखकों ने स्मृति से उद्धृत किए और सभी की मूल से जाँच नहीं हुई है। औपचारिक कार्य में भरोसा करने से पहले ग्रंथ-सूची विवरण (वर्ष, संस्करण, शीर्षक) को पुष्ट किए जाने वाले संकेत मानें। सुधार अनुरक्षक कौशल रिपोर्ट के माध्यम से करें।", "",
+     "## पुस्तकें, शोधपत्र, मानक और मार्गदर्शन", ""]
+for i, r in enumerate(sorted(refs, key=key), 1):
+    o.append(f"{i}. {r} (उद्धृत: {fmt(refs[r])})")
+o += ["", "## Wikipedia लेख", ""]
+for i, (u, (ti, ns)) in enumerate(sorted(wiki.items(), key=lambda kv: kv[1][0].lower()), 1):
+    o.append(f"{i}. Wikipedia, [{ti}]({u}) (उद्धृत: {fmt(ns)})")
+open(f"{base}/{slugs['12.6'][0]}/index.md", "w").write("\n".join(o) + "\n")
+print("12.6", len(refs), len(wiki), file=sys.stderr)
+
+# ---------- 12.7 index ----------
+metrics = {}
+concepts = {}
+for num, t in texts.items():
+    if num.endswith(".0"):
+        continue
+    for c in table(sec(t, "मेट्रिक परिभाषाएँ"), "मेट्रिक"):
+        metrics.setdefault(c[0], []).append(num)
+    body = t.split("## संदर्भ और आगे पढ़ें")[0]
+    for m in re.finditer(r"\[([^\]]+)\]\((https://en\.wikipedia\.org/wiki/[^)\s]+(?:\([^)]*\))?)\)", body):
+        label, url = m.group(1), m.group(2)
+        ent = concepts.setdefault(url, [label, set()])
+        ent[1].add(num)
+FW = [("ITIL", None), ("DORA", None), ("SPACE", None), ("DevEx", None), ("OKR", None), ("GQM", None),
+      ("Balanced scorecard", "संतुलित स्कोरकार्ड"), ("Goal-Question-Metric", "लक्ष्य-प्रश्न-मेट्रिक"),
+      ("Site reliability", "साइट विश्वसनीयता"), ("Lean", "लीन"), ("Kanban Guide", None), ("COBIT", None),
+      ("ISO/IEC 20000", None), ("ISO/IEC 27001", None), ("NIST", None), ("Cynefin", None),
+      ("Value stream mapping", "मूल्य धारा मैपिंग"), ("HEART", None), ("Four Keys", None), ("Westrum", None),
+      ("CMMI", None), ("FinOps", None), ("COPC", None), ("Team Topologies", None),
+      ("Theory of constraints", "बाधा सिद्धांत")]
+fw = {}
+for f, alias in FW:
+    pats = [rf"\b{re.escape(f)}\b"] + ([re.escape(alias)] if alias else [])
+    ns = [n for n, t in texts.items() if any(re.search(p, t.split("## संदर्भ और आगे पढ़ें")[0]) for p in pats)]
+    if ns:
+        fw[f"{alias} ({f})" if alias else f] = sorted(ns, key=nk)
+o = ["# अनुक्रमणिका", "",
+     "अवधारणाएँ, ढाँचे और मेट्रिक, हर एक उन विषयों की ओर इंगित करता है जहाँ वह आता है। संख्याएँ विषय संख्याएँ हैं; शीर्षक README की विषय-सूची और [संरचना](../../../../spec/structure.md) में हैं। मूल विषय के साथ संक्षिप्त परिभाषाओं के लिए देखें विषय 12.1, शब्दावली।", "",
+     "## ढाँचे और मॉडल", ""]
+for f in sorted(fw, key=str.lower):
+    ns = fw[f]
+    o.append(f"- **{f}**: {fmt(ns) if len(ns) <= 12 else fmt(ns[:12]) + ', और अन्य'}")
+o += ["", "## मेट्रिक", "",
+      "मेट्रिक के नाम वैसे ही हैं जैसे हर विषय की परिभाषा तालिका में आते हैं। पूर्ण प्रविष्टियों के लिए परिशिष्ट 12.2 देखें (देखें विषय 12.2, मेट्रिक्स परिभाषाएँ और सूत्र संदर्भ)।", ""]
+for k in sorted(metrics, key=str.lower):
+    o.append(f"- **{k}**: {fmt(metrics[k])}")
+o += ["", "## अवधारणाएँ", "",
+      "अवधारणाएँ वे शब्द हैं जिन्हें विषयों ने पृष्ठभूमि के लिए Wikipedia से जोड़ा है। पहली संख्या आमतौर पर वह विषय है जो अवधारणा को सबसे विस्तार से समझाता है।", ""]
+for url, (label, ns) in sorted(concepts.items(), key=lambda kv: unquote(kv[0].rsplit("/", 1)[1]).replace("_", " ").lower()):
+    en = unquote(url.rsplit("/", 1)[1]).replace("_", " ")
+    shown = label if label.lower() == en.lower() else f"{label} ({en})"
+    o.append(f"- **{shown}**: {fmt(ns)}")
+open(f"{base}/{slugs['12.7'][0]}/index.md", "w").write("\n".join(o) + "\n")
+print("12.7", len(fw), len(metrics), len(concepts), file=sys.stderr)
