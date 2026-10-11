@@ -1,0 +1,15 @@
+{
+  "name": "Cymraeg (Cymru)",
+  "dirs": {
+    "topics": "pynciau",
+    "contents": "cynnwys"
+  },
+  "strings": {
+    "title": "Metrigau ITIL Ystwyth",
+    "tagline": "Mesurwch wasanaethau TG ystwyth heb ystumio'r gwaith.",
+    "intro": "Llyfr ymarferol ar fesur rheoli gwasanaethau TG ystwyth yn dda: 12 rhan, 88 pwnc. Mae pob metrig yn nodi sut y gellid ei chwarae a'r rheilen warchod sy'n dal hynny. Mae metrigau'n disgrifio timau, gwasanaethau a systemau, byth yn graddio unigolion.",
+    "contents": "Cynnwys",
+    "read": "Darllen ar y we",
+    "part_fmt": "Rhan {n}"
+  }
+}

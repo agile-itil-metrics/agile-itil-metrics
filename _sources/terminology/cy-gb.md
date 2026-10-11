@@ -68,3 +68,11 @@ Translators use these choices consistently. Where no established Welsh term is k
 | skill (AI) | sgìl AI |
 | best practice | arfer gorau |
 | failure mode | dull methu |
+
+## Y llyfr hwn (Metrigau ITIL Ystwyth)
+
+Teitlau pynciau: yn `locales/cy-gb/slugs.tsv` (colofn 3). Croesgyfeiriadau: "(gweler pwnc N.M, Teitl)". Cyfeirlyfr: metric = metrig (lluosog metrigau); baseline = llinell sylfaen; guardrail = rheilen warchod; gaming vector = ffordd o chwarae'r system; denominator = enwadur; continuous delivery = cyflawni parhaus (byth "cyflawni ystwyth"); sprint/Scrum/Kanban yn amodol yn unig; rhifau enghreifftiol: "enghreifftiol". Dim cwmni go iawn mewn enghreifftiau.
+Penawdau adrannau, yn y drefn: Crynodeb a chymhelliant; Egwyddorion allweddol; Diffiniadau metrigau; Argymhellion; Ffyrdd o chwarae'r system a rheiliau gwarchod; Cyfaddawdau: manteision ac anfanteision; Cwestiynau i'w trafod gyda'ch tîm; Pedwar persbectif (Timau cynnyrch a chyflawni; Timau gwasanaeth a gweithrediadau; Arweinyddiaeth a llywodraethu; Cwsmeriaid a defnyddwyr); Yn ymarferol: enghraifft ITIL ystwyth; Y golwg fesul sector (**Busnes newydd.** **Busnes bach.** **Menter fawr.** **Llywodraeth a'r sector cyhoeddus.**); Yr achos busnes: cymhellion, ROI a TCO; Gwrthbatrymau a maglau; Model aeddfedrwydd; Rhestr wirio; Anogwyr AI; Sgiliau AI; Pwyntiau allweddol; Cyfeiriadau a darllen pellach. Cyflwyniadau: Pynciau yn y rhan hon; Sut mae'r pynciau hyn yn cydberthyn.
+Lefelau: 1 Cychwyn, 2 Datblygu, 3 Safoni, 4 Rheoli, 5 Cydgysylltu; colofn "Dimensiwn".
+Tablau: Metrig | Diffiniad | Fformiwla | Uned | Ffynhonnell data | Arfer ITIL | Cyfatebydd ystwyth | Amledd; Metrig | Sut mae'n cael ei chwarae | Rheilen warchod (metrig neu arfer) pâr; Dull | Cryfder | Gwendid.
+Sgiliau AI: "Sgìl Metrigau ITIL Ystwyth" a "Sgìl cynhaliwr Metrigau ITIL Ystwyth".
