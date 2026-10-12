@@ -1,0 +1,88 @@
+1.0	Cyflwyniad-i-Ran-1-Sylfeini-Mesur	Cyflwyniad i Ran 1: Sylfeini Mesur
+1.1	Pam-mesur-ITIL-ystwyth	Pam mesur ITIL ystwyth
+1.2	Cyfraith-Goodhart-a-seicoleg-metrigau	Cyfraith Goodhart a seicoleg metrigau
+1.3	Canlyniadau-yn-hytrach-nag-allbwn-dewis-beth-iw-fesur	Canlyniadau yn hytrach nag allbwn: dewis beth i'w fesur
+1.4	Llywodraethu-a-pherchnogaeth-metrigau	Llywodraethu a pherchnogaeth metrigau
+1.5	Ffynonellau-data-ac-offeryniaeth	Ffynonellau data ac offeryniaeth
+1.6	Llythrennedd-ystadegol-ar-gyfer-metrigau-gwasanaeth	Llythrennedd ystadegol ar gyfer metrigau gwasanaeth
+1.7	Fframweithiau-mesur	Fframweithiau mesur
+2.0	Cyflwyniad-i-Ran-2-Metrigau-Llif-a-Chyflawni-Parhaus	Cyflwyniad i Ran 2: Metrigau Llif a Chyflawni Parhaus
+2.1	Mesurau-llif	Mesurau llif
+2.2	Amser-arweiniol-amser-cylch-ac-effeithlonrwydd-llif	Amser arweiniol, amser cylch ac effeithlonrwydd llif
+2.3	Gwaith-ar-y-gweill-a-chiwio	Gwaith ar y gweill a chiwio
+2.4	Metrigau-ffrwd-werth	Metrigau ffrwd werth
+2.5	Metrigau-rhagweld-a-chynllunio-cyflawni	Metrigau rhagweld a chynllunio cyflawni
+2.6	Metrigau-ol-groniad-a-mireinio	Metrigau ôl-groniad a mireinio
+2.7	Metrigau-ceisiadau-tynnu-ac-adolygu-cod	Metrigau ceisiadau tynnu ac adolygu cod
+2.8	Metrigau-DORA	Metrigau DORA
+2.9	Gwaith-gweithredol-a-gwaith-heb-ei-gynllunio	Gwaith gweithredol a gwaith heb ei gynllunio
+3.0	Cyflwyniad-i-Ran-3-Metrigau-Desg-Gwasanaeth-Digwyddiadau-a-Cheisiadau	Cyflwyniad i Ran 3: Metrigau Desg Gwasanaeth, Digwyddiadau a Cheisiadau
+3.1	Metrigau-desg-gwasanaeth	Metrigau desg gwasanaeth
+3.2	Nifer-a-blaenoriaeth-digwyddiadau	Nifer a blaenoriaeth digwyddiadau
+3.3	Amser-ymateb-a-datrys-digwyddiadau	Amser ymateb a datrys digwyddiadau
+3.4	Metrigau-digwyddiadau-mawr	Metrigau digwyddiadau mawr
+3.5	Metrigau-cyflawni-ceisiadau-gwasanaeth	Metrigau cyflawni ceisiadau gwasanaeth
+3.6	Metrigau-rheoli-gwybodaeth	Metrigau rheoli gwybodaeth
+3.7	Metrigau-hunanwasanaeth-ac-awtomeiddio	Metrigau hunanwasanaeth ac awtomeiddio
+4.0	Cyflwyniad-i-Ran-4-Metrigau-Problemau-Newid-a-Rhyddhau	Cyflwyniad i Ran 4: Metrigau Problemau, Newid a Rhyddhau
+4.1	Metrigau-rheoli-problemau	Metrigau rheoli problemau
+4.2	Metrigau-adolygu-ol-ddigwyddiad-a-dysgu	Metrigau adolygu ôl-ddigwyddiad a dysgu
+4.3	Metrigau-galluogi-newid	Metrigau galluogi newid
+4.4	Methiant-newid-ac-ailwaith	Methiant newid ac ailwaith
+4.5	Metrigau-rhyddhau-a-defnyddio	Metrigau rhyddhau a defnyddio
+4.6	Dyled-dechnegol-a-gwallau-hysbys	Dyled dechnegol a gwallau hysbys
+5.0	Cyflwyniad-i-Ran-5-Metrigau-Lefel-Gwasanaeth-Argaeledd-a-Dibynadwyedd	Cyflwyniad i Ran 5: Metrigau Lefel Gwasanaeth, Argaeledd a Dibynadwyedd
+5.1	Metrigau-SLA-OLA-ac-XLA	Metrigau SLA, OLA ac XLA
+5.2	SLIau-SLOau-a-chyllidebau-gwallau	SLIau, SLOau a chyllidebau gwallau
+5.3	Metrigau-argaeledd	Metrigau argaeledd
+5.4	Metrigau-capasiti-a-pherfformiad	Metrigau capasiti a pherfformiad
+5.5	Metrigau-ansawdd-monitro-a-rhybuddion	Metrigau ansawdd monitro a rhybuddion
+5.6	Metrigau-parhad-gwasanaeth	Metrigau parhad gwasanaeth
+5.7	Metrigau-llafur-diwerth-ac-ar-alwad	Metrigau llafur diwerth ac ar alwad
+6.0	Cyflwyniad-i-Ran-6-Metrigau-Cwsmeriaid-a-Phrofiad	Cyflwyniad i Ran 6: Metrigau Cwsmeriaid a Phrofiad
+6.1	Metrigau-bodlonrwydd-cwsmeriaid	Metrigau bodlonrwydd cwsmeriaid
+6.2	Cytundebau-lefel-profiad	Cytundebau lefel profiad
+6.3	Metrigau-mabwysiadu-gwasanaeth-a-chatalog	Metrigau mabwysiadu gwasanaeth a chatalog
+6.4	Profiad-defnyddwyr-a-gweithwyr	Profiad defnyddwyr a gweithwyr
+6.5	Sylweddoli-gwerth-a-chanlyniadau-busnes	Sylweddoli gwerth a chanlyniadau busnes
+7.0	Cyflwyniad-i-Ran-7-Metrigau-Asedau-Cyfluniad-ac-Ariannol	Cyflwyniad i Ran 7: Metrigau Asedau, Cyfluniad ac Ariannol
+7.1	Metrigau-rheoli-asedau-TG	Metrigau rheoli asedau TG
+7.2	Metrigau-asedau-meddalwedd-a-thrwyddedau	Metrigau asedau meddalwedd a thrwyddedau
+7.3	Metrigau-cylch-oes-asedau-caledwedd	Metrigau cylch oes asedau caledwedd
+7.4	Metrigau-ansawdd-cyfluniad-a-CMDB	Metrigau ansawdd cyfluniad a CMDB
+7.5	Cost-gwasanaeth-ac-economeg-uned	Cost gwasanaeth ac economeg uned
+7.6	Metrigau-FinOps-a-chostau-cwmwl	Metrigau FinOps a chostau cwmwl
+7.7	Elw-ar-fuddsoddiad-ar-achos-busnes	Elw ar fuddsoddiad a'r achos busnes
+8.0	Cyflwyniad-i-Ran-8-Metrigau-Diogelwch-Risg-Cydymffurfio-a-Chyflenwyr	Cyflwyniad i Ran 8: Metrigau Diogelwch, Risg, Cydymffurfio a Chyflenwyr
+8.1	Metrigau-digwyddiadau-diogelwch-a-gwendidau	Metrigau digwyddiadau diogelwch a gwendidau
+8.2	Metrigau-risg-a-rheolaethau	Metrigau risg a rheolaethau
+8.3	Metrigau-cydymffurfio-ac-archwilio	Metrigau cydymffurfio ac archwilio
+8.4	Metrigau-cyflenwyr-a-chontractau	Metrigau cyflenwyr a chontractau
+8.5	Adrodd-rheoleiddiedig-a-llywodraethol	Adrodd rheoleiddiedig a llywodraethol
+9.0	Cyflwyniad-i-Ran-9-Metrigau-Pobl-Timau-a-Gwelliant	Cyflwyniad i Ran 9: Metrigau Pobl, Timau a Gwelliant
+9.1	Iechyd-tim-a-phrofiad-datblygwyr	Iechyd tîm a phrofiad datblygwyr
+9.2	Metrigau-boddhad-a-lles	Metrigau boddhad a lles
+9.3	Metrigau-cydweithio-a-throsglwyddo	Metrigau cydweithio a throsglwyddo
+9.4	Metrigau-sgiliau-a-dysgu	Metrigau sgiliau a dysgu
+9.5	Metrigau-gwelliant-parhaus	Metrigau gwelliant parhaus
+9.6	Metrigau-newid-sefydliadol-a-mabwysiadu	Metrigau newid sefydliadol a mabwysiadu
+10.0	Cyflwyniad-i-Ran-10-Metrigau-yn-Oes-AI	Cyflwyniad i Ran 10: Metrigau yn Oes AI
+10.1	AI-mewn-mesur-rheoli-gwasanaethau	AI mewn mesur rheoli gwasanaethau
+10.2	Mesur-gwaith-a-chymorth-AI	Mesur gwaith â chymorth AI
+10.3	Metrigau-asiantau-AI-a-sgwrsfotiau	Metrigau asiantau AI a sgwrsfotiau
+10.4	Chwyddiant-metrigau-a-gwanhau-ansawdd	Chwyddiant metrigau a gwanhau ansawdd
+10.5	Metrigau-llywodraethu-a-risg-AI	Metrigau llywodraethu a risg AI
+11.0	Cyflwyniad-i-Ran-11-Adeiladu-Rhaglen-Fetrigau	Cyflwyniad i Ran 11: Adeiladu Rhaglen Fetrigau
+11.1	Dylunio-dangosfwrdd-metrigau-gwasanaeth	Dylunio dangosfwrdd metrigau gwasanaeth
+11.2	Tirwedd-offer	Tirwedd offer
+11.3	Cyflwyno-metrigau-heb-fagu-ofn	Cyflwyno metrigau heb fagu ofn
+11.4	Model-aeddfedrwydd-ar-gyfer-rhaglenni-metrigau	Model aeddfedrwydd ar gyfer rhaglenni metrigau
+11.5	Map-ffordd-mabwysiadu-cynyddol	Map ffordd mabwysiadu cynyddol
+12.0	Atodiadau	Atodiadau
+12.1	Geirfa	Geirfa
+12.2	Cyfeirnod-diffiniadau-a-fformiwlau-metrigau	Cyfeirnod diffiniadau a fformiwlâu metrigau
+12.3	Rhestri-gwirio	Rhestri gwirio
+12.4	Templedi	Templedi
+12.5	Hunanasesiad-aeddfedrwydd	Hunanasesiad aeddfedrwydd
+12.6	Cyfeiriadau-a-darllen-pellach	Cyfeiriadau a darllen pellach
+12.7	Mynegai	Mynegai
