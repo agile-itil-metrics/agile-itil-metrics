@@ -632,7 +632,7 @@
 - **الذكاء الاصطناعي التوليدي (Generative artificial intelligence)**: 10.1
 - **قانون غودهارت (Goodhart's law)**: 1.1، 1.2، 2.5، 2.7، 2.8، 3.4، 3.5، 4.3، 4.4، 4.5، 6.1، 6.2، 6.3، 6.4، 6.5، 7.1، 7.2، 7.3، 7.4، 7.5، 7.6، 7.7، 8.1، 8.2، 8.3، 8.4، 8.5، 9.1، 9.2، 9.3، 9.4، 9.5، 9.6، 10.1، 10.2، 10.3، 10.4، 10.5، 11.1، 11.3
 - **قاعدة بيانات الرسم البياني (Graph database)**: 7.4
-- **الهلوسة (Hallucination (artificial intelligence)**: 10.1
+- **الهلوسة (Hallucination (artificial intelligence))**: 10.1
 - **أثر هاوثورن (Hawthorne effect)**: 9.6، 11.3
 - **مكتب المساعدة (help desk) (Help desk)**: 3.1
 - **مكتب الخدمة (Help desk software)**: 3.2

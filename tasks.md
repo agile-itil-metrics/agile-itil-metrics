@@ -35,4 +35,4 @@ Live checklist. Update in the same commit as the work. Backlog detail is in `spe
 - [x] zh-cn (88/88, `bin/check-locales zh-cn` clean) and zh-001 (copy), published
 - [x] hi-in (88/88, `bin/check-locales hi-in` clean) and hi-001 (copy), published
 - [x] cy-gb (88/88, `bin/check-locales cy-gb` clean) and cy-001 (copy), published
-- [ ] ar-001
+- [x] ar-001 (88/88, `bin/check-locales ar-001` clean), published
