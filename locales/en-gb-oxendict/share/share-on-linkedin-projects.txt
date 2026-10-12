@@ -1,0 +1,17 @@
+Agile ITIL Metrics
+
+• Link: https://agile-itil-metrics.github.io
+• Tags: #agile #itil #metrics #itsm #ServiceManagement #ContinuousDelivery #SRE
+• Keywords: ITIL metrics, service management, continuous delivery, SLO
+
+Summary: Agile ITIL Metrics is a free, open book on measuring IT service management. It pairs ITIL practices with continuous delivery, so teams measure the services they run and the value customers receive. Each topic defines its metrics, shows how people game them, and names a guardrail against that. Most organizations collect plenty of data and still argue about what it means. This book gives them a shared vocabulary. It reads in the browser, anywhere, at no cost.
+
+Benefits: You get a clear definition for each metric. You see what the number hides. You learn which companion measure keeps it honest. Change failure rate, mean time to restore, and customer satisfaction each get the same treatment. Every topic closes with a maturity model, a checklist, and prompts you can use with your own team.
+
+Why this matters: Service metrics often turn into targets, and targets invite gaming. A resolution time that looks healthy can mean tickets closed early and reopened later. The book treats that pattern as normal and designs against it. Metrics describe teams, services, and systems. They never rank individuals. That keeps measurement useful and keeps trust intact.
+
+Please share: Send the book to the person who owns your service desk dashboard. Pass it to the engineer who carries the pager. Offer it to the manager who builds the quarterly report. Link a single topic in your team chat when a metric debate starts. Each topic stands alone, so one link is enough.
+
+Advice welcome: I continuously improve this work. Which metrics does your organization use? Any that failed? Where do the examples feel unrealistic? Message me so I can make the project better.
+
+Associated skills: IT Service Management, ITIL, Service Level Objectives, Continuous Delivery, Metrics Design
