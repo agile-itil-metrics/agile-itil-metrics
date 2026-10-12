@@ -1,0 +1,178 @@
+#!/usr/bin/env python3
+# Regenerates the cy-gb generated appendices (12.2, 12.6, 12.7) from the cy-gb topics.
+# Run bin/build-locale-files cy-gb afterwards to refresh index.md, sitemap.xml, and peer ids.
+import os, re, sys
+from urllib.parse import unquote
+
+root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+L = "cy-gb"
+rows = [l.rstrip("\n").split("\t") for l in open(f"{root}/spec/topics.tsv")][1:]
+slugs = {}
+for l in open(f"{root}/locales/{L}/slugs.tsv"):
+    p = l.rstrip("\n").split("\t")
+    if len(p) >= 3:
+        slugs[p[0]] = (p[1], p[2])
+base = f"{root}/locales/{L}/pynciau"
+
+S_DEF = "Diffiniadau metrigau"
+S_GAME = "Ffyrdd o chwarae'r system a rheiliau gwarchod"
+S_REF = "Cyfeiriadau a darllen pellach"
+FIRST = "Metrig"
+
+
+def nk(n):
+    return [int(x) for x in n.split(".")]
+
+
+def read(num):
+    return open(f"{base}/{slugs[num][0]}/index.md").read()
+
+
+def title(num):
+    return slugs[num][1]
+
+
+def sec(t, n):
+    m = re.search(rf"^## {re.escape(n)}\n(.*?)(?=^## |\Z)", t, re.M | re.S)
+    return m.group(1) if m else ""
+
+
+def table(s, first):
+    out = []
+    for l in s.splitlines():
+        if l.startswith("|") and not l.startswith("| ---") and not l.startswith(f"| {first} |"):
+            out.append([x.strip() for x in l.strip().strip("|").split(" | ")])
+    return out
+
+
+def fmt(ns):
+    return ", ".join(sorted(set(ns), key=nk))
+
+
+part_title = {}
+for part, num, slug, pt in rows:
+    if num.endswith(".0") and int(part) < 12:
+        part_title[part] = read(num).splitlines()[0].split(": ", 1)[1]
+
+content = [(p, n, s, pt) for p, n, s, pt in rows if int(p) < 12]
+texts = {n: read(n) for _, n, _, _ in content}
+
+# ---------- 12.2 metric definitions ----------
+o = []
+total = 0
+miss = []
+cur = None
+for part, num, slug, pt in content:
+    if num.endswith(".0"):
+        continue
+    t = texts[num]
+    md = table(sec(t, S_DEF), FIRST)
+    gv = {c[0]: c for c in table(sec(t, S_GAME), FIRST) if len(c) == 3}
+    if part != cur:
+        o.append(f"\n## Rhan {part}: {part_title[part]}\n")
+        cur = part
+    o.append(f"### {num} {title(num)}\n")
+    o.append(f"Pwnc cartref: (gweler pwnc {num}, {title(num)}).\n")
+    o.append("| Metrig | Diffiniad | Fformiwla | Uned | Ffynhonnell data | Arfer ITIL | Cyfatebydd ystwyth | Amledd | Ffordd o chwarae'r system | Rheilen warchod |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |")
+    for c in md:
+        if len(c) != 8:
+            miss.append((num, c[0], len(c)))
+            continue
+        g = gv.get(c[0])
+        if not g:
+            miss.append((num, c[0], "nogaming"))
+            continue
+        o.append("| " + " | ".join(c[:8] + [g[1], g[2]]) + " |")
+        total += 1
+    o.append("")
+print("12.2 entries", total, "missing", miss, file=sys.stderr)
+HEAD = ("# Cyfeirnod diffiniadau a fformiwlâu metrigau\n\n"
+        "Mae'r atodiad hwn yn rhestru pob metrig a ddiffinnir yn y pynciau cynnwys, wedi'u grwpio yn ôl rhan a phwnc. Mae pob cofnod yn cario'r diffiniad, y fformiwla, yr uned, y ffynhonnell data, yr arfer ITIL cysylltiedig, y cyfatebydd ystwyth, a'r amledd o'r pwnc cartref, ynghyd â'r ffordd o chwarae'r system a'r rheilen warchod bâr. Fe'i cynhyrchir o adrannau \"Diffiniadau metrigau\" a \"Ffyrdd o chwarae'r system a rheiliau gwarchod\" pob pwnc, felly y pwnc cartref yw'r awdurdod: lle mae cofnod yma yn wahanol i'w bwnc, mae'r pwnc yn drech, ac ailgynhyrchir yr atodiad hwn.\n\n"
+        "## Sut i ddefnyddio'r cyfeirnod hwn\n\n"
+        "- **Edrychwch cyn i chi fabwysiadu.** Cyn ychwanegu metrig at ddangosfwrdd, darllenwch ei gofnod, gan gynnwys y ffordd o chwarae'r system a'r rheilen warchod, a mabwysiadwch y rheilen warchod gydag ef (gweler pwnc 1.3, Canlyniadau yn hytrach nag allbwn: dewis beth i'w fesur).\n"
+        "- **Mesurwch dimau, gwasanaethau, a systemau.** Nid oes yr un cofnod i fod i raddio unigolion (gweler pwnc 1.2, Cyfraith Goodhart a seicoleg metrigau).\n"
+        "- **Ffafriwch y pwnc cartref ar gyfer barn.** Mae'r fformiwlâu yma yn fyr. Mae diffiniadau termau, rhybuddion ar samplu, a'r enghreifftiau gweithredol yn y pwnc cartref.\n"
+        "- **Cofnodwch eich amrywiadau eich hun.** Os yw eich sefydliad yn newid diffiniad, cofnodwch y newid a'r rheswm yn eich catalog metrigau (gweler pwnc 1.4, Llywodraethu a pherchnogaeth metrigau). Mae cardiau metrig yn helpu (gweler pwnc 12.4, Templedi).\n"
+        "- **Marcir ffigurau enghreifftiol.** Nid oes gwerthoedd meincnod yn yr atodiad hwn. Daw unrhyw rif o'ch llinell sylfaen eich hun.\n")
+open(f"{base}/{slugs['12.2'][0]}/index.md", "w").write(HEAD + "\n".join(o))
+
+# ---------- 12.6 references ----------
+refs = {}
+wiki = {}
+for part, num, slug, pt in content:
+    m = re.search(rf"^## {re.escape(S_REF)}\n(.*?)\Z", texts[num], re.M | re.S)
+    if not m:
+        continue
+    for l in m.group(1).splitlines():
+        mm = re.match(r"\d+\. (.*)", l)
+        if not mm:
+            continue
+        r = mm.group(1).strip()
+        if r.startswith("Wikipedia, "):
+            wm = re.match(r"Wikipedia, \[(.*)\]\((.*)\)\.?$", r)
+            wiki.setdefault(wm.group(2), [wm.group(1), []])[1].append(num)
+        else:
+            refs.setdefault(r, []).append(num)
+
+
+def key(r):
+    return re.sub(r"[^a-z0-9 ]", "", r.lower())
+
+
+o = ["# Cyfeiriadau a darllen pellach", "",
+     "Mae'r atodiad hwn yn cyfuno'r cyfeiriadau a ddyfynnir yn y pynciau cynnwys, gyda'r pynciau sy'n dyfynnu pob un. Rhestrir cofnodion yn nhrefn yr wyddor yn ôl awdur neu gorff. Y pwnc cartref yw'r lle o hyd i weld sut y defnyddir ffynhonnell.", "",
+     "## Ynghylch gwirio", "",
+     "Gwiriwyd bod dolenni Wikipedia yn y llyfr hwn yn agor. Dyfynnodd yr awduron lyfrau, papurau, safonau, a dogfennau arweiniad o'r cof ac nid yw pob un wedi'i wirio yn erbyn y gwreiddiol eto. Trinwch fanylion llyfryddol (blynyddoedd, argraffiadau, teitlau) fel arweiniadau i'w cadarnhau cyn dibynnu arnynt mewn gwaith ffurfiol. Adroddwch gywiriadau drwy sgìl y cynhaliwr.", "",
+     "## Llyfrau, papurau, safonau, ac arweiniad", ""]
+for i, r in enumerate(sorted(refs, key=key), 1):
+    o.append(f"{i}. {r} (a ddyfynnir yn {fmt(refs[r])})")
+o += ["", "## Erthyglau Wikipedia", ""]
+for i, (u, (ti, ns)) in enumerate(sorted(wiki.items(), key=lambda kv: kv[1][0].lower()), 1):
+    o.append(f"{i}. Wikipedia, [{ti}]({u}) (a ddyfynnir yn {fmt(ns)})")
+open(f"{base}/{slugs['12.6'][0]}/index.md", "w").write("\n".join(o) + "\n")
+print("12.6", len(refs), len(wiki), file=sys.stderr)
+
+# ---------- 12.7 index ----------
+metrics = {}
+concepts = {}
+for num, t in texts.items():
+    if num.endswith(".0"):
+        continue
+    for c in table(sec(t, S_DEF), FIRST):
+        metrics.setdefault(c[0], []).append(num)
+    body = t.split(f"## {S_REF}")[0]
+    for m in re.finditer(r"\[([^\]]+)\]\((https://en\.wikipedia\.org/wiki/[^)\s]+(?:\([^)]*\))?)\)", body):
+        label, url = m.group(1), m.group(2)
+        ent = concepts.setdefault(url, [label, set()])
+        ent[1].add(num)
+FW = [("ITIL", None), ("DORA", None), ("SPACE", None), ("DevEx", None), ("OKR", None), ("GQM", None),
+      ("Balanced scorecard", "Cerdyn sgorio cytbwys"), ("Goal-Question-Metric", "Nod-Cwestiwn-Metrig"),
+      ("Site reliability", "Dibynadwyedd safle"), ("Lean", "Darbodus"), ("Kanban Guide", None), ("COBIT", None),
+      ("ISO/IEC 20000", None), ("ISO/IEC 27001", None), ("NIST", None), ("Cynefin", None),
+      ("Value stream mapping", "Mapio ffrwd werth"), ("HEART", None), ("Four Keys", None), ("Westrum", None),
+      ("CMMI", None), ("FinOps", None), ("COPC", None), ("Team Topologies", None),
+      ("Theory of constraints", "Damcaniaeth cyfyngiadau")]
+fw = {}
+for f, alias in FW:
+    pats = [rf"\b{re.escape(f)}\b"] + ([re.escape(alias)] if alias else [])
+    ns = [n for n, t in texts.items() if any(re.search(p, t.split(f"## {S_REF}")[0], re.I if p != pats[0] else 0) for p in pats)]
+    if ns:
+        fw[f"{alias} ({f})" if alias else f] = sorted(ns, key=nk)
+o = ["# Mynegai", "",
+     "Cysyniadau, fframweithiau, a metrigau, pob un yn pwyntio at y pynciau lle maent yn ymddangos. Rhifau pynciau yw'r rhifau; mae'r teitlau yn nhabl cynnwys y README ac yn [strwythur](../../../../spec/structure.md). Ar gyfer diffiniadau byr gyda phwnc cartref, gweler pwnc 12.1, Geirfa.", "",
+     "## Fframweithiau a modelau", ""]
+for f in sorted(fw, key=str.lower):
+    ns = fw[f]
+    o.append(f"- **{f}**: {fmt(ns) if len(ns) <= 12 else fmt(ns[:12]) + ', ac eraill'}")
+o += ["", "## Metrigau", "",
+      "Enwau metrigau fel y maent yn ymddangos yn nhabl diffiniadau pob pwnc. Mae'r cofnodion llawn yn atodiad 12.2 (gweler pwnc 12.2, Cyfeirnod diffiniadau a fformiwlâu metrigau).", ""]
+for k in sorted(metrics, key=str.lower):
+    o.append(f"- **{k}**: {fmt(metrics[k])}")
+o += ["", "## Cysyniadau", "",
+      "Cysyniadau yw'r termau y mae'r pynciau wedi'u cysylltu â Wikipedia ar gyfer cefndir. Y rhif cyntaf fel arfer yw'r pwnc sy'n esbonio'r cysyniad yn fwyaf manwl.", ""]
+for url, (label, ns) in sorted(concepts.items(), key=lambda kv: unquote(kv[0].rsplit("/", 1)[1]).replace("_", " ").lower()):
+    en = unquote(url.rsplit("/", 1)[1]).replace("_", " ")
+    shown = label if label.lower() == en.lower() else f"{label} ({en})"
+    o.append(f"- **{shown}**: {fmt(ns)}")
+open(f"{base}/{slugs['12.7'][0]}/index.md", "w").write("\n".join(o) + "\n")
+print("12.7", len(fw), len(metrics), len(concepts), file=sys.stderr)
