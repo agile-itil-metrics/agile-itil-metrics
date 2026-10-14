@@ -90,7 +90,7 @@ Define el periodo, la moneda y los tipos de costo de cada medida, y registra las
 | Cobertura de la asignación | Declarar grandes cantidades como gasto general compartido para evitar la atribución | Proporción de gasto general informada; revisión de lo que se declara como gasto general y por qué |
 | División entre operar, cambiar y mejorar | Reetiquetar el trabajo de operación como mejora o cambio; etiquetar al final del periodo | Etiquetar en la entrada; muestrear elementos por tipo; comparar con datos de incidentes y solicitudes |
 | Varianza del pronóstico | Inflar los pronósticos; revisar el pronóstico tarde en el periodo | Pronóstico registrado al inicio; comparar con el tiempo los rangos de pronóstico con los reales |
-| Tasa de disputas del informe de costos | Desalentar las disputas; cambiar líneas sin un cambio de regla | Revisar las disputas y sus resultados; comprobar si las reglas cambiaron tras disputas repetidas |
+| Tasa de disputas del informe de costos (showback) | Desalentar las disputas; cambiar líneas sin un cambio de regla | Revisar las disputas y sus resultados; comprobar si las reglas cambiaron tras disputas repetidas |
 | Proporción de financiación de equipos permanentes | Rebautizar proyectos como equipos permanentes sin cambiar la financiación ni la propiedad | Comprobar con el tiempo la estabilidad de los equipos y la propiedad; medidas de salud del servicio |
 
 Una lectura sana es un cuadro de costos que los responsables de los servicios reconocen, costos unitarios que se mueven por causas explicadas mientras la calidad se mantiene, errores de pronóstico que se reducen y trabajo de mejora que aparece en los números.
