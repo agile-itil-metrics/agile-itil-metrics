@@ -1,3 +1,0 @@
-# Mesures de flux
-
-<!-- stub -->

@@ -1,3 +1,0 @@
-# Cadres de mesure
-
-<!-- stub -->

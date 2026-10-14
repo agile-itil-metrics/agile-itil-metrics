@@ -1,3 +1,0 @@
-# Métriques de disponibilité
-
-<!-- stub -->

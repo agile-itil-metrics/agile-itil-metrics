@@ -1,3 +1,0 @@
-# Listes de vérification
-
-<!-- stub -->
