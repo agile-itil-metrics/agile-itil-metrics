@@ -1,0 +1,173 @@
+#!/usr/bin/env python3
+# Regenerates the bn-001 generated appendices (12.2, 12.6, 12.7) from the bn-001 topics.
+# Run bin/build-locale-files bn-001 afterwards to refresh index.md, sitemap.xml, and peer ids.
+import os, re, sys
+from urllib.parse import unquote
+
+root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+L = "bn-001"
+rows = [l.rstrip("\n").split("\t") for l in open(f"{root}/spec/topics.tsv")][1:]
+slugs = {}
+for l in open(f"{root}/locales/{L}/slugs.tsv"):
+    p = l.rstrip("\n").split("\t")
+    if len(p) >= 3:
+        slugs[p[0]] = (p[1], p[2])
+base = f"{root}/locales/{L}/বিষয়"
+
+
+def nk(n):
+    return [int(x) for x in n.split(".")]
+
+
+def read(num):
+    return open(f"{base}/{slugs[num][0]}/index.md").read()
+
+
+def title(num):
+    return slugs[num][1]
+
+
+def sec(t, n):
+    m = re.search(rf"^## {re.escape(n)}\n(.*?)(?=^## |\Z)", t, re.M | re.S)
+    return m.group(1) if m else ""
+
+
+def table(s, first):
+    out = []
+    for l in s.splitlines():
+        if l.startswith("|") and not l.startswith("| ---") and not l.startswith(f"| {first} |"):
+            out.append([x.strip() for x in l.strip().strip("|").split(" | ")])
+    return out
+
+
+def fmt(ns):
+    return ", ".join(sorted(set(ns), key=nk))
+
+
+part_title = {}
+for part, num, slug, pt in rows:
+    if num.endswith(".0") and int(part) < 12:
+        part_title[part] = read(num).splitlines()[0].split(": ", 1)[1]
+
+content = [(p, n, s, pt) for p, n, s, pt in rows if int(p) < 12]
+texts = {n: read(n) for _, n, _, _ in content}
+
+# ---------- 12.2 metric definitions ----------
+o = []
+total = 0
+miss = []
+cur = None
+for part, num, slug, pt in content:
+    if num.endswith(".0"):
+        continue
+    t = texts[num]
+    md = table(sec(t, "মেট্রিকের সংজ্ঞা"), "মেট্রিক")
+    gv = {c[0]: c for c in table(sec(t, "কারসাজির উপায় ও রক্ষাবেষ্টনী"), "মেট্রিক") if len(c) == 3}
+    if part != cur:
+        o.append(f"\n## অংশ {part}: {part_title[part]}\n")
+        cur = part
+    o.append(f"### {num} {title(num)}\n")
+    o.append(f"মূল বিষয়: (দেখুন বিষয় {num}, {title(num)})।\n")
+    o.append("| মেট্রিক | সংজ্ঞা | সূত্র | একক | তথ্যের উৎস | ITIL অনুশীলন | এজাইল সমতুল্য | পর্যায়কাল | কারসাজির উপায় | রক্ষাবেষ্টনী |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |")
+    for c in md:
+        if len(c) != 8:
+            miss.append((num, c[0], len(c)))
+            continue
+        g = gv.get(c[0])
+        if not g:
+            miss.append((num, c[0], "nogaming"))
+            continue
+        o.append("| " + " | ".join(c[:8] + [g[1], g[2]]) + " |")
+        total += 1
+    o.append("")
+print("12.2 entries", total, "missing", miss, file=sys.stderr)
+HEAD = ("# মেট্রিকের সংজ্ঞা ও সূত্রের নির্দেশিকা\n\n"
+        "এই পরিশিষ্ট বিষয়বস্তুর বিষয়গুলিতে সংজ্ঞায়িত প্রতিটি মেট্রিক অংশ ও বিষয় অনুযায়ী সাজিয়ে তালিকাভুক্ত করে। প্রতিটি এন্ট্রি মূল বিষয়ের সংজ্ঞা, সূত্র, একক, তথ্যের উৎস, সম্পর্কিত ITIL অনুশীলন, এজাইল সমতুল্য ও পর্যায়কাল, এবং কারসাজির উপায় ও জোড়া রক্ষাবেষ্টনী বহন করে। এটি প্রতিটি বিষয়ের “মেট্রিকের সংজ্ঞা” এবং “কারসাজির উপায় ও রক্ষাবেষ্টনী” অংশ থেকে তৈরি, তাই মূল বিষয়ই কর্তৃপক্ষ: এখানকার একটি এন্ট্রি তার বিষয় থেকে ভিন্ন হলে বিষয়টি অনুসরণ করুন এবং এই পরিশিষ্ট নতুন করে তৈরি করুন।\n\n"
+        "## এই নির্দেশিকা কীভাবে ব্যবহার করবেন\n\n"
+        "- **গ্রহণের আগে দেখুন।** একটি ড্যাশবোর্ডে মেট্রিক যোগ করার আগে তার এন্ট্রি পড়ুন, কারসাজির উপায় ও রক্ষাবেষ্টনীসহ, এবং রক্ষাবেষ্টনী তার সঙ্গে গ্রহণ করুন (দেখুন বিষয় 1.3, আউটপুটের চেয়ে ফলাফল: কী পরিমাপ করব তা বাছাই)।\n"
+        "- **দল, সেবা ও ব্যবস্থা মাপুন।** কোনো এন্ট্রি ব্যক্তিকে ক্রম দেওয়ার জন্য নয় (দেখুন বিষয় 1.2, গুডহার্টের সূত্র ও মেট্রিকের মনস্তত্ত্ব)।\n"
+        "- **বিচারের জন্য মূল বিষয়ে যান।** এখানকার সূত্র সংক্ষিপ্ত। পরিভাষার সংজ্ঞা, নমুনা নেওয়ার সতর্কতা ও বিস্তারিত উদাহরণ মূল বিষয়ে আছে।\n"
+        "- **নিজের রূপভেদ লিপিবদ্ধ করুন।** আপনার প্রতিষ্ঠান কোনো সংজ্ঞা বদলালে বদল ও কারণ মেট্রিক ক্যাটালগে লিপিবদ্ধ করুন (দেখুন বিষয় 1.4, মেট্রিকের গভর্ন্যান্স ও মালিকানা)। মেট্রিক কার্ড সাহায্য করে (দেখুন বিষয় 12.4, টেমপ্লেট)।\n"
+        "- **দৃষ্টান্তমূলক অঙ্ক চিহ্নিত থাকে।** এই পরিশিষ্টে কোনো বেঞ্চমার্ক নেই। যেকোনো সংখ্যা আপনার নিজস্ব ভিত্তিরেখা থেকে আসে।\n")
+open(f"{base}/{slugs['12.2'][0]}/index.md", "w").write(HEAD + "\n".join(o))
+
+# ---------- 12.6 references ----------
+refs = {}
+wiki = {}
+for part, num, slug, pt in content:
+    m = re.search(r"^## তথ্যসূত্র ও আরও পড়ার জন্য\n(.*?)\Z", texts[num], re.M | re.S)
+    if not m:
+        continue
+    for l in m.group(1).splitlines():
+        mm = re.match(r"\d+\. (.*)", l)
+        if not mm:
+            continue
+        r = mm.group(1).strip()
+        if r.startswith("Wikipedia, "):
+            wm = re.match(r"Wikipedia, \[(.*)\]\((.*)\)\.?$", r)
+            wiki.setdefault(wm.group(2), [wm.group(1), []])[1].append(num)
+        else:
+            refs.setdefault(r, []).append(num)
+
+
+def key(r):
+    return re.sub(r"[^a-z0-9 ]", "", r.lower())
+
+
+o = ["# তথ্যসূত্র ও আরও পড়ার জন্য", "",
+     "এই পরিশিষ্ট বিষয়বস্তুর বিষয়গুলিতে উদ্ধৃত তথ্যসূত্র একত্র করে এবং প্রতিটি যে বিষয়গুলি উদ্ধৃত করে তা বলে। এন্ট্রি লেখক বা সংস্থার বর্ণানুক্রমে। একটি উৎস কীভাবে ব্যবহৃত হয়েছে দেখার জায়গা এখনও মূল বিষয়।", "",
+     "## যাচাই সম্পর্কে", "",
+     "এই বইয়ের Wikipedia লিঙ্কগুলি খোলে কি না যাচাই করা হয়েছে। বই, প্রবন্ধ, মান ও নির্দেশনার নথি লেখকেরা স্মৃতি থেকে উদ্ধৃত করেছেন এবং সবগুলি মূলের সঙ্গে মেলানো হয়নি। আনুষ্ঠানিক কাজে ভরসা করার আগে গ্রন্থপঞ্জির বিবরণ (বছর, সংস্করণ, শিরোনাম) নিশ্চিত করার ইঙ্গিত হিসেবে নিন। সংশোধন রক্ষণাবেক্ষণ স্কিলের মাধ্যমে জানান।", "",
+     "## বই, প্রবন্ধ, মান ও নির্দেশনা", ""]
+for i, r in enumerate(sorted(refs, key=key), 1):
+    o.append(f"{i}. {r} (উদ্ধৃত: {fmt(refs[r])})")
+o += ["", "## Wikipedia নিবন্ধ", ""]
+for i, (u, (ti, ns)) in enumerate(sorted(wiki.items(), key=lambda kv: kv[1][0].lower()), 1):
+    o.append(f"{i}. Wikipedia, [{ti}]({u}) (উদ্ধৃত: {fmt(ns)})")
+open(f"{base}/{slugs['12.6'][0]}/index.md", "w").write("\n".join(o) + "\n")
+print("12.6", len(refs), len(wiki), file=sys.stderr)
+
+# ---------- 12.7 index ----------
+metrics = {}
+concepts = {}
+for num, t in texts.items():
+    if num.endswith(".0"):
+        continue
+    for c in table(sec(t, "মেট্রিকের সংজ্ঞা"), "মেট্রিক"):
+        metrics.setdefault(c[0], []).append(num)
+    body = t.split("## তথ্যসূত্র ও আরও পড়ার জন্য")[0]
+    for m in re.finditer(r"\[([^\]]+)\]\((https://en\.wikipedia\.org/wiki/[^)\s]+(?:\([^)]*\))?)\)", body):
+        label, url = m.group(1), m.group(2)
+        ent = concepts.setdefault(url, [label, set()])
+        ent[1].add(num)
+FW = [("ITIL", None), ("DORA", None), ("SPACE", None), ("DevEx", None), ("OKR", None), ("GQM", None),
+      ("Balanced scorecard", "ব্যালান্সড স্কোরকার্ড"), ("Goal-Question-Metric", "লক্ষ্য-প্রশ্ন-মেট্রিক"),
+      ("Site reliability", "সাইট নির্ভরযোগ্যতা"), ("Lean", "লিন"), ("Kanban Guide", None), ("COBIT", None),
+      ("ISO/IEC 20000", None), ("ISO/IEC 27001", None), ("NIST", None), ("Cynefin", None),
+      ("Value stream mapping", "ভ্যালু স্ট্রিম ম্যাপিং"), ("HEART", None), ("Four Keys", None), ("Westrum", None),
+      ("CMMI", None), ("FinOps", None), ("COPC", None), ("Team Topologies", None),
+      ("Theory of constraints", "সীমাবদ্ধতার তত্ত্ব")]
+fw = {}
+for f, alias in FW:
+    pats = [rf"\b{re.escape(f)}\b"] + ([re.escape(alias)] if alias else [])
+    ns = [n for n, t in texts.items() if any(re.search(p, t.split("## তথ্যসূত্র ও আরও পড়ার জন্য")[0]) for p in pats)]
+    if ns:
+        fw[f"{alias} ({f})" if alias else f] = sorted(ns, key=nk)
+o = ["# বর্ণানুক্রমিক সূচি", "",
+     "ধারণা, কাঠামো ও মেট্রিক, প্রতিটি যেসব বিষয়ে আসে তার সঙ্গে। সংখ্যাগুলি বিষয়ের নম্বর; শিরোনাম README-র সূচিপত্র এবং [কাঠামো](../../../../spec/structure.md)-তে আছে। মূল বিষয়সহ সংক্ষিপ্ত সংজ্ঞার জন্য দেখুন বিষয় 12.1, শব্দকোষ।", "",
+     "## কাঠামো ও মডেল", ""]
+for f in sorted(fw, key=str.lower):
+    ns = fw[f]
+    o.append(f"- **{f}**: {fmt(ns) if len(ns) <= 12 else fmt(ns[:12]) + ', এবং আরও'}")
+o += ["", "## মেট্রিক", "",
+      "মেট্রিকের নাম প্রতিটি বিষয়ের সংজ্ঞার সারণিতে যেভাবে আছে সেভাবে। পূর্ণ এন্ট্রির জন্য পরিশিষ্ট 12.2 দেখুন (দেখুন বিষয় 12.2, মেট্রিকের সংজ্ঞা ও সূত্রের নির্দেশিকা)।", ""]
+for k in sorted(metrics, key=str.lower):
+    o.append(f"- **{k}**: {fmt(metrics[k])}")
+o += ["", "## ধারণা", "",
+      "ধারণা হলো সেই পদ যা বিষয়গুলি প্রেক্ষাপটের জন্য Wikipedia-র সঙ্গে যুক্ত করেছে। প্রথম নম্বর সাধারণত সেই বিষয় যা ধারণাটি সবচেয়ে বিস্তারিত ব্যাখ্যা করে।", ""]
+for url, (label, ns) in sorted(concepts.items(), key=lambda kv: unquote(kv[0].rsplit("/", 1)[1]).replace("_", " ").lower()):
+    en = unquote(url.rsplit("/", 1)[1]).replace("_", " ")
+    shown = label if label.lower() == en.lower() else f"{label} ({en})"
+    o.append(f"- **{shown}**: {fmt(ns)}")
+open(f"{base}/{slugs['12.7'][0]}/index.md", "w").write("\n".join(o) + "\n")
+print("12.7", len(fw), len(metrics), len(concepts), file=sys.stderr)
