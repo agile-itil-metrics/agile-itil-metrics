@@ -180,7 +180,7 @@ Les retours sont de meilleures décisions et moins de disputes. Les équipes qui
 - **Le coût par ticket comme objectif.** Il récompense la clôture précoce des tickets. Employez le coût par demande résolue avec une compagne de qualité.
 - **La précision sans confiance.** Un beau modèle auquel les responsables ne croient pas ne vaut rien. Bâtissez les règles avec eux.
 - **La refacturation d'abord.** Elle déclenche des querelles avant qu'il y ait compréhension. Commencez par la rétrofacturation informative.
-- **Couper ce qui est difficile à voir.** L'entretien, l'apprentissage et le travail de fiabilité sont coupés en premier et coûtent plus plus tard. Protégez la capacité d'amélioration.
+- **Couper ce qui est difficile à voir.** L'entretien, l'apprentissage et le travail de fiabilité sont coupés en premier et coûtent plus cher plus tard. Protégez la capacité d'amélioration.
 - **Comparer les équipes par coût.** Les services diffèrent par leurs contraintes et leurs risques. Comparez chacun à son propre historique.
 - **Changer les règles et la tendance en même temps.** Marquez les changements de règles sur les graphiques et rétablissez l'historique là où c'est possible.
 - **Traiter le coût comme appartenant à la finance.** Les personnes qui exploitent le service savent d'où vient le coût. Incluez-les.
