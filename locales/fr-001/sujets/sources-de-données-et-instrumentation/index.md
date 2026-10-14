@@ -120,7 +120,7 @@ Mettez le flux de travail sur un tableau et demandez à des personnes de différ
 **4. Comment saurions-nous qu'un flux s'est arrêté en silence ?**
 Demandez quand quelqu'un a vérifié pour la dernière fois que les données du tableau de bord sont à jour. Discutez de l'alerte ou de l'indicateur de fraîcheur qui détecterait un connecteur arrêté en moins d'un jour. L'animateur doit insister pour obtenir un responsable nommé et un contrôle concret, non une intention générale d'être prudent.
 
-**5. Que collectons-nous que nous n'utilisons jamais, et que utilisons-nous que nous ne collectons pas bien ?**
+**5. Que collectons-nous que nous n'utilisons jamais, et qu'utilisons-nous que nous ne collectons pas bien ?**
 Placez côte à côte la liste des champs et la liste des métriques. Marquez les champs qui n'alimentent aucune décision et les métriques qui reposent sur de mauvais champs. Décidez d'un champ à ne plus collecter et d'un champ à améliorer ce trimestre.
 
 **6. Qui répond à nos enquêtes, et qui ne répond pas ?**
