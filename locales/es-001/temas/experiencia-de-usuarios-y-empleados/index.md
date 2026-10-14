@@ -71,7 +71,7 @@ Define el grupo y el periodo de cada medida. La preparación el primer día cuen
 
 **11. Trata las soluciones provisionales como retroalimentación de diseño.** Cuando la gente usa una herramienta no aprobada, pregunta qué hace mejor. La respuesta es un requisito que la herramienta oficial pasó por alto. La [TI en la sombra](https://en.wikipedia.org/wiki/Shadow_IT) conlleva riesgos reales para la seguridad y el costo, y una respuesta punitiva la empuja a la clandestinidad. Prefiere adoptar la buena idea, o explicar el riesgo y ofrecer una alternativa segura.
 
-**12. Comparte el programa con las personas a quienes sirve.** Muestra los resultados al personal, celebra una breve revisión con representantes y pregunta qué cambiar el trimestre siguiente. El programa es una forma de colaboración continua entre TI y sus usuarios, y la mejora continua del entorno es el resultado. Víncúlalo con las medidas de personas de la parte siguiente (véase el tema 9.2, Métricas de satisfacción y bienestar).
+**12. Comparte el programa con las personas a quienes sirve.** Muestra los resultados al personal, celebra una breve revisión con representantes y pregunta qué cambiar el trimestre siguiente. El programa es una forma de colaboración continua entre TI y sus usuarios, y la mejora continua del entorno es el resultado. Vincúlalo con las medidas de personas de la parte siguiente (véase el tema 9.2, Métricas de satisfacción y bienestar).
 
 ## Vectores de manipulación y barreras de protección
 
