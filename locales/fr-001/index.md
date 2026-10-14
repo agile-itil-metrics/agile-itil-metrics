@@ -129,6 +129,6 @@ Un manuel pratique pour bien mesurer la gestion agile des services informatiques
 - [12.4 Modèles](sujets/modèles/index.md)
 - [12.5 Autoévaluation de la maturité](sujets/autoévaluation-de-la-maturité/index.md)
 - [12.6 Références et lectures complémentaires](sujets/références-et-lectures-complémentaires/index.md)
-- [12.7 Index](sujets/index/index.md)
+- [12.7 Index alphabétique](sujets/index-alphabétique/index.md)
 
 [Lire sur le Web](https://agile-itil-metrics.github.io/fr-001/contenus/)
