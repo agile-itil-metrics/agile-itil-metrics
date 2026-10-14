@@ -12,7 +12,7 @@ Bacalah bagian ini lebih dulu bila Anda baru mengenal buku ini, dan kembalilah k
 
 - **1.1 Mengapa mengukur ITIL agile**: mengapa tim yang membangun dan menjalankan layanan membutuhkan angka, apa yang disumbangkan agile dan ITIL masing-masing pada pengukuran, serta harga dari tidak mengukur apa pun atau mengukur hal yang keliru.
 - **1.2 Hukum Goodhart dan psikologi metrik**: pagar pembatas di balik setiap topik lain, mencakup bagaimana sebuah ukuran berubah menjadi target, bagaimana manipulasi terjadi pada data tiket dan pengiriman, dan kebiasaan yang mencegahnya.
-- **1.3 Hasil di atas keluaran: memilih apa yang diukur**: nilai, hasil, keluaran, dan aktivitas, indikator utama dan indikator tertinggal, serta penciptaan nilai bersama dalam ITIL sebagai ujian metrik yang baik.
+- **1.3 Hasil di atas keluaran: memilih apa yang diukur**: nilai, hasil, keluaran, dan aktivitas, indikator pendahulu dan indikator tertinggal, serta penciptaan nilai bersama dalam ITIL sebagai ujian metrik yang baik.
 - **1.4 Tata kelola dan kepemilikan metrik**: pemilik metrik, definisi, ritme tinjauan, pemensiunan, dan siapa yang boleh melihat apa.
 - **1.5 Sumber data dan instrumentasi**: alat ITSM, pelacak isu, kontrol versi, jalur integrasi dan pengiriman berkelanjutan, pemantauan, basis data manajemen konfigurasi (CMDB), dan survei sebagai sumber, dengan perhatian pada kualitas data, stempel waktu, dan model status.
 - **1.6 Literasi statistik untuk metrik layanan**: persentil di atas rata-rata, distribusi miring, sampel kecil, bagan kendali, dan ketidakpastian yang jujur untuk data tiket dan alur.
