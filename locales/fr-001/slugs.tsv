@@ -1,0 +1,88 @@
+1.0	introduction-à-la-partie-1-fondements-de-la-mesure	Introduction à la partie 1 : Fondements de la mesure
+1.1	pourquoi-mesurer-l-itil-agile	Pourquoi mesurer l'ITIL agile
+1.2	loi-de-goodhart-et-psychologie-des-métriques	Loi de Goodhart et psychologie des métriques
+1.3	les-résultats-plutôt-que-la-production-choisir-ce-qu-il-faut-mesurer	Les résultats plutôt que la production : choisir ce qu'il faut mesurer
+1.4	gouvernance-et-responsabilité-des-métriques	Gouvernance et responsabilité des métriques
+1.5	sources-de-données-et-instrumentation	Sources de données et instrumentation
+1.6	culture-statistique-pour-les-métriques-de-service	Culture statistique pour les métriques de service
+1.7	cadres-de-mesure	Cadres de mesure
+2.0	introduction-à-la-partie-2-métriques-de-flux-et-de-livraison-continue	Introduction à la partie 2 : Métriques de flux et de livraison continue
+2.1	mesures-de-flux	Mesures de flux
+2.2	délai-de-livraison-temps-de-cycle-et-efficacité-du-flux	Délai de livraison, temps de cycle et efficacité du flux
+2.3	travail-en-cours-et-théorie-des-files-d-attente	Travail en cours et théorie des files d'attente
+2.4	métriques-de-flux-de-valeur	Métriques de flux de valeur
+2.5	métriques-de-prévision-et-de-planification-de-la-livraison	Métriques de prévision et de planification de la livraison
+2.6	métriques-du-backlog-et-de-son-affinage	Métriques du backlog et de son affinage
+2.7	métriques-des-demandes-de-fusion-et-de-la-revue-de-code	Métriques des demandes de fusion et de la revue de code
+2.8	métriques-dora	Métriques DORA
+2.9	travail-opérationnel-et-travail-non-planifié	Travail opérationnel et travail non planifié
+3.0	introduction-à-la-partie-3-métriques-du-centre-de-services-des-incidents-et-des-demandes	Introduction à la partie 3 : Métriques du centre de services, des incidents et des demandes
+3.1	métriques-du-centre-de-services	Métriques du centre de services
+3.2	volume-et-priorité-des-incidents	Volume et priorité des incidents
+3.3	temps-de-réponse-et-de-résolution-des-incidents	Temps de réponse et de résolution des incidents
+3.4	métriques-des-incidents-majeurs	Métriques des incidents majeurs
+3.5	métriques-de-traitement-des-demandes-de-service	Métriques de traitement des demandes de service
+3.6	métriques-de-gestion-des-connaissances	Métriques de gestion des connaissances
+3.7	métriques-de-libre-service-et-d-automatisation	Métriques de libre-service et d'automatisation
+4.0	introduction-à-la-partie-4-métriques-des-problèmes-des-changements-et-des-versions	Introduction à la partie 4 : Métriques des problèmes, des changements et des versions
+4.1	métriques-de-gestion-des-problèmes	Métriques de gestion des problèmes
+4.2	métriques-des-analyses-post-incident-et-de-l-apprentissage	Métriques des analyses post-incident et de l'apprentissage
+4.3	métriques-de-maîtrise-des-changements	Métriques de maîtrise des changements
+4.4	échecs-de-changement-et-reprises	Échecs de changement et reprises
+4.5	métriques-des-versions-et-des-déploiements	Métriques des versions et des déploiements
+4.6	dette-technique-et-erreurs-connues	Dette technique et erreurs connues
+5.0	introduction-à-la-partie-5-métriques-des-niveaux-de-service-de-la-disponibilité-et-de-la-fiabilité	Introduction à la partie 5 : Métriques des niveaux de service, de la disponibilité et de la fiabilité
+5.1	métriques-de-sla-d-ola-et-de-xla	Métriques de SLA, d'OLA et de XLA
+5.2	sli-slo-et-budgets-d-erreur	SLI, SLO et budgets d'erreur
+5.3	métriques-de-disponibilité	Métriques de disponibilité
+5.4	métriques-de-capacité-et-de-performance	Métriques de capacité et de performance
+5.5	métriques-de-supervision-et-de-qualité-des-alertes	Métriques de supervision et de qualité des alertes
+5.6	métriques-de-continuité-de-service	Métriques de continuité de service
+5.7	métriques-de-tâches-répétitives-et-d-astreinte	Métriques de tâches répétitives et d'astreinte
+6.0	introduction-à-la-partie-6-métriques-de-clientèle-et-d-expérience	Introduction à la partie 6 : Métriques de clientèle et d'expérience
+6.1	métriques-de-satisfaction-de-la-clientèle	Métriques de satisfaction de la clientèle
+6.2	accords-de-niveau-d-expérience	Accords de niveau d'expérience
+6.3	métriques-d-adoption-des-services-et-de-catalogue	Métriques d'adoption des services et de catalogue
+6.4	expérience-des-utilisateurs-et-des-employés	Expérience des utilisateurs et des employés
+6.5	réalisation-de-la-valeur-et-résultats-métier	Réalisation de la valeur et résultats métier
+7.0	introduction-à-la-partie-7-métriques-des-actifs-de-la-configuration-et-des-finances	Introduction à la partie 7 : Métriques des actifs, de la configuration et des finances
+7.1	métriques-de-gestion-des-actifs-informatiques	Métriques de gestion des actifs informatiques
+7.2	métriques-des-actifs-logiciels-et-des-licences	Métriques des actifs logiciels et des licences
+7.3	métriques-du-cycle-de-vie-des-actifs-matériels	Métriques du cycle de vie des actifs matériels
+7.4	métriques-de-qualité-de-la-configuration-et-de-la-cmdb	Métriques de qualité de la configuration et de la CMDB
+7.5	coût-du-service-et-économie-unitaire	Coût du service et économie unitaire
+7.6	métriques-finops-et-de-coûts-du-nuage	Métriques FinOps et de coûts du nuage
+7.7	retour-sur-investissement-et-dossier-d-affaires	Retour sur investissement et dossier d'affaires
+8.0	introduction-à-la-partie-8-métriques-de-sécurité-de-risque-de-conformité-et-de-fournisseurs	Introduction à la partie 8 : Métriques de sécurité, de risque, de conformité et de fournisseurs
+8.1	métriques-des-incidents-de-sécurité-et-des-vulnérabilités	Métriques des incidents de sécurité et des vulnérabilités
+8.2	métriques-des-risques-et-des-contrôles	Métriques des risques et des contrôles
+8.3	métriques-de-conformité-et-d-audit	Métriques de conformité et d'audit
+8.4	métriques-des-fournisseurs-et-des-contrats	Métriques des fournisseurs et des contrats
+8.5	rapports-réglementaires-et-gouvernementaux	Rapports réglementaires et gouvernementaux
+9.0	introduction-à-la-partie-9-métriques-des-personnes-des-équipes-et-de-l-amélioration	Introduction à la partie 9 : Métriques des personnes, des équipes et de l'amélioration
+9.1	santé-de-l-équipe-et-expérience-des-développeurs	Santé de l'équipe et expérience des développeurs
+9.2	métriques-de-satisfaction-et-de-bien-être	Métriques de satisfaction et de bien-être
+9.3	métriques-de-collaboration-et-de-transmission	Métriques de collaboration et de transmission
+9.4	métriques-de-compétences-et-d-apprentissage	Métriques de compétences et d'apprentissage
+9.5	métriques-d-amélioration-continue	Métriques d'amélioration continue
+9.6	métriques-de-changement-organisationnel-et-d-adoption	Métriques de changement organisationnel et d'adoption
+10.0	introduction-à-la-partie-10-les-métriques-à-l-ère-de-l-ia	Introduction à la partie 10 : Les métriques à l'ère de l'IA
+10.1	l-ia-dans-la-mesure-de-la-gestion-des-services	L'IA dans la mesure de la gestion des services
+10.2	mesurer-le-travail-assisté-par-l-ia	Mesurer le travail assisté par l'IA
+10.3	métriques-des-agents-d-ia-et-des-agents-conversationnels	Métriques des agents d'IA et des agents conversationnels
+10.4	inflation-des-métriques-et-dilution-de-la-qualité	Inflation des métriques et dilution de la qualité
+10.5	métriques-de-gouvernance-et-de-risque-de-l-ia	Métriques de gouvernance et de risque de l'IA
+11.0	introduction-à-la-partie-11-construire-un-programme-de-métriques	Introduction à la partie 11 : Construire un programme de métriques
+11.1	concevoir-un-tableau-de-bord-de-métriques-de-service	Concevoir un tableau de bord de métriques de service
+11.2	panorama-des-outils	Panorama des outils
+11.3	déployer-les-métriques-sans-semer-la-peur	Déployer les métriques sans semer la peur
+11.4	modèle-de-maturité-des-programmes-de-métriques	Modèle de maturité des programmes de métriques
+11.5	une-feuille-de-route-d-adoption-progressive	Une feuille de route d'adoption progressive
+12.0	annexes	Annexes
+12.1	glossaire	Glossaire
+12.2	référentiel-des-définitions-et-formules-de-métriques	Référentiel des définitions et formules de métriques
+12.3	listes-de-vérification	Listes de vérification
+12.4	modèles	Modèles
+12.5	autoévaluation-de-la-maturité	Autoévaluation de la maturité
+12.6	références-et-lectures-complémentaires	Références et lectures complémentaires
+12.7	index	Index

@@ -1,0 +1,15 @@
+{
+  "name": "Français (monde)",
+  "dirs": {
+    "topics": "sujets",
+    "contents": "contenus"
+  },
+  "strings": {
+    "title": "Métriques de l'ITIL agile",
+    "tagline": "Mesurez les services informatiques agiles sans fausser le travail.",
+    "intro": "Un manuel pratique pour bien mesurer la gestion agile des services informatiques : 12 parties et 88 sujets. Chaque métrique indique comment elle peut être détournée et quel garde-fou permet de le détecter. Les métriques décrivent des équipes, des services et des systèmes, et ne servent jamais à classer des personnes.",
+    "contents": "Contenus",
+    "read": "Lire sur le Web",
+    "part_fmt": "Partie {n}"
+  }
+}
