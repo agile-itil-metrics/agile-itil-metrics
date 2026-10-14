@@ -75,7 +75,7 @@ Tingkat pembukaan ulang hanya menghitung item yang dibuka ulang pada catatan yan
 
 ### Jaga sistem tetap jujur
 
-**10. Jalankan tinjauan manipulasi.** Sekali sebulan kuartal, ajukan satu pertanyaan kepada tim tentang setiap metrik yang dilaporkan: “Jika kita ingin angka ini tampak baik tanpa membantu siapa pun, apa yang akan kita lakukan?” Tulis jawabannya, lalu periksa apakah pagar pembatas akan menangkap masing-masing. Latihan ini murah, menghasilkan gagasan berguna, dan menggeser percakapan dari kecurigaan ke desain.
+**10. Jalankan tinjauan manipulasi.** Sekali setiap kuartal, ajukan satu pertanyaan kepada tim tentang setiap metrik yang dilaporkan: “Jika kita ingin angka ini tampak baik tanpa membantu siapa pun, apa yang akan kita lakukan?” Tulis jawabannya, lalu periksa apakah pagar pembatas akan menangkap masing-masing. Latihan ini murah, menghasilkan gagasan berguna, dan menggeser percakapan dari kecurigaan ke desain.
 
 **11. Audit definisi terhadap kenyataan.** Ambil sampel sejumlah kecil item yang ditutup dan bacalah. Apakah benar-benar terselesaikan? Apakah prioritasnya jujur? Apakah status “menunggu pelanggan” berarti pelanggan memang sedang ditunggu? Sampel lima belas menit sering memberi tahu lebih banyak daripada dasbor sebulan.
 
