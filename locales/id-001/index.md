@@ -115,7 +115,7 @@ Buku panduan praktis tentang cara mengukur manajemen layanan TI agile dengan bai
 
 - [11.0 Pengantar Bagian 11: Membangun Program Metrik](topik/pengantar-bagian-11-membangun-program-metrik/index.md)
 - [11.1 Merancang dasbor metrik layanan](topik/merancang-dasbor-metrik-layanan/index.md)
-- [11.2 Lanskap perangkat](topik/lanskap-perangkat/index.md)
+- [11.2 Lanskap perkakas](topik/lanskap-perangkat/index.md)
 - [11.3 Meluncurkan metrik tanpa menumbuhkan ketakutan](topik/meluncurkan-metrik-tanpa-menumbuhkan-ketakutan/index.md)
 - [11.4 Model kematangan untuk program metrik](topik/model-kematangan-untuk-program-metrik/index.md)
 - [11.5 Peta jalan adopsi bertahap](topik/peta-jalan-adopsi-bertahap/index.md)

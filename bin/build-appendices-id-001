@@ -1,0 +1,178 @@
+#!/usr/bin/env python3
+# Regenerates the id-001 generated appendices (12.2, 12.6, 12.7) from the id-001 topics.
+# Run bin/build-locale-files id-001 afterwards to refresh index.md, sitemap.xml, and peer ids.
+import os, re, sys
+from urllib.parse import unquote
+
+root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+L = "id-001"
+rows = [l.rstrip("\n").split("\t") for l in open(f"{root}/spec/topics.tsv")][1:]
+slugs = {}
+for l in open(f"{root}/locales/{L}/slugs.tsv"):
+    p = l.rstrip("\n").split("\t")
+    if len(p) >= 3:
+        slugs[p[0]] = (p[1], p[2])
+base = f"{root}/locales/{L}/topik"
+
+S_DEF = "Definisi metrik"
+S_GAME = "Vektor manipulasi dan pagar pembatas"
+S_REF = "Referensi dan bacaan lanjutan"
+FIRST = "Metrik"
+
+
+def nk(n):
+    return [int(x) for x in n.split(".")]
+
+
+def read(num):
+    return open(f"{base}/{slugs[num][0]}/index.md").read()
+
+
+def title(num):
+    return slugs[num][1]
+
+
+def sec(t, n):
+    m = re.search(rf"^## {re.escape(n)}\n(.*?)(?=^## |\Z)", t, re.M | re.S)
+    return m.group(1) if m else ""
+
+
+def table(s, first):
+    out = []
+    for l in s.splitlines():
+        if l.startswith("|") and not l.startswith("| ---") and not l.startswith(f"| {first} |"):
+            out.append([x.strip() for x in l.strip().strip("|").split(" | ")])
+    return out
+
+
+def fmt(ns):
+    return ", ".join(sorted(set(ns), key=nk))
+
+
+part_title = {}
+for part, num, slug, pt in rows:
+    if num.endswith(".0") and int(part) < 12:
+        part_title[part] = read(num).splitlines()[0].split(": ", 1)[1]
+
+content = [(p, n, s, pt) for p, n, s, pt in rows if int(p) < 12]
+texts = {n: read(n) for _, n, _, _ in content}
+
+# ---------- 12.2 metric definitions ----------
+o = []
+total = 0
+miss = []
+cur = None
+for part, num, slug, pt in content:
+    if num.endswith(".0"):
+        continue
+    t = texts[num]
+    md = table(sec(t, S_DEF), FIRST)
+    gv = {c[0]: c for c in table(sec(t, S_GAME), FIRST) if len(c) == 3}
+    if part != cur:
+        o.append(f"\n## Bagian {part}: {part_title[part]}\n")
+        cur = part
+    o.append(f"### {num} {title(num)}\n")
+    o.append(f"Topik asal: (lihat topik {num}, {title(num)}).\n")
+    o.append("| Metrik | Definisi | Rumus | Satuan | Sumber data | Praktik ITIL | Padanan agile | Periode | Cara dimanipulasi | Pagar pembatas |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |")
+    for c in md:
+        if len(c) != 8:
+            miss.append((num, c[0], len(c)))
+            continue
+        g = gv.get(c[0])
+        if not g:
+            miss.append((num, c[0], "nogaming"))
+            continue
+        o.append("| " + " | ".join(c[:8] + [g[1], g[2]]) + " |")
+        total += 1
+    o.append("")
+print("12.2 entries", total, "missing", miss, file=sys.stderr)
+HEAD = ("# Rujukan definisi dan rumus metrik\n\n"
+        "Lampiran ini mendaftar setiap metrik yang didefinisikan dalam topik isi, dikelompokkan menurut bagian dan topik. Setiap entri membawa definisi, rumus, satuan, sumber data, praktik ITIL terkait, padanan agile, dan periode dari topik asal, bersama vektor manipulasi dan pagar pembatas berpasangannya. Ia dihasilkan dari bagian “Definisi metrik” dan “Vektor manipulasi dan pagar pembatas” pada tiap topik, sehingga topik asal adalah otoritas: di mana entri di sini berbeda dari topiknya, topik yang menang, dan lampiran ini dihasilkan ulang.\n\n"
+        "## Cara memakai rujukan ini\n\n"
+        "- **Lihat sebelum Anda mengadopsi.** Sebelum menambah metrik ke dasbor, baca entrinya, termasuk vektor manipulasi dan pagar pembatas, dan adopsi pagar pembatas bersamanya (lihat topik 1.3, Hasil di atas keluaran: memilih apa yang diukur).\n"
+        "- **Ukur tim, layanan, dan sistem.** Tak ada entri yang dimaksudkan untuk memeringkat individu (lihat topik 1.2, Hukum Goodhart dan psikologi metrik).\n"
+        "- **Utamakan topik asal untuk pertimbangan.** Rumus di sini singkat. Definisi istilah, catatan pengambilan sampel, dan contoh kerja ada di topik asal.\n"
+        "- **Catat variasi Anda sendiri.** Jika organisasi Anda mengubah definisi, catat perubahan dan alasannya di katalog metrik Anda (lihat topik 1.4, Tata kelola dan kepemilikan metrik). Kartu metrik membantu (lihat topik 12.4, Templat).\n"
+        "- **Angka ilustratif ditandai.** Lampiran ini tidak memuat nilai tolok ukur. Angka apa pun berasal dari garis dasar Anda sendiri.\n")
+open(f"{base}/{slugs['12.2'][0]}/index.md", "w").write(HEAD + "\n".join(o))
+
+# ---------- 12.6 references ----------
+refs = {}
+wiki = {}
+for part, num, slug, pt in content:
+    m = re.search(rf"^## {re.escape(S_REF)}\n(.*?)\Z", texts[num], re.M | re.S)
+    if not m:
+        continue
+    for l in m.group(1).splitlines():
+        mm = re.match(r"\d+\. (.*)", l)
+        if not mm:
+            continue
+        r = mm.group(1).strip()
+        if r.startswith("Wikipedia, "):
+            wm = re.match(r"Wikipedia, \[(.*)\]\((.*)\)\.?$", r)
+            wiki.setdefault(wm.group(2), [wm.group(1), []])[1].append(num)
+        else:
+            refs.setdefault(r, []).append(num)
+
+
+def key(r):
+    return re.sub(r"[^a-z0-9 ]", "", r.lower())
+
+
+o = [f"# {S_REF}", "",
+     "Lampiran ini mengonsolidasikan referensi yang dikutip dalam topik isi, dengan topik yang mengutip masing-masing. Entri didaftar menurut abjad penulis atau badan. Topik asal tetap menjadi tempat melihat bagaimana sumber dipakai.", "",
+     "## Tentang verifikasi", "",
+     "Tautan Wikipedia dalam buku ini diperiksa dapat dibuka. Buku, makalah, standar, dan dokumen panduan dikutip dari ingatan oleh para penulis dan belum semuanya diperiksa terhadap aslinya. Perlakukan rincian bibliografi (tahun, edisi, judul) sebagai petunjuk untuk dikonfirmasi sebelum diandalkan dalam pekerjaan formal. Laporkan koreksi lewat skill pemelihara.", "",
+     "## Buku, makalah, standar, dan panduan", ""]
+for i, r in enumerate(sorted(refs, key=key), 1):
+    o.append(f"{i}. {r} (dikutip dalam {fmt(refs[r])})")
+o += ["", "## Artikel Wikipedia", ""]
+for i, (u, (ti, ns)) in enumerate(sorted(wiki.items(), key=lambda kv: kv[1][0].lower()), 1):
+    o.append(f"{i}. Wikipedia, [{ti}]({u}) (dikutip dalam {fmt(ns)})")
+open(f"{base}/{slugs['12.6'][0]}/index.md", "w").write("\n".join(o) + "\n")
+print("12.6", len(refs), len(wiki), file=sys.stderr)
+
+# ---------- 12.7 index ----------
+metrics = {}
+concepts = {}
+for num, t in texts.items():
+    if num.endswith(".0"):
+        continue
+    for c in table(sec(t, S_DEF), FIRST):
+        metrics.setdefault(c[0], []).append(num)
+    body = t.split(f"## {S_REF}")[0]
+    for m in re.finditer(r"\[([^\]]+)\]\((https://en\.wikipedia\.org/wiki/[^)\s]+(?:\([^)]*\))?)\)", body):
+        label, url = m.group(1), m.group(2)
+        ent = concepts.setdefault(url, [label, set()])
+        ent[1].add(num)
+FW = [("ITIL", None), ("DORA", None), ("SPACE", None), ("DevEx", None), ("OKR", None), ("GQM", None),
+      ("Balanced scorecard", "Balanced scorecard"), ("Goal-Question-Metric", "Tujuan-Pertanyaan-Metrik"),
+      ("Site reliability", "Keandalan situs"), ("Lean", "Ramping"), ("Kanban Guide", None), ("COBIT", None),
+      ("ISO/IEC 20000", None), ("ISO/IEC 27001", None), ("NIST", None), ("Cynefin", None),
+      ("Value stream mapping", "Pemetaan aliran nilai"), ("HEART", None), ("Four Keys", None), ("Westrum", None),
+      ("CMMI", None), ("FinOps", None), ("COPC", None), ("Team Topologies", None),
+      ("Theory of constraints", "Teori kendala")]
+fw = {}
+for f, alias in FW:
+    pats = [rf"\b{re.escape(f)}\b"] + ([re.escape(alias)] if alias and alias != f else [])
+    ns = [n for n, t in texts.items() if any(re.search(p, t.split(f"## {S_REF}")[0]) for p in pats)]
+    if ns:
+        fw[f"{alias} ({f})" if alias and alias != f else f] = sorted(ns, key=nk)
+o = ["# Indeks", "",
+     "Konsep, kerangka, dan metrik, masing-masing dengan topik tempat muncul. Angka adalah nomor topik; judul ada di daftar isi README dan di [struktur](../../../../spec/structure.md). Untuk definisi singkat dengan topik asal, lihat topik 12.1, Glosarium.", "",
+     "## Kerangka dan model", ""]
+for f in sorted(fw, key=str.lower):
+    ns = fw[f]
+    o.append(f"- **{f}**: {fmt(ns) if len(ns) <= 12 else fmt(ns[:12]) + ', dan lainnya'}")
+o += ["", "## Metrik", "",
+      "Nama metrik sebagaimana tampak pada tabel definisi tiap topik. Entri lengkap ada di lampiran 12.2 (lihat topik 12.2, Rujukan definisi dan rumus metrik).", ""]
+for k in sorted(metrics, key=str.lower):
+    o.append(f"- **{k}**: {fmt(metrics[k])}")
+o += ["", "## Konsep", "",
+      "Konsep diambil dari istilah yang ditautkan topik ke Wikipedia untuk latar belakang. Angka pertama biasanya topik yang menjelaskan konsep itu paling rinci.", ""]
+for url, (label, ns) in sorted(concepts.items(), key=lambda kv: unquote(kv[0].rsplit("/", 1)[1]).replace("_", " ").lower()):
+    en = unquote(url.rsplit("/", 1)[1]).replace("_", " ")
+    shown = label if label.lower() == en.lower() else f"{label} ({en})"
+    o.append(f"- **{shown}**: {fmt(ns)}")
+open(f"{base}/{slugs['12.7'][0]}/index.md", "w").write("\n".join(o) + "\n")
+print("12.7", len(fw), len(metrics), len(concepts), file=sys.stderr)
