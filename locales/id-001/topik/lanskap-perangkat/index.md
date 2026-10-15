@@ -1,3 +1,0 @@
-# Lanskap perangkat
-
-<!-- stub -->

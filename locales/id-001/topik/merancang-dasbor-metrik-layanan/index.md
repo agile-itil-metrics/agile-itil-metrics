@@ -12,7 +12,7 @@ ITIL membingkai ini sebagai soal informasi dan komunikasi: informasi yang tepat,
 
 Tiga kegagalan desain lazim. Yang pertama adalah dinding angka, ketika seratus ubin bersaing dan tak satu pun menonjol. Yang kedua adalah tampilan hanya-target, ketika angka ditunjukkan terhadap sasaran dalam merah atau hijau tanpa tren dan konteks, yang mengundang pengelolaan menurut warna alih-alih pemahaman. Yang ketiga adalah tampilan tanpa pemilik, ketika definisi telah hanyut, data basi, dan tak ada yang tahu siapa untuk ditanya. Pekerjaan desain adalah menghindari ini.
 
-Desain visual yang baik membantu. [Visualisasi data](https://en.wikipedia.org/wiki/Data_visualization) adalah praktik menunjukkan data secara grafis agar pola dapat dilihat dan dipahami. [Sparkline](https://en.wikipedia.org/wiki/Sparkline) adalah bagan garis kecil seukuran kata yang menunjukkan tren tanpa sumbu atau label, dan cocok untuk dasbor karena menaruh riwayat di samping nilai saat ini. [Bagan jalannya](https://en.wikipedia.org/wiki/Run_chart) memplot ukuran dari waktu ke waktu dengan garis median, dan [bagan kendali](https://en.wikipedia.org/wiki/Control_chart) menambah batas yang memisahkan variasi biasa dari sinyal yang layak diselidiki (lihat topik 1.6, Literasi statistik untuk metrik layanan). [Chartjunk](https://en.wikipedia.org/wiki/Chartjunk) adalah hiasan yang tak menambah informasi, seperti garis kisi tebal, batang tiga dimensi, dan pengukur hias, dan layak dibuang.
+Desain visual yang baik membantu. [Visualisasi data](https://en.wikipedia.org/wiki/Data_visualization) adalah praktik menunjukkan data secara grafis agar pola dapat dilihat dan dipahami. [Sparkline](https://en.wikipedia.org/wiki/Sparkline) adalah bagan garis kecil seukuran kata yang menunjukkan tren tanpa sumbu atau label, dan cocok untuk dasbor karena menaruh riwayat di samping nilai saat ini. [Run chart](https://en.wikipedia.org/wiki/Run_chart) memplot ukuran dari waktu ke waktu dengan garis median, dan [bagan kendali](https://en.wikipedia.org/wiki/Control_chart) menambah batas yang memisahkan variasi biasa dari sinyal yang layak diselidiki (lihat topik 1.6, Literasi statistik untuk metrik layanan). [Chartjunk](https://en.wikipedia.org/wiki/Chartjunk) adalah hiasan yang tak menambah informasi, seperti garis kisi tebal, batang tiga dimensi, dan pengukur hias, dan layak dibuang.
 
 [Metrik vanitas](https://en.wikipedia.org/wiki/Vanity_metric) adalah angka yang tampak baik dan tak membantu siapa pun memutuskan apa pun, seperti hitungan tiket ditangani atau login ke portal yang ditunjukkan tanpa hasil. Pagar pembatas dari [hukum Goodhart](https://en.wikipedia.org/wiki/Goodhart%27s_law) berlaku pada seluruh tampilan: ketika angka di layar menjadi target, orang mengelola angkanya (lihat topik 1.2, Hukum Goodhart dan psikologi metrik).
 
@@ -23,7 +23,7 @@ Topik ini bersandar pada kerangka pengukuran (lihat topik 1.7, Kerangka pengukur
 - **Mulai dari pertanyaan, bukan data.** Tuliskan keputusan dan pertanyaan yang dimiliki audiens sebelum memilih satu bagan pun.
 - **Tunjukkan sedikit ukuran, seimbang.** Himpunan kecil yang mencakup alur, mutu, keandalan, pengalaman, dan biaya lebih tahan manipulasi daripada satu ukuran saja.
 - **Selalu tunjukkan tren dan konteks.** Nilai tanpa riwayat, garis dasar, dan catatan tentang apa yang berubah sulit ditafsirkan.
-- **Hormati variasi.** Jangan bereaksi pada setiap goyangan. Pakai bagan jalannya atau bagan kendali untuk memisahkan sinyal dari derau.
+- **Hormati variasi.** Jangan bereaksi pada setiap goyangan. Pakai run chart atau bagan kendali untuk memisahkan sinyal dari derau.
 - **Beri setiap audiens tampilannya sendiri.** Tim, pemilik layanan, dan pimpinan mengajukan pertanyaan berbeda dan butuh rincian berbeda.
 - **Tim melihat data mereka lebih dulu.** Orang yang mengerjakan pekerjaan sebaiknya melihat angka mereka sebelum orang lain, dan memiliki penafsirannya.
 - **Definisikan segalanya dan namai pemilik.** Setiap ukuran punya definisi tertulis, sumber data, dan orang untuk ditanya.
@@ -65,7 +65,7 @@ Definisikan audiens tiap tampilan secara tertulis. Hitung ukuran per tampilan, b
 
 ### Tunjukkan konteks dan tren
 
-**7. Tunjukkan riwayat bersama setiap nilai.** Taruh sparkline atau bagan jalannya kecil di samping tiap nilai saat ini. Tunjukkan riwayat yang cukup untuk melihat pola musiman, seperti puncak bulanan atau siklus kuartalan. Tandai peristiwa yang menjelaskan perubahan: rilis, perubahan kebijakan, gangguan, reorganisasi tim. Catatan di samping garis menghemat seratus pertanyaan.
+**7. Tunjukkan riwayat bersama setiap nilai.** Taruh sparkline atau run chart kecil di samping tiap nilai saat ini. Tunjukkan riwayat yang cukup untuk melihat pola musiman, seperti puncak bulanan atau siklus kuartalan. Tandai peristiwa yang menjelaskan perubahan: rilis, perubahan kebijakan, gangguan, reorganisasi tim. Catatan di samping garis menghemat seratus pertanyaan.
 
 **8. Pakai distribusi dan rentang untuk ukuran waktu.** Rata-rata menyembunyikan ekor panjang yang dirasakan pengguna. Tunjukkan median dan persentil tinggi seperti ke-85 atau ke-95, dan tunjukkan sebarannya. Nyatakan ukuran sampel bila kecil, dan tunjukkan seberapa tak pasti sampel kecil (lihat topik 1.6, Literasi statistik untuk metrik layanan, dan topik 2.2, Lead time, cycle time, dan efisiensi alur).
 
