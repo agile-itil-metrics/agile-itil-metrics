@@ -1,0 +1,15 @@
+{
+  "name": "Nederlands (Nederland)",
+  "dirs": {
+    "topics": "onderwerpen",
+    "contents": "inhoud"
+  },
+  "strings": {
+    "title": "Agile ITIL-metrieken",
+    "tagline": "Meet agile it-diensten zonder het werk te vertekenen.",
+    "intro": "Een praktisch handboek over het goed meten van agile it-servicemanagement: 12 delen en 88 onderwerpen. Bij elke metriek staat hoe die kan worden gemanipuleerd en welke vangrail dat opvangt. Metrieken beschrijven teams, diensten en systemen en worden nooit gebruikt om mensen te rangschikken.",
+    "contents": "Inhoud",
+    "read": "Lees op het web",
+    "part_fmt": "Deel {n}"
+  }
+}

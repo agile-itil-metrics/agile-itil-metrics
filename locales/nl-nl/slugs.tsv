@@ -1,0 +1,88 @@
+1.0	inleiding-op-deel-1-grondslagen-van-meten	Inleiding op deel 1: Grondslagen van meten
+1.1	waarom-agile-itil-meten	Waarom agile ITIL meten
+1.2	de-wet-van-goodhart-en-de-psychologie-van-metrieken	De wet van Goodhart en de psychologie van metrieken
+1.3	uitkomsten-boven-output-kiezen-wat-je-meet	Uitkomsten boven output: kiezen wat je meet
+1.4	governance-en-eigenaarschap-van-metrieken	Governance en eigenaarschap van metrieken
+1.5	gegevensbronnen-en-instrumentatie	Gegevensbronnen en instrumentatie
+1.6	statistische-geletterdheid-voor-dienstmetrieken	Statistische geletterdheid voor dienstmetrieken
+1.7	meetkaders	Meetkaders
+2.0	inleiding-op-deel-2-metrieken-voor-stroom-en-continue-oplevering	Inleiding op deel 2: Metrieken voor stroom en continue oplevering
+2.1	stroommaten	Stroommaten
+2.2	doorlooptijd-cyclustijd-en-stroomefficiëntie	Doorlooptijd, cyclustijd en stroomefficiëntie
+2.3	werk-in-uitvoering-en-wachtrijtheorie	Werk in uitvoering en wachtrijtheorie
+2.4	waardestroommetrieken	Waardestroommetrieken
+2.5	metrieken-voor-opleverprognoses-en-planning	Metrieken voor opleverprognoses en planning
+2.6	metrieken-voor-backlog-en-refinement	Metrieken voor backlog en refinement
+2.7	metrieken-voor-pull-requests-en-codereview	Metrieken voor pull requests en codereview
+2.8	dora-metrieken	DORA-metrieken
+2.9	operationeel-en-ongepland-werk	Operationeel en ongepland werk
+3.0	inleiding-op-deel-3-metrieken-voor-servicedesk-incidenten-en-verzoeken	Inleiding op deel 3: Metrieken voor servicedesk, incidenten en verzoeken
+3.1	servicedeskmetrieken	Servicedeskmetrieken
+3.2	incidentvolume-en-prioriteit	Incidentvolume en prioriteit
+3.3	reactie-en-oplostijd-van-incidenten	Reactie- en oplostijd van incidenten
+3.4	metrieken-voor-grote-incidenten	Metrieken voor grote incidenten
+3.5	metrieken-voor-de-afhandeling-van-serviceverzoeken	Metrieken voor de afhandeling van serviceverzoeken
+3.6	metrieken-voor-kennismanagement	Metrieken voor kennismanagement
+3.7	metrieken-voor-selfservice-en-automatisering	Metrieken voor selfservice en automatisering
+4.0	inleiding-op-deel-4-metrieken-voor-problemen-wijzigingen-en-releases	Inleiding op deel 4: Metrieken voor problemen, wijzigingen en releases
+4.1	metrieken-voor-probleembeheer	Metrieken voor probleembeheer
+4.2	metrieken-voor-postmortems-en-leren	Metrieken voor postmortems en leren
+4.3	metrieken-voor-wijzigingsfaciliteren	Metrieken voor wijzigingsfaciliteren
+4.4	mislukte-wijzigingen-en-herwerk	Mislukte wijzigingen en herwerk
+4.5	metrieken-voor-releases-en-uitrol	Metrieken voor releases en uitrol
+4.6	technische-schuld-en-bekende-fouten	Technische schuld en bekende fouten
+5.0	inleiding-op-deel-5-metrieken-voor-serviceniveau-beschikbaarheid-en-betrouwbaarheid	Inleiding op deel 5: Metrieken voor serviceniveau, beschikbaarheid en betrouwbaarheid
+5.1	sla-ola-en-xla-metrieken	SLA-, OLA- en XLA-metrieken
+5.2	sli-s-slo-s-en-foutbudgetten	SLI's, SLO's en foutbudgetten
+5.3	beschikbaarheidsmetrieken	Beschikbaarheidsmetrieken
+5.4	metrieken-voor-capaciteit-en-prestaties	Metrieken voor capaciteit en prestaties
+5.5	metrieken-voor-monitoring-en-alarmkwaliteit	Metrieken voor monitoring en alarmkwaliteit
+5.6	metrieken-voor-servicecontinuïteit	Metrieken voor servicecontinuïteit
+5.7	metrieken-voor-toil-en-bereikbaarheidsdienst	Metrieken voor toil en bereikbaarheidsdienst
+6.0	inleiding-op-deel-6-metrieken-voor-klanten-en-ervaring	Inleiding op deel 6: Metrieken voor klanten en ervaring
+6.1	metrieken-voor-klanttevredenheid	Metrieken voor klanttevredenheid
+6.2	ervaringsniveauovereenkomsten	Ervaringsniveauovereenkomsten
+6.3	metrieken-voor-dienstadoptie-en-catalogus	Metrieken voor dienstadoptie en catalogus
+6.4	gebruikers-en-medewerkerservaring	Gebruikers- en medewerkerservaring
+6.5	waardegerealiseerd-en-bedrijfsresultaten	Waardegerealiseerd en bedrijfsresultaten
+7.0	inleiding-op-deel-7-metrieken-voor-assets-configuratie-en-financiën	Inleiding op deel 7: Metrieken voor assets, configuratie en financiën
+7.1	metrieken-voor-it-assetmanagement	Metrieken voor it-assetmanagement
+7.2	metrieken-voor-softwareassets-en-licenties	Metrieken voor softwareassets en licenties
+7.3	metrieken-voor-de-levenscyclus-van-hardware-assets	Metrieken voor de levenscyclus van hardware-assets
+7.4	metrieken-voor-configuratie-en-cmdb-kwaliteit	Metrieken voor configuratie- en CMDB-kwaliteit
+7.5	dienstkosten-en-unit-economics	Dienstkosten en unit economics
+7.6	metrieken-voor-finops-en-cloudkosten	Metrieken voor FinOps en cloudkosten
+7.7	rendement-op-investering-en-businesscase	Rendement op investering en businesscase
+8.0	inleiding-op-deel-8-metrieken-voor-beveiliging-risico-compliance-en-leveranciers	Inleiding op deel 8: Metrieken voor beveiliging, risico, compliance en leveranciers
+8.1	metrieken-voor-beveiligingsincidenten-en-kwetsbaarheden	Metrieken voor beveiligingsincidenten en kwetsbaarheden
+8.2	metrieken-voor-risico-s-en-beheersmaatregelen	Metrieken voor risico's en beheersmaatregelen
+8.3	metrieken-voor-compliance-en-audit	Metrieken voor compliance en audit
+8.4	metrieken-voor-leveranciers-en-contracten	Metrieken voor leveranciers en contracten
+8.5	gereguleerde-en-overheidsrapportage	Gereguleerde en overheidsrapportage
+9.0	inleiding-op-deel-9-metrieken-voor-mensen-teams-en-verbetering	Inleiding op deel 9: Metrieken voor mensen, teams en verbetering
+9.1	teamgezondheid-en-ontwikkelaarservaring	Teamgezondheid en ontwikkelaarservaring
+9.2	metrieken-voor-tevredenheid-en-welzijn	Metrieken voor tevredenheid en welzijn
+9.3	metrieken-voor-samenwerking-en-overdracht	Metrieken voor samenwerking en overdracht
+9.4	metrieken-voor-vaardigheden-en-leren	Metrieken voor vaardigheden en leren
+9.5	metrieken-voor-continue-verbetering	Metrieken voor continue verbetering
+9.6	metrieken-voor-organisatieverandering-en-adoptie	Metrieken voor organisatieverandering en adoptie
+10.0	inleiding-op-deel-10-metrieken-in-het-tijdperk-van-ai	Inleiding op deel 10: Metrieken in het tijdperk van AI
+10.1	ai-in-het-meten-van-servicemanagement	AI in het meten van servicemanagement
+10.2	door-ai-ondersteund-werk-meten	Door AI ondersteund werk meten
+10.3	metrieken-voor-ai-agents-en-chatbots	Metrieken voor AI-agents en chatbots
+10.4	metriekinflatie-en-kwaliteitsverwatering	Metriekinflatie en kwaliteitsverwatering
+10.5	metrieken-voor-ai-governance-en-risico	Metrieken voor AI-governance en -risico
+11.0	inleiding-op-deel-11-een-metriekenprogramma-opbouwen	Inleiding op deel 11: Een metriekenprogramma opbouwen
+11.1	een-dashboard-voor-dienstmetrieken-ontwerpen	Een dashboard voor dienstmetrieken ontwerpen
+11.2	het-gereedschapslandschap	Het gereedschapslandschap
+11.3	metrieken-invoeren-zonder-angst-te-kweken	Metrieken invoeren zonder angst te kweken
+11.4	volwassenheidsmodel-voor-metriekenprogramma-s	Volwassenheidsmodel voor metriekenprogramma's
+11.5	een-stapsgewijze-invoeringsroutekaart	Een stapsgewijze invoeringsroutekaart
+12.0	bijlagen	Bijlagen
+12.1	woordenlijst	Woordenlijst
+12.2	naslag-van-metriekdefinities-en-formules	Naslag van metriekdefinities en formules
+12.3	checklists	Checklists
+12.4	sjablonen	Sjablonen
+12.5	zelfbeoordeling-van-volwassenheid	Zelfbeoordeling van volwassenheid
+12.6	referenties-en-verder-lezen	Referenties en verder lezen
+12.7	index	Index
