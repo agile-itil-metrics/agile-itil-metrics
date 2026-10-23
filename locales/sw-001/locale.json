@@ -1,0 +1,15 @@
+{
+  "name": "Kiswahili (dunia)",
+  "dirs": {
+    "topics": "mada",
+    "contents": "yaliyomo"
+  },
+  "strings": {
+    "title": "Vipimo vya ITIL Chapuchapu",
+    "tagline": "Pima huduma za TEHAMA chapuchapu bila kupotosha kazi.",
+    "intro": "Mwongozo wa vitendo wa kupima vizuri usimamizi wa huduma za TEHAMA chapuchapu: sehemu 12 na mada 88. Kila kipimo kinataja jinsi kinavyoweza kupotoshwa na kizuizi kinachokikamata. Vipimo vinaelezea timu, huduma na mifumo, na havitumiki kamwe kupanga watu kwa vyeo.",
+    "contents": "Yaliyomo",
+    "read": "Soma mtandaoni",
+    "part_fmt": "Sehemu ya {n}"
+  }
+}
