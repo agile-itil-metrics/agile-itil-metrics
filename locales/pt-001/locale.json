@@ -1,0 +1,15 @@
+{
+  "name": "Português (mundo)",
+  "dirs": {
+    "topics": "tópicos",
+    "contents": "conteúdo"
+  },
+  "strings": {
+    "title": "Métricas de ITIL ágil",
+    "tagline": "Meça serviços de TI ágeis sem distorcer o trabalho.",
+    "intro": "Um manual prático para medir bem a gestão ágil de serviços de TI: 12 partes e 88 tópicos. Cada métrica indica seu vetor de manipulação e a barreira de proteção que o detecta. As métricas descrevem equipes, serviços e sistemas, e nunca servem para classificar pessoas.",
+    "contents": "Conteúdo",
+    "read": "Ler na web",
+    "part_fmt": "Parte {n}"
+  }
+}

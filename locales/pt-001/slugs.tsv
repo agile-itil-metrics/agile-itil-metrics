@@ -1,0 +1,88 @@
+1.0	introdução-à-parte-1-fundamentos-da-medição	Introdução à Parte 1: Fundamentos da medição
+1.1	por-que-medir-o-itil-ágil	Por que medir o ITIL ágil
+1.2	a-lei-de-goodhart-e-a-psicologia-das-métricas	A lei de Goodhart e a psicologia das métricas
+1.3	resultados-acima-da-produção-escolher-o-que-medir	Resultados acima da produção: escolher o que medir
+1.4	governança-e-responsabilidade-das-métricas	Governança e responsabilidade das métricas
+1.5	fontes-de-dados-e-instrumentação	Fontes de dados e instrumentação
+1.6	letramento-estatístico-para-métricas-de-serviço	Letramento estatístico para métricas de serviço
+1.7	estruturas-de-medição	Estruturas de medição
+2.0	introdução-à-parte-2-métricas-de-fluxo-e-entrega-contínua	Introdução à Parte 2: Métricas de fluxo e entrega contínua
+2.1	medidas-de-fluxo	Medidas de fluxo
+2.2	lead-time-tempo-de-ciclo-e-eficiência-de-fluxo	Lead time, tempo de ciclo e eficiência de fluxo
+2.3	trabalho-em-andamento-e-teoria-das-filas	Trabalho em andamento e teoria das filas
+2.4	métricas-de-fluxo-de-valor	Métricas de fluxo de valor
+2.5	métricas-de-previsão-e-planejamento-de-entregas	Métricas de previsão e planejamento de entregas
+2.6	métricas-de-backlog-e-refinamento	Métricas de backlog e refinamento
+2.7	métricas-de-pull-requests-e-revisão-de-código	Métricas de pull requests e revisão de código
+2.8	métricas-dora	Métricas DORA
+2.9	trabalho-operacional-e-trabalho-não-planejado	Trabalho operacional e trabalho não planejado
+3.0	introdução-à-parte-3-métricas-de-central-de-serviços-incidentes-e-requisições	Introdução à Parte 3: Métricas de central de serviços, incidentes e requisições
+3.1	métricas-da-central-de-serviços	Métricas da central de serviços
+3.2	volume-e-prioridade-de-incidentes	Volume e prioridade de incidentes
+3.3	tempo-de-resposta-e-de-resolução-de-incidentes	Tempo de resposta e de resolução de incidentes
+3.4	métricas-de-incidentes-graves	Métricas de incidentes graves
+3.5	métricas-de-atendimento-de-requisições-de-serviço	Métricas de atendimento de requisições de serviço
+3.6	métricas-de-gestão-do-conhecimento	Métricas de gestão do conhecimento
+3.7	métricas-de-autoatendimento-e-automação	Métricas de autoatendimento e automação
+4.0	introdução-à-parte-4-métricas-de-problemas-mudanças-e-releases	Introdução à Parte 4: Métricas de problemas, mudanças e releases
+4.1	métricas-de-gestão-de-problemas	Métricas de gestão de problemas
+4.2	métricas-de-análises-pós-incidente-e-aprendizado	Métricas de análises pós-incidente e aprendizado
+4.3	métricas-de-habilitação-de-mudanças	Métricas de habilitação de mudanças
+4.4	falhas-de-mudança-e-retrabalho	Falhas de mudança e retrabalho
+4.5	métricas-de-releases-e-implantação	Métricas de releases e implantação
+4.6	dívida-técnica-e-erros-conhecidos	Dívida técnica e erros conhecidos
+5.0	introdução-à-parte-5-métricas-de-nível-de-serviço-disponibilidade-e-confiabilidade	Introdução à Parte 5: Métricas de nível de serviço, disponibilidade e confiabilidade
+5.1	métricas-de-sla-ola-e-xla	Métricas de SLA, OLA e XLA
+5.2	slis-slos-e-orçamentos-de-erro	SLIs, SLOs e orçamentos de erro
+5.3	métricas-de-disponibilidade	Métricas de disponibilidade
+5.4	métricas-de-capacidade-e-desempenho	Métricas de capacidade e desempenho
+5.5	métricas-de-monitoramento-e-qualidade-de-alertas	Métricas de monitoramento e qualidade de alertas
+5.6	métricas-de-continuidade-de-serviço	Métricas de continuidade de serviço
+5.7	métricas-de-trabalho-repetitivo-e-plantão	Métricas de trabalho repetitivo e plantão
+6.0	introdução-à-parte-6-métricas-de-cliente-e-experiência	Introdução à Parte 6: Métricas de cliente e experiência
+6.1	métricas-de-satisfação-do-cliente	Métricas de satisfação do cliente
+6.2	acordos-de-nível-de-experiência	Acordos de nível de experiência
+6.3	métricas-de-adoção-de-serviços-e-catálogo	Métricas de adoção de serviços e catálogo
+6.4	experiência-de-usuários-e-colaboradores	Experiência de usuários e colaboradores
+6.5	realização-de-valor-e-resultados-de-negócio	Realização de valor e resultados de negócio
+7.0	introdução-à-parte-7-métricas-de-ativos-configuração-e-finanças	Introdução à Parte 7: Métricas de ativos, configuração e finanças
+7.1	métricas-de-gestão-de-ativos-de-ti	Métricas de gestão de ativos de TI
+7.2	métricas-de-ativos-de-software-e-licenças	Métricas de ativos de software e licenças
+7.3	métricas-do-ciclo-de-vida-de-ativos-de-hardware	Métricas do ciclo de vida de ativos de hardware
+7.4	métricas-de-qualidade-de-configuração-e-cmdb	Métricas de qualidade de configuração e CMDB
+7.5	custo-de-serviço-e-economia-unitária	Custo de serviço e economia unitária
+7.6	métricas-de-finops-e-custos-de-nuvem	Métricas de FinOps e custos de nuvem
+7.7	retorno-do-investimento-e-business-case	Retorno do investimento e business case
+8.0	introdução-à-parte-8-métricas-de-segurança-risco-conformidade-e-fornecedores	Introdução à Parte 8: Métricas de segurança, risco, conformidade e fornecedores
+8.1	métricas-de-incidentes-de-segurança-e-vulnerabilidades	Métricas de incidentes de segurança e vulnerabilidades
+8.2	métricas-de-riscos-e-controles	Métricas de riscos e controles
+8.3	métricas-de-conformidade-e-auditoria	Métricas de conformidade e auditoria
+8.4	métricas-de-fornecedores-e-contratos	Métricas de fornecedores e contratos
+8.5	relatórios-regulatórios-e-governamentais	Relatórios regulatórios e governamentais
+9.0	introdução-à-parte-9-métricas-de-pessoas-equipes-e-melhoria	Introdução à Parte 9: Métricas de pessoas, equipes e melhoria
+9.1	saúde-da-equipe-e-experiência-do-desenvolvedor	Saúde da equipe e experiência do desenvolvedor
+9.2	métricas-de-satisfação-e-bem-estar	Métricas de satisfação e bem-estar
+9.3	métricas-de-colaboração-e-transferências-de-trabalho	Métricas de colaboração e transferências de trabalho
+9.4	métricas-de-habilidades-e-aprendizado	Métricas de habilidades e aprendizado
+9.5	métricas-de-melhoria-contínua	Métricas de melhoria contínua
+9.6	métricas-de-mudança-organizacional-e-adoção	Métricas de mudança organizacional e adoção
+10.0	introdução-à-parte-10-métricas-na-era-da-ia	Introdução à Parte 10: Métricas na era da IA
+10.1	a-ia-na-medição-da-gestão-de-serviços	A IA na medição da gestão de serviços
+10.2	medir-o-trabalho-assistido-por-ia	Medir o trabalho assistido por IA
+10.3	métricas-de-agentes-de-ia-e-chatbots	Métricas de agentes de IA e chatbots
+10.4	inflação-de-métricas-e-diluição-da-qualidade	Inflação de métricas e diluição da qualidade
+10.5	métricas-de-governança-e-risco-de-ia	Métricas de governança e risco de IA
+11.0	introdução-à-parte-11-construir-um-programa-de-métricas	Introdução à Parte 11: Construir um programa de métricas
+11.1	projetar-um-painel-de-métricas-de-serviço	Projetar um painel de métricas de serviço
+11.2	panorama-de-ferramentas	Panorama de ferramentas
+11.3	implantar-métricas-sem-criar-medo	Implantar métricas sem criar medo
+11.4	modelo-de-maturidade-para-programas-de-métricas	Modelo de maturidade para programas de métricas
+11.5	um-roteiro-de-adoção-incremental	Um roteiro de adoção incremental
+12.0	apêndices	Apêndices
+12.1	glossário	Glossário
+12.2	referência-de-definições-e-fórmulas-de-métricas	Referência de definições e fórmulas de métricas
+12.3	listas-de-verificação	Listas de verificação
+12.4	modelos	Modelos
+12.5	autoavaliação-de-maturidade	Autoavaliação de maturidade
+12.6	referências-e-leituras-complementares	Referências e leituras complementares
+12.7	índice	Índice
