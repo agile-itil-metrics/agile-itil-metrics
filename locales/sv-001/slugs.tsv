@@ -1,0 +1,88 @@
+1.0	introduktion-till-del-1-grunderna-i-mätning	Introduktion till del 1: Grunderna i mätning
+1.1	varför-mäta-agil-itil	Varför mäta agil ITIL
+1.2	goodharts-lag-och-mätetalens-psykologi	Goodharts lag och mätetalens psykologi
+1.3	resultat-före-leverans-att-välja-vad-som-ska-mätas	Resultat före leverans: att välja vad som ska mätas
+1.4	styrning-och-ägarskap-av-mätetal	Styrning och ägarskap av mätetal
+1.5	datakällor-och-instrumentering	Datakällor och instrumentering
+1.6	statistisk-läskunnighet-för-tjänstemätetal	Statistisk läskunnighet för tjänstemätetal
+1.7	ramverk-för-mätning	Ramverk för mätning
+2.0	introduktion-till-del-2-mätetal-för-flöde-och-kontinuerlig-leverans	Introduktion till del 2: Mätetal för flöde och kontinuerlig leverans
+2.1	flödesmått	Flödesmått
+2.2	ledtid-cykeltid-och-flödeseffektivitet	Ledtid, cykeltid och flödeseffektivitet
+2.3	pågående-arbete-och-köteori	Pågående arbete och köteori
+2.4	mätetal-för-värdeström	Mätetal för värdeström
+2.5	mätetal-för-leveransprognoser-och-planering	Mätetal för leveransprognoser och planering
+2.6	mätetal-för-backlog-och-förfining	Mätetal för backlog och förfining
+2.7	mätetal-för-pull-requests-och-kodgranskning	Mätetal för pull requests och kodgranskning
+2.8	dora-mätetal	DORA-mätetal
+2.9	driftarbete-och-oplanerat-arbete	Driftarbete och oplanerat arbete
+3.0	introduktion-till-del-3-mätetal-för-servicedesk-incidenter-och-förfrågningar	Introduktion till del 3: Mätetal för servicedesk, incidenter och förfrågningar
+3.1	mätetal-för-servicedesk	Mätetal för servicedesk
+3.2	incidentvolym-och-prioritet	Incidentvolym och prioritet
+3.3	svarstid-och-lösningstid-för-incidenter	Svarstid och lösningstid för incidenter
+3.4	mätetal-för-större-incidenter	Mätetal för större incidenter
+3.5	mätetal-för-uppfyllande-av-serviceförfrågningar	Mätetal för uppfyllande av serviceförfrågningar
+3.6	mätetal-för-kunskapshantering	Mätetal för kunskapshantering
+3.7	mätetal-för-självbetjäning-och-automatisering	Mätetal för självbetjäning och automatisering
+4.0	introduktion-till-del-4-mätetal-för-problem-ändringar-och-releaser	Introduktion till del 4: Mätetal för problem, ändringar och releaser
+4.1	mätetal-för-problemhantering	Mätetal för problemhantering
+4.2	mätetal-för-efteranalyser-och-lärande	Mätetal för efteranalyser och lärande
+4.3	mätetal-för-ändringsmöjliggörande	Mätetal för ändringsmöjliggörande
+4.4	misslyckade-ändringar-och-omarbete	Misslyckade ändringar och omarbete
+4.5	mätetal-för-releaser-och-driftsättning	Mätetal för releaser och driftsättning
+4.6	teknisk-skuld-och-kända-fel	Teknisk skuld och kända fel
+5.0	introduktion-till-del-5-mätetal-för-servicenivå-tillgänglighet-och-tillförlitlighet	Introduktion till del 5: Mätetal för servicenivå, tillgänglighet och tillförlitlighet
+5.1	mätetal-för-sla-ola-och-xla	Mätetal för SLA, OLA och XLA
+5.2	sli-er-slo-er-och-felbudgetar	SLI:er, SLO:er och felbudgetar
+5.3	mätetal-för-tillgänglighet	Mätetal för tillgänglighet
+5.4	mätetal-för-kapacitet-och-prestanda	Mätetal för kapacitet och prestanda
+5.5	mätetal-för-övervakning-och-larmkvalitet	Mätetal för övervakning och larmkvalitet
+5.6	mätetal-för-tjänstekontinuitet	Mätetal för tjänstekontinuitet
+5.7	mätetal-för-rutinarbete-och-jour	Mätetal för rutinarbete och jour
+6.0	introduktion-till-del-6-mätetal-för-kunder-och-upplevelse	Introduktion till del 6: Mätetal för kunder och upplevelse
+6.1	mätetal-för-kundnöjdhet	Mätetal för kundnöjdhet
+6.2	överenskommelser-om-upplevelsenivå	Överenskommelser om upplevelsenivå
+6.3	mätetal-för-tjänsteanvändning-och-katalog	Mätetal för tjänsteanvändning och katalog
+6.4	användar-och-medarbetarupplevelse	Användar- och medarbetarupplevelse
+6.5	värdeförverkligande-och-affärsresultat	Värdeförverkligande och affärsresultat
+7.0	introduktion-till-del-7-mätetal-för-tillgångar-konfiguration-och-ekonomi	Introduktion till del 7: Mätetal för tillgångar, konfiguration och ekonomi
+7.1	mätetal-för-it-tillgångshantering	Mätetal för it-tillgångshantering
+7.2	mätetal-för-programvarutillgångar-och-licenser	Mätetal för programvarutillgångar och licenser
+7.3	mätetal-för-maskinvarutillgångars-livscykel	Mätetal för maskinvarutillgångars livscykel
+7.4	mätetal-för-konfigurations-och-cmdb-kvalitet	Mätetal för konfigurations- och CMDB-kvalitet
+7.5	tjänstekostnad-och-enhetsekonomi	Tjänstekostnad och enhetsekonomi
+7.6	mätetal-för-finops-och-molnkostnader	Mätetal för FinOps och molnkostnader
+7.7	avkastning-på-investering-och-affärscase	Avkastning på investering och affärscase
+8.0	introduktion-till-del-8-mätetal-för-säkerhet-risk-regelefterlevnad-och-leverantörer	Introduktion till del 8: Mätetal för säkerhet, risk, regelefterlevnad och leverantörer
+8.1	mätetal-för-säkerhetsincidenter-och-sårbarheter	Mätetal för säkerhetsincidenter och sårbarheter
+8.2	mätetal-för-risker-och-kontroller	Mätetal för risker och kontroller
+8.3	mätetal-för-regelefterlevnad-och-revision	Mätetal för regelefterlevnad och revision
+8.4	mätetal-för-leverantörer-och-avtal	Mätetal för leverantörer och avtal
+8.5	reglerad-och-statlig-rapportering	Reglerad och statlig rapportering
+9.0	introduktion-till-del-9-mätetal-för-människor-team-och-förbättring	Introduktion till del 9: Mätetal för människor, team och förbättring
+9.1	teamhälsa-och-utvecklarupplevelse	Teamhälsa och utvecklarupplevelse
+9.2	mätetal-för-nöjdhet-och-välbefinnande	Mätetal för nöjdhet och välbefinnande
+9.3	mätetal-för-samarbete-och-överlämningar	Mätetal för samarbete och överlämningar
+9.4	mätetal-för-kompetens-och-lärande	Mätetal för kompetens och lärande
+9.5	mätetal-för-ständig-förbättring	Mätetal för ständig förbättring
+9.6	mätetal-för-organisationsförändring-och-införande	Mätetal för organisationsförändring och införande
+10.0	introduktion-till-del-10-mätetal-i-ai-eran	Introduktion till del 10: Mätetal i AI-eran
+10.1	ai-i-mätning-av-tjänstehantering	AI i mätning av tjänstehantering
+10.2	att-mäta-ai-stött-arbete	Att mäta AI-stött arbete
+10.3	mätetal-för-ai-agenter-och-chattbottar	Mätetal för AI-agenter och chattbottar
+10.4	mätetalsinflation-och-kvalitetsurvattning	Mätetalsinflation och kvalitetsurvattning
+10.5	mätetal-för-ai-styrning-och-ai-risk	Mätetal för AI-styrning och AI-risk
+11.0	introduktion-till-del-11-att-bygga-ett-mätetalsprogram	Introduktion till del 11: Att bygga ett mätetalsprogram
+11.1	att-utforma-en-instrumentpanel-för-tjänstemätetal	Att utforma en instrumentpanel för tjänstemätetal
+11.2	verktygslandskapet	Verktygslandskapet
+11.3	att-införa-mätetal-utan-att-skapa-rädsla	Att införa mätetal utan att skapa rädsla
+11.4	mognadsmodell-för-mätetalsprogram	Mognadsmodell för mätetalsprogram
+11.5	en-stegvis-införandeplan	En stegvis införandeplan
+12.0	bilagor	Bilagor
+12.1	ordlista	Ordlista
+12.2	referens-för-mätetalsdefinitioner-och-formler	Referens för mätetalsdefinitioner och formler
+12.3	checklistor	Checklistor
+12.4	mallar	Mallar
+12.5	självskattning-av-mognad	Självskattning av mognad
+12.6	referenser-och-vidare-läsning	Referenser och vidare läsning
+12.7	index	Index

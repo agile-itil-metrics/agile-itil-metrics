@@ -1,0 +1,15 @@
+{
+  "name": "Svenska (världen)",
+  "dirs": {
+    "topics": "ämnen",
+    "contents": "innehåll"
+  },
+  "strings": {
+    "title": "Agila ITIL-mätetal",
+    "tagline": "Mät agila it-tjänster utan att förvränga arbetet.",
+    "intro": "En praktisk handbok om hur man mäter agil it-tjänstehantering på ett bra sätt: 12 delar och 88 ämnen. Varje mätetal anger hur det kan manipuleras och vilket skyddsräcke som fångar upp det. Mätetal beskriver team, tjänster och system, och används aldrig för att rangordna människor.",
+    "contents": "Innehåll",
+    "read": "Läs på webben",
+    "part_fmt": "Del {n}"
+  }
+}
