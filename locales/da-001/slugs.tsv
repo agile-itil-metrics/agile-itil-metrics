@@ -1,0 +1,88 @@
+1.0	introduktion-til-del-1-grundlaget-for-måling	Introduktion til del 1: Grundlaget for måling
+1.1	hvorfor-måle-agil-itil	Hvorfor måle agil ITIL
+1.2	goodharts-lov-og-målingernes-psykologi	Goodharts lov og målingernes psykologi
+1.3	resultater-frem-for-output-at-vælge-hvad-der-skal-måles	Resultater frem for output: at vælge, hvad der skal måles
+1.4	styring-og-ejerskab-af-målinger	Styring og ejerskab af målinger
+1.5	datakilder-og-instrumentering	Datakilder og instrumentering
+1.6	statistisk-læsefærdighed-til-servicemålinger	Statistisk læsefærdighed til servicemålinger
+1.7	målerammer	Målerammer
+2.0	introduktion-til-del-2-målinger-for-flow-og-kontinuerlig-levering	Introduktion til del 2: Målinger for flow og kontinuerlig levering
+2.1	flowmål	Flowmål
+2.2	gennemløbstid-cyklustid-og-flow-effektivitet	Gennemløbstid, cyklustid og flow-effektivitet
+2.3	igangværende-arbejde-og-køteori	Igangværende arbejde og køteori
+2.4	målinger-for-værdistrømmen	Målinger for værdistrømmen
+2.5	målinger-for-leveranceprognoser-og-planlægning	Målinger for leveranceprognoser og planlægning
+2.6	målinger-for-backlog-og-forfinelse	Målinger for backlog og forfinelse
+2.7	målinger-for-pull-requests-og-kodegennemgang	Målinger for pull requests og kodegennemgang
+2.8	dora-målinger	DORA-målinger
+2.9	driftsarbejde-og-uplanlagt-arbejde	Driftsarbejde og uplanlagt arbejde
+3.0	introduktion-til-del-3-målinger-for-servicedesk-hændelser-og-anmodninger	Introduktion til del 3: Målinger for servicedesk, hændelser og anmodninger
+3.1	målinger-for-servicedesk	Målinger for servicedesk
+3.2	hændelsesvolumen-og-prioritet	Hændelsesvolumen og prioritet
+3.3	reaktions-og-løsningstid-for-hændelser	Reaktions- og løsningstid for hændelser
+3.4	målinger-for-større-hændelser	Målinger for større hændelser
+3.5	målinger-for-opfyldelse-af-serviceanmodninger	Målinger for opfyldelse af serviceanmodninger
+3.6	målinger-for-videnstyring	Målinger for videnstyring
+3.7	målinger-for-selvbetjening-og-automatisering	Målinger for selvbetjening og automatisering
+4.0	introduktion-til-del-4-målinger-for-problemer-ændringer-og-releases	Introduktion til del 4: Målinger for problemer, ændringer og releases
+4.1	målinger-for-problemstyring	Målinger for problemstyring
+4.2	målinger-for-eftertanker-og-læring	Målinger for eftertanker og læring
+4.3	målinger-for-ændringsunderstøttelse	Målinger for ændringsunderstøttelse
+4.4	fejlslagne-ændringer-og-omarbejde	Fejlslagne ændringer og omarbejde
+4.5	målinger-for-releases-og-udrulning	Målinger for releases og udrulning
+4.6	teknisk-gæld-og-kendte-fejl	Teknisk gæld og kendte fejl
+5.0	introduktion-til-del-5-målinger-for-serviceniveau-tilgængelighed-og-pålidelighed	Introduktion til del 5: Målinger for serviceniveau, tilgængelighed og pålidelighed
+5.1	målinger-for-sla-ola-og-xla	Målinger for SLA, OLA og XLA
+5.2	sli-er-slo-er-og-fejlbudgetter	SLI'er, SLO'er og fejlbudgetter
+5.3	målinger-for-tilgængelighed	Målinger for tilgængelighed
+5.4	målinger-for-kapacitet-og-ydeevne	Målinger for kapacitet og ydeevne
+5.5	målinger-for-overvågning-og-alarmkvalitet	Målinger for overvågning og alarmkvalitet
+5.6	målinger-for-servicekontinuitet	Målinger for servicekontinuitet
+5.7	målinger-for-rutinearbejde-og-vagt	Målinger for rutinearbejde og vagt
+6.0	introduktion-til-del-6-målinger-for-kunder-og-oplevelse	Introduktion til del 6: Målinger for kunder og oplevelse
+6.1	målinger-for-kundetilfredshed	Målinger for kundetilfredshed
+6.2	aftaler-om-oplevelsesniveau	Aftaler om oplevelsesniveau
+6.3	målinger-for-serviceanvendelse-og-katalog	Målinger for serviceanvendelse og katalog
+6.4	bruger-og-medarbejderoplevelse	Bruger- og medarbejderoplevelse
+6.5	værdirealisering-og-forretningsresultater	Værdirealisering og forretningsresultater
+7.0	introduktion-til-del-7-målinger-for-aktiver-konfiguration-og-økonomi	Introduktion til del 7: Målinger for aktiver, konfiguration og økonomi
+7.1	målinger-for-it-aktivstyring	Målinger for it-aktivstyring
+7.2	målinger-for-softwareaktiver-og-licenser	Målinger for softwareaktiver og licenser
+7.3	målinger-for-hardwareaktivers-livscyklus	Målinger for hardwareaktivers livscyklus
+7.4	målinger-for-konfigurations-og-cmdb-kvalitet	Målinger for konfigurations- og CMDB-kvalitet
+7.5	serviceomkostninger-og-enhedsøkonomi	Serviceomkostninger og enhedsøkonomi
+7.6	målinger-for-finops-og-skyomkostninger	Målinger for FinOps og skyomkostninger
+7.7	investeringsafkast-og-business-case	Investeringsafkast og business case
+8.0	introduktion-til-del-8-målinger-for-sikkerhed-risiko-compliance-og-leverandører	Introduktion til del 8: Målinger for sikkerhed, risiko, compliance og leverandører
+8.1	målinger-for-sikkerhedshændelser-og-sårbarheder	Målinger for sikkerhedshændelser og sårbarheder
+8.2	målinger-for-risici-og-kontroller	Målinger for risici og kontroller
+8.3	målinger-for-compliance-og-revision	Målinger for compliance og revision
+8.4	målinger-for-leverandører-og-kontrakter	Målinger for leverandører og kontrakter
+8.5	reguleret-og-offentlig-rapportering	Reguleret og offentlig rapportering
+9.0	introduktion-til-del-9-målinger-for-mennesker-teams-og-forbedring	Introduktion til del 9: Målinger for mennesker, teams og forbedring
+9.1	teamsundhed-og-udvikleroplevelse	Teamsundhed og udvikleroplevelse
+9.2	målinger-for-tilfredshed-og-trivsel	Målinger for tilfredshed og trivsel
+9.3	målinger-for-samarbejde-og-overdragelser	Målinger for samarbejde og overdragelser
+9.4	målinger-for-kompetencer-og-læring	Målinger for kompetencer og læring
+9.5	målinger-for-løbende-forbedring	Målinger for løbende forbedring
+9.6	målinger-for-organisatorisk-forandring-og-indførelse	Målinger for organisatorisk forandring og indførelse
+10.0	introduktion-til-del-10-målinger-i-ai-s-tidsalder	Introduktion til del 10: Målinger i AI's tidsalder
+10.1	ai-i-måling-af-servicestyring	AI i måling af servicestyring
+10.2	at-måle-ai-understøttet-arbejde	At måle AI-understøttet arbejde
+10.3	målinger-for-ai-agenter-og-chatbots	Målinger for AI-agenter og chatbots
+10.4	målingsinflation-og-kvalitetsudvanding	Målingsinflation og kvalitetsudvanding
+10.5	målinger-for-ai-styring-og-ai-risiko	Målinger for AI-styring og AI-risiko
+11.0	introduktion-til-del-11-at-opbygge-et-målingsprogram	Introduktion til del 11: At opbygge et målingsprogram
+11.1	at-designe-et-dashboard-for-servicemålinger	At designe et dashboard for servicemålinger
+11.2	værktøjslandskabet	Værktøjslandskabet
+11.3	at-indføre-målinger-uden-at-skabe-frygt	At indføre målinger uden at skabe frygt
+11.4	modenhedsmodel-for-målingsprogrammer	Modenhedsmodel for målingsprogrammer
+11.5	en-trinvis-køreplan-for-indførelse	En trinvis køreplan for indførelse
+12.0	bilag	Bilag
+12.1	ordliste	Ordliste
+12.2	opslagsværk-med-målingsdefinitioner-og-formler	Opslagsværk med målingsdefinitioner og formler
+12.3	tjeklister	Tjeklister
+12.4	skabeloner	Skabeloner
+12.5	selvvurdering-af-modenhed	Selvvurdering af modenhed
+12.6	referencer-og-yderligere-læsning	Referencer og yderligere læsning
+12.7	indeks	Indeks

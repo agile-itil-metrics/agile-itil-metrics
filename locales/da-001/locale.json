@@ -1,0 +1,15 @@
+{
+  "name": "Dansk (verden)",
+  "dirs": {
+    "topics": "emner",
+    "contents": "indhold"
+  },
+  "strings": {
+    "title": "Agile ITIL-målinger",
+    "tagline": "Mål agile it-tjenester uden at forvride arbejdet.",
+    "intro": "En praktisk håndbog i at måle agil it-servicestyring godt: 12 dele og 88 emner. Hver måling angiver sin manipulationsvektor og det autoværn, der fanger den. Målinger beskriver teams, tjenester og systemer og bruges aldrig til at rangordne mennesker.",
+    "contents": "Indhold",
+    "read": "Læs på nettet",
+    "part_fmt": "Del {n}"
+  }
+}
