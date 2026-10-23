@@ -1,0 +1,15 @@
+{
+  "name": "Deutsch (Welt)",
+  "dirs": {
+    "topics": "themen",
+    "contents": "inhalt"
+  },
+  "strings": {
+    "title": "Agile ITIL-Kennzahlen",
+    "tagline": "Agile IT-Services messen, ohne die Arbeit zu verzerren.",
+    "intro": "Ein praktisches Handbuch zum guten Messen des agilen IT-Service-Managements: 12 Teile und 88 Themen. Jede Kennzahl nennt ihren Manipulationsvektor und die Leitplanke, die ihn auffängt. Kennzahlen beschreiben Teams, Services und Systeme und dienen nie dazu, Menschen in eine Rangfolge zu bringen.",
+    "contents": "Inhalt",
+    "read": "Im Web lesen",
+    "part_fmt": "Teil {n}"
+  }
+}
