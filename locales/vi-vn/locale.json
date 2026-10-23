@@ -1,0 +1,15 @@
+{
+  "name": "Tiếng Việt (Việt Nam)",
+  "dirs": {
+    "topics": "chủ-đề",
+    "contents": "mục-lục"
+  },
+  "strings": {
+    "title": "Chỉ số ITIL linh hoạt",
+    "tagline": "Đo lường dịch vụ CNTT linh hoạt mà không làm méo mó công việc.",
+    "intro": "Cẩm nang thực hành về cách đo lường tốt việc quản lý dịch vụ CNTT linh hoạt: 12 phần và 88 chủ đề. Mỗi chỉ số nêu rõ cách nó có thể bị lợi dụng và rào chắn nào phát hiện được điều đó. Chỉ số mô tả đội nhóm, dịch vụ và hệ thống, và không bao giờ dùng để xếp hạng con người.",
+    "contents": "Mục lục",
+    "read": "Đọc trên web",
+    "part_fmt": "Phần {n}"
+  }
+}

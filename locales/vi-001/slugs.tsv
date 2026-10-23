@@ -1,0 +1,88 @@
+1.0	giới-thiệu-phần-1-nền-tảng-của-đo-lường	Giới thiệu Phần 1: Nền tảng của đo lường
+1.1	vì-sao-đo-lường-itil-linh-hoạt	Vì sao đo lường ITIL linh hoạt
+1.2	định-luật-goodhart-và-tâm-lý-học-của-chỉ-số	Định luật Goodhart và tâm lý học của chỉ số
+1.3	kết-quả-hơn-sản-lượng-chọn-điều-cần-đo	Kết quả hơn sản lượng: chọn điều cần đo
+1.4	quản-trị-và-quyền-sở-hữu-chỉ-số	Quản trị và quyền sở hữu chỉ số
+1.5	nguồn-dữ-liệu-và-công-cụ-đo	Nguồn dữ liệu và công cụ đo
+1.6	hiểu-biết-thống-kê-cho-chỉ-số-dịch-vụ	Hiểu biết thống kê cho chỉ số dịch vụ
+1.7	các-khung-đo-lường	Các khung đo lường
+2.0	giới-thiệu-phần-2-chỉ-số-dòng-chảy-và-phân-phối-liên-tục	Giới thiệu Phần 2: Chỉ số dòng chảy và phân phối liên tục
+2.1	các-thước-đo-dòng-chảy	Các thước đo dòng chảy
+2.2	thời-gian-chờ-thời-gian-chu-trình-và-hiệu-suất-dòng-chảy	Thời gian chờ, thời gian chu trình và hiệu suất dòng chảy
+2.3	công-việc-đang-làm-dở-và-lý-thuyết-hàng-đợi	Công việc đang làm dở và lý thuyết hàng đợi
+2.4	chỉ-số-chuỗi-giá-trị	Chỉ số chuỗi giá trị
+2.5	chỉ-số-dự-báo-và-lập-kế-hoạch-phân-phối	Chỉ số dự báo và lập kế hoạch phân phối
+2.6	chỉ-số-tồn-đọng-và-tinh-chỉnh	Chỉ số tồn đọng và tinh chỉnh
+2.7	chỉ-số-yêu-cầu-hợp-nhất-và-rà-soát-mã	Chỉ số yêu cầu hợp nhất và rà soát mã
+2.8	chỉ-số-dora	Chỉ số DORA
+2.9	công-việc-vận-hành-và-công-việc-ngoài-kế-hoạch	Công việc vận hành và công việc ngoài kế hoạch
+3.0	giới-thiệu-phần-3-chỉ-số-bàn-dịch-vụ-sự-cố-và-yêu-cầu	Giới thiệu Phần 3: Chỉ số bàn dịch vụ, sự cố và yêu cầu
+3.1	chỉ-số-bàn-dịch-vụ	Chỉ số bàn dịch vụ
+3.2	số-lượng-và-mức-ưu-tiên-sự-cố	Số lượng và mức ưu tiên sự cố
+3.3	thời-gian-phản-hồi-và-giải-quyết-sự-cố	Thời gian phản hồi và giải quyết sự cố
+3.4	chỉ-số-sự-cố-lớn	Chỉ số sự cố lớn
+3.5	chỉ-số-thực-hiện-yêu-cầu-dịch-vụ	Chỉ số thực hiện yêu cầu dịch vụ
+3.6	chỉ-số-quản-lý-tri-thức	Chỉ số quản lý tri thức
+3.7	chỉ-số-tự-phục-vụ-và-tự-động-hóa	Chỉ số tự phục vụ và tự động hóa
+4.0	giới-thiệu-phần-4-chỉ-số-vấn-đề-thay-đổi-và-phát-hành	Giới thiệu Phần 4: Chỉ số vấn đề, thay đổi và phát hành
+4.1	chỉ-số-quản-lý-vấn-đề	Chỉ số quản lý vấn đề
+4.2	chỉ-số-phân-tích-sau-sự-cố-và-học-hỏi	Chỉ số phân tích sau sự cố và học hỏi
+4.3	chỉ-số-hỗ-trợ-thay-đổi	Chỉ số hỗ trợ thay đổi
+4.4	thay-đổi-thất-bại-và-làm-lại	Thay đổi thất bại và làm lại
+4.5	chỉ-số-phát-hành-và-triển-khai	Chỉ số phát hành và triển khai
+4.6	nợ-kỹ-thuật-và-lỗi-đã-biết	Nợ kỹ thuật và lỗi đã biết
+5.0	giới-thiệu-phần-5-chỉ-số-mức-dịch-vụ-tính-sẵn-sàng-và-độ-tin-cậy	Giới thiệu Phần 5: Chỉ số mức dịch vụ, tính sẵn sàng và độ tin cậy
+5.1	chỉ-số-sla-ola-và-xla	Chỉ số SLA, OLA và XLA
+5.2	sli-slo-và-ngân-sách-lỗi	SLI, SLO và ngân sách lỗi
+5.3	chỉ-số-tính-sẵn-sàng	Chỉ số tính sẵn sàng
+5.4	chỉ-số-năng-lực-và-hiệu-năng	Chỉ số năng lực và hiệu năng
+5.5	chỉ-số-giám-sát-và-chất-lượng-cảnh-báo	Chỉ số giám sát và chất lượng cảnh báo
+5.6	chỉ-số-liên-tục-dịch-vụ	Chỉ số liên tục dịch vụ
+5.7	chỉ-số-công-việc-lặp-đi-lặp-lại-và-trực-ca	Chỉ số công việc lặp đi lặp lại và trực ca
+6.0	giới-thiệu-phần-6-chỉ-số-khách-hàng-và-trải-nghiệm	Giới thiệu Phần 6: Chỉ số khách hàng và trải nghiệm
+6.1	chỉ-số-hài-lòng-của-khách-hàng	Chỉ số hài lòng của khách hàng
+6.2	thỏa-thuận-mức-trải-nghiệm	Thỏa thuận mức trải nghiệm
+6.3	chỉ-số-áp-dụng-dịch-vụ-và-danh-mục	Chỉ số áp dụng dịch vụ và danh mục
+6.4	trải-nghiệm-người-dùng-và-nhân-viên	Trải nghiệm người dùng và nhân viên
+6.5	hiện-thực-hóa-giá-trị-và-kết-quả-kinh-doanh	Hiện thực hóa giá trị và kết quả kinh doanh
+7.0	giới-thiệu-phần-7-chỉ-số-tài-sản-cấu-hình-và-tài-chính	Giới thiệu Phần 7: Chỉ số tài sản, cấu hình và tài chính
+7.1	chỉ-số-quản-lý-tài-sản-cntt	Chỉ số quản lý tài sản CNTT
+7.2	chỉ-số-tài-sản-phần-mềm-và-giấy-phép	Chỉ số tài sản phần mềm và giấy phép
+7.3	chỉ-số-vòng-đời-tài-sản-phần-cứng	Chỉ số vòng đời tài sản phần cứng
+7.4	chỉ-số-chất-lượng-cấu-hình-và-cmdb	Chỉ số chất lượng cấu hình và CMDB
+7.5	chi-phí-dịch-vụ-và-kinh-tế-đơn-vị	Chi phí dịch vụ và kinh tế đơn vị
+7.6	chỉ-số-finops-và-chi-phí-đám-mây	Chỉ số FinOps và chi phí đám mây
+7.7	lợi-tức-đầu-tư-và-hồ-sơ-kinh-doanh	Lợi tức đầu tư và hồ sơ kinh doanh
+8.0	giới-thiệu-phần-8-chỉ-số-bảo-mật-rủi-ro-tuân-thủ-và-nhà-cung-cấp	Giới thiệu Phần 8: Chỉ số bảo mật, rủi ro, tuân thủ và nhà cung cấp
+8.1	chỉ-số-sự-cố-bảo-mật-và-lỗ-hổng	Chỉ số sự cố bảo mật và lỗ hổng
+8.2	chỉ-số-rủi-ro-và-kiểm-soát	Chỉ số rủi ro và kiểm soát
+8.3	chỉ-số-tuân-thủ-và-kiểm-toán	Chỉ số tuân thủ và kiểm toán
+8.4	chỉ-số-nhà-cung-cấp-và-hợp-đồng	Chỉ số nhà cung cấp và hợp đồng
+8.5	báo-cáo-theo-quy-định-và-cho-cơ-quan-nhà-nước	Báo cáo theo quy định và cho cơ quan nhà nước
+9.0	giới-thiệu-phần-9-chỉ-số-con-người-đội-nhóm-và-cải-tiến	Giới thiệu Phần 9: Chỉ số con người, đội nhóm và cải tiến
+9.1	sức-khỏe-đội-nhóm-và-trải-nghiệm-nhà-phát-triển	Sức khỏe đội nhóm và trải nghiệm nhà phát triển
+9.2	chỉ-số-hài-lòng-và-sức-khỏe-tinh-thần	Chỉ số hài lòng và sức khỏe tinh thần
+9.3	chỉ-số-cộng-tác-và-bàn-giao	Chỉ số cộng tác và bàn giao
+9.4	chỉ-số-kỹ-năng-và-học-tập	Chỉ số kỹ năng và học tập
+9.5	chỉ-số-cải-tiến-liên-tục	Chỉ số cải tiến liên tục
+9.6	chỉ-số-thay-đổi-tổ-chức-và-mức-độ-áp-dụng	Chỉ số thay đổi tổ chức và mức độ áp dụng
+10.0	giới-thiệu-phần-10-chỉ-số-trong-kỷ-nguyên-ai	Giới thiệu Phần 10: Chỉ số trong kỷ nguyên AI
+10.1	ai-trong-đo-lường-quản-lý-dịch-vụ	AI trong đo lường quản lý dịch vụ
+10.2	đo-lường-công-việc-có-ai-hỗ-trợ	Đo lường công việc có AI hỗ trợ
+10.3	chỉ-số-tác-tử-ai-và-chatbot	Chỉ số tác tử AI và chatbot
+10.4	lạm-phát-chỉ-số-và-pha-loãng-chất-lượng	Lạm phát chỉ số và pha loãng chất lượng
+10.5	chỉ-số-quản-trị-và-rủi-ro-ai	Chỉ số quản trị và rủi ro AI
+11.0	giới-thiệu-phần-11-xây-dựng-chương-trình-chỉ-số	Giới thiệu Phần 11: Xây dựng chương trình chỉ số
+11.1	thiết-kế-bảng-điều-khiển-chỉ-số-dịch-vụ	Thiết kế bảng điều khiển chỉ số dịch vụ
+11.2	bức-tranh-công-cụ	Bức tranh công cụ
+11.3	triển-khai-chỉ-số-mà-không-gieo-sợ-hãi	Triển khai chỉ số mà không gieo sợ hãi
+11.4	mô-hình-trưởng-thành-cho-chương-trình-chỉ-số	Mô hình trưởng thành cho chương trình chỉ số
+11.5	lộ-trình-áp-dụng-từng-bước	Lộ trình áp dụng từng bước
+12.0	phụ-lục	Phụ lục
+12.1	bảng-thuật-ngữ	Bảng thuật ngữ
+12.2	tham-chiếu-định-nghĩa-và-công-thức-chỉ-số	Tham chiếu định nghĩa và công thức chỉ số
+12.3	danh-sách-kiểm-tra	Danh sách kiểm tra
+12.4	biểu-mẫu	Biểu mẫu
+12.5	tự-đánh-giá-mức-trưởng-thành	Tự đánh giá mức trưởng thành
+12.6	tài-liệu-tham-khảo-và-đọc-thêm	Tài liệu tham khảo và đọc thêm
+12.7	chỉ-mục	Chỉ mục
