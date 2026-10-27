@@ -48,7 +48,7 @@ PERSP = ["Product and delivery teams","Service and operations teams","Leadership
 BANNED = ["not only","but also","load-bearing","It's important to note","In today's fast-paced","It's crucial to consider",
           "It appears that","One could argue","revolutionary","game-changing","cutting-edge","seamless","best-in-class"]
 disk = os.path.join(root, "locales/en-001/topics")
-on_disk = sorted(os.listdir(disk)) if os.path.isdir(disk) else []
+on_disk = sorted(d for d in os.listdir(disk) if not d.startswith(".")) if os.path.isdir(disk) else []
 for s in set(on_disk) - set(slugs): err(f"topic directory not in manifest: {s}")
 ids = {}
 written = 0
