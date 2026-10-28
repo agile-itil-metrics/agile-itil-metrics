@@ -1,0 +1,88 @@
+1.0	pengantar-bagian-1-dasar-dasar-pengukuran	Pengantar Bagian 1: Dasar-Dasar Pengukuran
+1.1	mengapa-mengukur-itil-agile	Mengapa mengukur ITIL agile
+1.2	hukum-goodhart-dan-psikologi-metrik	Hukum Goodhart dan psikologi metrik
+1.3	hasil-di-atas-keluaran-memilih-apa-yang-diukur	Hasil di atas keluaran: memilih apa yang diukur
+1.4	tata-kelola-dan-kepemilikan-metrik	Tata kelola dan kepemilikan metrik
+1.5	sumber-data-dan-instrumentasi	Sumber data dan instrumentasi
+1.6	literasi-statistik-untuk-metrik-layanan	Literasi statistik untuk metrik layanan
+1.7	kerangka-pengukuran	Kerangka pengukuran
+2.0	pengantar-bagian-2-metrik-alur-dan-pengiriman-berkelanjutan	Pengantar Bagian 2: Metrik Alur dan Pengiriman Berkelanjutan
+2.1	ukuran-alur	Ukuran alur
+2.2	lead-time-cycle-time-dan-efisiensi-alur	Lead time, cycle time, dan efisiensi alur
+2.3	pekerjaan-dalam-proses-wip-dan-antrean	Pekerjaan dalam proses (WIP) dan antrean
+2.4	metrik-aliran-nilai	Metrik aliran nilai
+2.5	metrik-perkiraan-dan-perencanaan-pengiriman	Metrik perkiraan dan perencanaan pengiriman
+2.6	metrik-backlog-dan-penyempurnaan	Metrik backlog dan penyempurnaan
+2.7	metrik-pull-request-dan-tinjauan-kode	Metrik pull request dan tinjauan kode
+2.8	metrik-dora	Metrik DORA
+2.9	pekerjaan-operasional-dan-pekerjaan-tak-terencana	Pekerjaan operasional dan pekerjaan tak terencana
+3.0	pengantar-bagian-3-metrik-service-desk-insiden-dan-permintaan	Pengantar Bagian 3: Metrik Service Desk, Insiden, dan Permintaan
+3.1	metrik-service-desk	Metrik service desk
+3.2	volume-dan-prioritas-insiden	Volume dan prioritas insiden
+3.3	waktu-respons-dan-penyelesaian-insiden	Waktu respons dan penyelesaian insiden
+3.4	metrik-insiden-besar	Metrik insiden besar
+3.5	metrik-pemenuhan-permintaan-layanan	Metrik pemenuhan permintaan layanan
+3.6	metrik-manajemen-pengetahuan	Metrik manajemen pengetahuan
+3.7	metrik-swalayan-dan-otomatisasi	Metrik swalayan dan otomatisasi
+4.0	pengantar-bagian-4-metrik-masalah-perubahan-dan-rilis	Pengantar Bagian 4: Metrik Masalah, Perubahan, dan Rilis
+4.1	metrik-manajemen-masalah	Metrik manajemen masalah
+4.2	metrik-postmortem-dan-pembelajaran	Metrik postmortem dan pembelajaran
+4.3	metrik-pemberdayaan-perubahan	Metrik pemberdayaan perubahan
+4.4	kegagalan-perubahan-dan-pengerjaan-ulang	Kegagalan perubahan dan pengerjaan ulang
+4.5	metrik-rilis-dan-deployment	Metrik rilis dan deployment
+4.6	utang-teknis-dan-kesalahan-yang-diketahui	Utang teknis dan kesalahan yang diketahui
+5.0	pengantar-bagian-5-metrik-tingkat-layanan-ketersediaan-dan-keandalan	Pengantar Bagian 5: Metrik Tingkat Layanan, Ketersediaan, dan Keandalan
+5.1	metrik-sla-ola-dan-xla	Metrik SLA, OLA, dan XLA
+5.2	sli-slo-dan-anggaran-kesalahan	SLI, SLO, dan anggaran kesalahan
+5.3	metrik-ketersediaan	Metrik ketersediaan
+5.4	metrik-kapasitas-dan-kinerja	Metrik kapasitas dan kinerja
+5.5	metrik-kualitas-pemantauan-dan-peringatan	Metrik kualitas pemantauan dan peringatan
+5.6	metrik-kelangsungan-layanan	Metrik kelangsungan layanan
+5.7	metrik-pekerjaan-berulang-dan-siaga	Metrik pekerjaan berulang dan siaga
+6.0	pengantar-bagian-6-metrik-pelanggan-dan-pengalaman	Pengantar Bagian 6: Metrik Pelanggan dan Pengalaman
+6.1	metrik-kepuasan-pelanggan	Metrik kepuasan pelanggan
+6.2	perjanjian-tingkat-pengalaman	Perjanjian tingkat pengalaman
+6.3	metrik-adopsi-layanan-dan-katalog	Metrik adopsi layanan dan katalog
+6.4	pengalaman-pengguna-dan-karyawan	Pengalaman pengguna dan karyawan
+6.5	realisasi-nilai-dan-hasil-bisnis	Realisasi nilai dan hasil bisnis
+7.0	pengantar-bagian-7-metrik-aset-konfigurasi-dan-keuangan	Pengantar Bagian 7: Metrik Aset, Konfigurasi, dan Keuangan
+7.1	metrik-manajemen-aset-ti	Metrik manajemen aset TI
+7.2	metrik-aset-perangkat-lunak-dan-lisensi	Metrik aset perangkat lunak dan lisensi
+7.3	metrik-siklus-hidup-aset-perangkat-keras	Metrik siklus hidup aset perangkat keras
+7.4	metrik-kualitas-konfigurasi-dan-cmdb	Metrik kualitas konfigurasi dan CMDB
+7.5	biaya-layanan-dan-ekonomi-per-unit	Biaya layanan dan ekonomi per unit
+7.6	metrik-finops-dan-biaya-cloud	Metrik FinOps dan biaya cloud
+7.7	pengembalian-investasi-dan-kasus-bisnis	Pengembalian investasi dan kasus bisnis
+8.0	pengantar-bagian-8-metrik-keamanan-risiko-kepatuhan-dan-pemasok	Pengantar Bagian 8: Metrik Keamanan, Risiko, Kepatuhan, dan Pemasok
+8.1	metrik-insiden-keamanan-dan-kerentanan	Metrik insiden keamanan dan kerentanan
+8.2	metrik-risiko-dan-kendali	Metrik risiko dan kendali
+8.3	metrik-kepatuhan-dan-audit	Metrik kepatuhan dan audit
+8.4	metrik-pemasok-dan-kontrak	Metrik pemasok dan kontrak
+8.5	pelaporan-teregulasi-dan-pemerintah	Pelaporan teregulasi dan pemerintah
+9.0	pengantar-bagian-9-metrik-manusia-tim-dan-perbaikan	Pengantar Bagian 9: Metrik Manusia, Tim, dan Perbaikan
+9.1	kesehatan-tim-dan-pengalaman-pengembang	Kesehatan tim dan pengalaman pengembang
+9.2	metrik-kepuasan-dan-kesejahteraan	Metrik kepuasan dan kesejahteraan
+9.3	metrik-kolaborasi-dan-serah-terima	Metrik kolaborasi dan serah terima
+9.4	metrik-keterampilan-dan-pembelajaran	Metrik keterampilan dan pembelajaran
+9.5	metrik-perbaikan-berkelanjutan	Metrik perbaikan berkelanjutan
+9.6	metrik-perubahan-organisasi-dan-adopsi	Metrik perubahan organisasi dan adopsi
+10.0	pengantar-bagian-10-metrik-di-era-ai	Pengantar Bagian 10: Metrik di Era AI
+10.1	ai-dalam-pengukuran-manajemen-layanan	AI dalam pengukuran manajemen layanan
+10.2	mengukur-pekerjaan-berbantuan-ai	Mengukur pekerjaan berbantuan AI
+10.3	metrik-agen-ai-dan-chatbot	Metrik agen AI dan chatbot
+10.4	inflasi-metrik-dan-pengenceran-kualitas	Inflasi metrik dan pengenceran kualitas
+10.5	metrik-tata-kelola-dan-risiko-ai	Metrik tata kelola dan risiko AI
+11.0	pengantar-bagian-11-membangun-program-metrik	Pengantar Bagian 11: Membangun Program Metrik
+11.1	merancang-dasbor-metrik-layanan	Merancang dasbor metrik layanan
+11.2	lanskap-perangkat	Lanskap perangkat
+11.3	meluncurkan-metrik-tanpa-menumbuhkan-ketakutan	Meluncurkan metrik tanpa menumbuhkan ketakutan
+11.4	model-kematangan-untuk-program-metrik	Model kematangan untuk program metrik
+11.5	peta-jalan-adopsi-bertahap	Peta jalan adopsi bertahap
+12.0	lampiran	Lampiran
+12.1	glosarium	Glosarium
+12.2	rujukan-definisi-dan-rumus-metrik	Rujukan definisi dan rumus metrik
+12.3	daftar-periksa	Daftar periksa
+12.4	templat	Templat
+12.5	penilaian-mandiri-kematangan	Penilaian mandiri kematangan
+12.6	referensi-dan-bacaan-lanjutan	Referensi dan bacaan lanjutan
+12.7	indeks	Indeks

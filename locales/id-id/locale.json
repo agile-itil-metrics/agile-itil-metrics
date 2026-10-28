@@ -1,0 +1,15 @@
+{
+  "name": "Bahasa Indonesia (dunia)",
+  "dirs": {
+    "topics": "topik",
+    "contents": "konten"
+  },
+  "strings": {
+    "title": "Metrik ITIL Agile",
+    "tagline": "Ukur layanan TI agile tanpa memutarbalikkan pekerjaan.",
+    "intro": "Buku panduan praktis tentang cara mengukur manajemen layanan TI agile dengan baik: 12 bagian dan 88 topik. Setiap metrik menyebutkan bagaimana ia bisa dimanipulasi dan pagar pembatas yang menangkapnya. Metrik menggambarkan tim, layanan, dan sistem, dan tidak pernah dipakai untuk memeringkat orang.",
+    "contents": "Konten",
+    "read": "Baca di web",
+    "part_fmt": "Bagian {n}"
+  }
+}
