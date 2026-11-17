@@ -1,25 +1,36 @@
-# Contributing
+# Contributing to Agile ITIL Metrics
 
-Thank you for helping. You can contribute time, corrections, translations, or review.
+Thanks for helping improve this project.
 
-## Ways to help
+## Ways to contribute
 
-- **Report a mistake.** Open an issue naming the topic number and the sentence. A wrong source, a broken link, or a metric without a guardrail is especially useful.
-- **Verify a reference.** Most books, papers, and standards were cited from memory. Confirm one against the original and open an issue or pull request with the correction.
-- **Translate.** See `spec/locales.md` and `spec/locales-for-global-sharing-with-svelte/index.md`. A translation keeps the section order and each topic's `.locale-peer-id`.
-- **Suggest a metric or a gaming vector.** Say which topic it belongs in, how it can be gamed, and what guardrail catches it.
+- **Report a problem:** open an issue describing what is wrong, unclear, or missing.
+- **Fix or improve something:** open a pull request. Small fixes can go straight to a pull request; for larger changes, please open an issue first so we can agree on the approach.
 
-## Before you open a pull request
+## Layout
 
-1. Read `spec/index.md`, `AGENTS.md`, and `STYLE_GUIDE.md`.
-2. Run `bin/check --strict` and `bin/check-locales`. Both must pass.
-3. If you changed a topic, run `bin/localize`, `bin/build-appendix-metrics`, `bin/build-appendix-references`, `bin/build-appendix-index`, and `bin/build-readme`, and commit the results.
-4. If you used an AI tool for substantial content, say which tool and what it did in the pull request description (see [AI_STATEMENT.md](AI_STATEMENT.md)).
+- `locales/<locale>/topics/<slug>/index.md`: one topic in one locale. The source text is `en-001`.
+- `spec/`: the governing specification and manifest (`spec/topics.tsv`). Read `spec/index.md` before editing a topic.
+- `agile-itil-metrics.github.io/`: the SvelteKit reading site.
 
-## Rules that matter most
+## Checks
 
-Never invent sources or numbers. Every metric gets a gaming vector and a guardrail. Metrics describe teams, services, and systems, never individuals. Follow the agile stance in `spec/index.md`.
+See [INSTALL.md](INSTALL.md). In short:
 
-## Money
+```sh
+python3 -I bin/check --strict          # structure, template, and style rules
+python3 -I bin/check --strict --links  # also resolves every Wikipedia link
+python3 bin/check-locales              # every locale is complete
+bin/build-readme                       # regenerate the README table of contents
+bin/build-llms                         # regenerate llms.txt and llms.json
+```
 
-There is no donation button. If you want to support the work, the most useful contributions are corrections and verified sources.
+AI agents should also read [AGENTS.md](AGENTS.md).
+
+## Code of conduct
+
+Participation is governed by our [Code of Conduct](CODE_OF_CONDUCT.md).
+
+## License
+
+By contributing, you agree that your contribution is offered under the terms in [LICENSE.md](LICENSE.md).

@@ -2,7 +2,7 @@
 
 A practical handbook for measuring the work of teams that build and run IT services the agile way: flow, incidents, changes, service levels, customer experience, assets, cost, risk, people, and AI, with the gaming vector and guardrail for every metric.
 
-It is the metrics companion to the [Agile ITIL Guide](https://agile-itil.github.io), which holds the practices.
+It is the metrics companion to the [Agile ITIL Guide](https://agile-itil-guide.github.io), which holds the practices.
 
 ## Who this is for
 
