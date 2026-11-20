@@ -1,0 +1,88 @@
+1.0	einführung-in-teil-1-grundlagen-des-messens	Einführung in Teil 1: Grundlagen des Messens
+1.1	warum-agiles-itil-messen	Warum agiles ITIL messen
+1.2	goodharts-gesetz-und-die-psychologie-von-kennzahlen	Goodharts Gesetz und die Psychologie von Kennzahlen
+1.3	ergebnisse-vor-output-auswählen-was-gemessen-wird	Ergebnisse vor Output: Auswählen, was gemessen wird
+1.4	governance-und-verantwortung-für-kennzahlen	Governance und Verantwortung für Kennzahlen
+1.5	datenquellen-und-instrumentierung	Datenquellen und Instrumentierung
+1.6	statistische-kompetenz-für-servicekennzahlen	Statistische Kompetenz für Servicekennzahlen
+1.7	messrahmenwerke	Messrahmenwerke
+2.0	einführung-in-teil-2-kennzahlen-für-fluss-und-kontinuierliche-auslieferung	Einführung in Teil 2: Kennzahlen für Fluss und kontinuierliche Auslieferung
+2.1	flussmaße	Flussmaße
+2.2	durchlaufzeit-zykluszeit-und-flusseffizienz	Durchlaufzeit, Zykluszeit und Flusseffizienz
+2.3	laufende-arbeit-und-warteschlangentheorie	Laufende Arbeit und Warteschlangentheorie
+2.4	kennzahlen-für-den-wertstrom	Kennzahlen für den Wertstrom
+2.5	kennzahlen-für-lieferprognosen-und-planung	Kennzahlen für Lieferprognosen und Planung
+2.6	kennzahlen-für-backlog-und-refinement	Kennzahlen für Backlog und Refinement
+2.7	kennzahlen-für-pull-requests-und-code-reviews	Kennzahlen für Pull Requests und Code-Reviews
+2.8	dora-kennzahlen	DORA-Kennzahlen
+2.9	betriebsarbeit-und-ungeplante-arbeit	Betriebsarbeit und ungeplante Arbeit
+3.0	einführung-in-teil-3-kennzahlen-für-service-desk-incidents-und-anfragen	Einführung in Teil 3: Kennzahlen für Service Desk, Incidents und Anfragen
+3.1	kennzahlen-für-den-service-desk	Kennzahlen für den Service Desk
+3.2	incident-aufkommen-und-priorität	Incident-Aufkommen und Priorität
+3.3	reaktions-und-lösungszeit-bei-incidents	Reaktions- und Lösungszeit bei Incidents
+3.4	kennzahlen-für-major-incidents	Kennzahlen für Major Incidents
+3.5	kennzahlen-für-die-erfüllung-von-serviceanfragen	Kennzahlen für die Erfüllung von Serviceanfragen
+3.6	kennzahlen-für-wissensmanagement	Kennzahlen für Wissensmanagement
+3.7	kennzahlen-für-self-service-und-automatisierung	Kennzahlen für Self-Service und Automatisierung
+4.0	einführung-in-teil-4-kennzahlen-für-probleme-changes-und-releases	Einführung in Teil 4: Kennzahlen für Probleme, Changes und Releases
+4.1	kennzahlen-für-das-problemmanagement	Kennzahlen für das Problemmanagement
+4.2	kennzahlen-für-postmortems-und-lernen	Kennzahlen für Postmortems und Lernen
+4.3	kennzahlen-für-die-change-befähigung	Kennzahlen für die Change-Befähigung
+4.4	change-fehlschläge-und-nacharbeit	Change-Fehlschläge und Nacharbeit
+4.5	kennzahlen-für-releases-und-deployments	Kennzahlen für Releases und Deployments
+4.6	technische-schulden-und-bekannte-fehler	Technische Schulden und bekannte Fehler
+5.0	einführung-in-teil-5-kennzahlen-für-servicelevel-verfügbarkeit-und-zuverlässigkeit	Einführung in Teil 5: Kennzahlen für Servicelevel, Verfügbarkeit und Zuverlässigkeit
+5.1	kennzahlen-für-sla-ola-und-xla	Kennzahlen für SLA, OLA und XLA
+5.2	slis-slos-und-fehlerbudgets	SLIs, SLOs und Fehlerbudgets
+5.3	verfügbarkeitskennzahlen	Verfügbarkeitskennzahlen
+5.4	kennzahlen-für-kapazität-und-leistung	Kennzahlen für Kapazität und Leistung
+5.5	kennzahlen-für-monitoring-und-alarmqualität	Kennzahlen für Monitoring und Alarmqualität
+5.6	kennzahlen-für-die-servicekontinuität	Kennzahlen für die Servicekontinuität
+5.7	kennzahlen-für-toil-und-bereitschaftsdienst	Kennzahlen für Toil und Bereitschaftsdienst
+6.0	einführung-in-teil-6-kennzahlen-für-kunden-und-erlebnis	Einführung in Teil 6: Kennzahlen für Kunden und Erlebnis
+6.1	kennzahlen-für-kundenzufriedenheit	Kennzahlen für Kundenzufriedenheit
+6.2	experience-level-agreements	Experience Level Agreements
+6.3	kennzahlen-für-service-akzeptanz-und-katalog	Kennzahlen für Service-Akzeptanz und Katalog
+6.4	nutzer-und-mitarbeitererlebnis	Nutzer- und Mitarbeitererlebnis
+6.5	wertrealisierung-und-geschäftsergebnisse	Wertrealisierung und Geschäftsergebnisse
+7.0	einführung-in-teil-7-kennzahlen-für-assets-konfiguration-und-finanzen	Einführung in Teil 7: Kennzahlen für Assets, Konfiguration und Finanzen
+7.1	kennzahlen-für-das-it-asset-management	Kennzahlen für das IT-Asset-Management
+7.2	kennzahlen-für-software-assets-und-lizenzen	Kennzahlen für Software-Assets und Lizenzen
+7.3	kennzahlen-für-den-lebenszyklus-von-hardware-assets	Kennzahlen für den Lebenszyklus von Hardware-Assets
+7.4	kennzahlen-für-konfigurations-und-cmdb-qualität	Kennzahlen für Konfigurations- und CMDB-Qualität
+7.5	servicekosten-und-stückökonomie	Servicekosten und Stückökonomie
+7.6	kennzahlen-für-finops-und-cloud-kosten	Kennzahlen für FinOps und Cloud-Kosten
+7.7	kapitalrendite-und-business-case	Kapitalrendite und Business Case
+8.0	einführung-in-teil-8-kennzahlen-für-sicherheit-risiko-compliance-und-lieferanten	Einführung in Teil 8: Kennzahlen für Sicherheit, Risiko, Compliance und Lieferanten
+8.1	kennzahlen-für-sicherheitsvorfälle-und-schwachstellen	Kennzahlen für Sicherheitsvorfälle und Schwachstellen
+8.2	kennzahlen-für-risiken-und-kontrollen	Kennzahlen für Risiken und Kontrollen
+8.3	kennzahlen-für-compliance-und-audit	Kennzahlen für Compliance und Audit
+8.4	kennzahlen-für-lieferanten-und-verträge	Kennzahlen für Lieferanten und Verträge
+8.5	regulatorische-und-behördliche-berichterstattung	Regulatorische und behördliche Berichterstattung
+9.0	einführung-in-teil-9-kennzahlen-für-menschen-teams-und-verbesserung	Einführung in Teil 9: Kennzahlen für Menschen, Teams und Verbesserung
+9.1	teamgesundheit-und-entwicklererlebnis	Teamgesundheit und Entwicklererlebnis
+9.2	kennzahlen-für-zufriedenheit-und-wohlbefinden	Kennzahlen für Zufriedenheit und Wohlbefinden
+9.3	kennzahlen-für-zusammenarbeit-und-übergaben	Kennzahlen für Zusammenarbeit und Übergaben
+9.4	kennzahlen-für-fähigkeiten-und-lernen	Kennzahlen für Fähigkeiten und Lernen
+9.5	kennzahlen-für-kontinuierliche-verbesserung	Kennzahlen für kontinuierliche Verbesserung
+9.6	kennzahlen-für-organisatorischen-wandel-und-akzeptanz	Kennzahlen für organisatorischen Wandel und Akzeptanz
+10.0	einführung-in-teil-10-kennzahlen-im-zeitalter-der-ki	Einführung in Teil 10: Kennzahlen im Zeitalter der KI
+10.1	ki-in-der-messung-des-service-managements	KI in der Messung des Service-Managements
+10.2	ki-gestützte-arbeit-messen	KI-gestützte Arbeit messen
+10.3	kennzahlen-für-ki-agenten-und-chatbots	Kennzahlen für KI-Agenten und Chatbots
+10.4	kennzahleninflation-und-qualitätsverwässerung	Kennzahleninflation und Qualitätsverwässerung
+10.5	kennzahlen-für-ki-governance-und-risiken	Kennzahlen für KI-Governance und -Risiken
+11.0	einführung-in-teil-11-ein-kennzahlenprogramm-aufbauen	Einführung in Teil 11: Ein Kennzahlenprogramm aufbauen
+11.1	ein-dashboard-für-servicekennzahlen-entwerfen	Ein Dashboard für Servicekennzahlen entwerfen
+11.2	werkzeuglandschaft	Werkzeuglandschaft
+11.3	kennzahlen-einführen-ohne-angst-zu-erzeugen	Kennzahlen einführen, ohne Angst zu erzeugen
+11.4	reifegradmodell-für-kennzahlenprogramme	Reifegradmodell für Kennzahlenprogramme
+11.5	eine-schrittweise-einführungs-roadmap	Eine schrittweise Einführungs-Roadmap
+12.0	anhänge	Anhänge
+12.1	glossar	Glossar
+12.2	nachschlagewerk-für-kennzahlendefinitionen-und-formeln	Nachschlagewerk für Kennzahlendefinitionen und Formeln
+12.3	checklisten	Checklisten
+12.4	vorlagen	Vorlagen
+12.5	reifegrad-selbstbewertung	Reifegrad-Selbstbewertung
+12.6	quellen-und-weiterführende-literatur	Quellen und weiterführende Literatur
+12.7	index	Index
