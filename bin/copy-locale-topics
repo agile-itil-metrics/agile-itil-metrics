@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+"""Copy every written topic's index.md from a regional locale to its -001 sibling.
+
+    bin/copy-locale-topics it-it it-001
+
+Both locales must share slugs.tsv and directory names. Never touches README.md or .locale-peer-id.
+"""
+import json, os, shutil, sys
+
+root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+src, dst = sys.argv[1], sys.argv[2]
+tdir = json.load(open(f"{root}/locales/{src}/locale.json", encoding="utf-8"))["dirs"]["topics"]
+n = 0
+for slug in sorted(os.listdir(f"{root}/locales/{src}/{tdir}")):
+    s = f"{root}/locales/{src}/{tdir}/{slug}/index.md"
+    d = f"{root}/locales/{dst}/{tdir}/{slug}/index.md"
+    if os.path.isfile(s) and os.path.isdir(os.path.dirname(d)):
+        shutil.copyfile(s, d)
+        n += 1
+print(f"{src} -> {dst}: {n} topics copied")

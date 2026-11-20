@@ -1,0 +1,218 @@
+#!/usr/bin/env python3
+# Regenerates the generated appendices (12.2, 12.6, 12.7) of it-it, tr-tr, or th-th (and their -001 copies)
+# from the locale's own topics.
+#   bin/build-appendices-i18n it-it     (then bin/build-locale-files it-it)
+# Run bin/build-locale-files afterwards to refresh index.md, sitemap.xml, and peer ids.
+import os, re, sys
+from urllib.parse import unquote
+
+root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+L = sys.argv[1]
+lang = L.split("-")[0]
+X = {
+"it": dict(
+  dir="argomenti", S_DEF="Definizioni delle metriche", S_GAME="Vettori di manipolazione e protezioni",
+  S_REF="Riferimenti e letture di approfondimento", FIRST="Metrica", PART="Parte", TOPIC="argomento", AND_OTHERS="e altri",
+  CITED="citato in", SRC="Argomento di origine",
+  HDR="| Metrica | Definizione | Formula | Unità | Fonte dei dati | Pratica ITIL | Controparte agile | Cadenza | Vettore di manipolazione | Protezione |",
+  T122="Riferimento a definizioni e formule delle metriche",
+  H122=lambda t: ("# " + t(12.2) + "\n\nQuesta appendice elenca ogni metrica definita negli argomenti di contenuto, raggruppata per parte e per argomento. Ogni voce riporta definizione, formula, unità, fonte dei dati, pratica ITIL correlata, controparte agile e cadenza dell'argomento di origine, insieme al vettore di manipolazione e alla protezione abbinata. È generata dalle sezioni \"Definizioni delle metriche\" e \"Vettori di manipolazione e protezioni\" di ciascun argomento, quindi l'argomento di origine fa fede: quando una voce qui differisce dal suo argomento, prevale l'argomento e questa appendice viene rigenerata.\n\n"
+    "## Come usare questo riferimento\n\n"
+    "- **Consulti prima di adottare.** Prima di aggiungere una metrica a una dashboard, legga la sua voce, compresi vettore di manipolazione e protezione, e adotti la protezione insieme alla metrica (cfr. argomento 1.3, " + t("1.3") + ").\n"
+    "- **Misuri team, servizi e sistemi.** Nessuna voce è pensata per classificare le persone (cfr. argomento 1.2, " + t("1.2") + ").\n"
+    "- **Preferisca l'argomento di origine per il giudizio.** Le formule qui sono brevi. Definizioni dei termini, avvertenze sul campionamento ed esempi svolti stanno nell'argomento di origine.\n"
+    "- **Registri le proprie varianti.** Se la Sua organizzazione modifica una definizione, registri la modifica e il motivo nel proprio catalogo delle metriche (cfr. argomento 1.4, " + t("1.4") + "). Le schede delle metriche aiutano (cfr. argomento 12.4, " + t("12.4") + ").\n"
+    "- **Le cifre illustrative sono segnalate.** Questa appendice non contiene valori di riferimento. Ogni numero proviene dalla Sua baseline.\n"),
+  T126="Riferimenti e letture di approfondimento",
+  H126=("Questa appendice raccoglie i riferimenti citati negli argomenti di contenuto, con gli argomenti che citano ciascuno. Le voci sono in ordine alfabetico per autore o ente. L'argomento di origine resta il luogo in cui vedere come si usa una fonte.",
+        "Informazioni sulla verifica", "I collegamenti a Wikipedia di questo libro sono stati verificati e risultano raggiungibili. Libri, articoli, norme e documenti di indirizzo sono stati citati dagli autori a memoria e non tutti sono ancora stati confrontati con gli originali. Consideri i dati bibliografici (anni, edizioni, titoli) come indizi da confermare prima di appoggiarvisi in lavori formali. Segnali le correzioni tramite la skill di manutenzione.",
+        "Libri, articoli, norme e indirizzi", "Articoli di Wikipedia"),
+  H127=("Indice", "Concetti, framework e metriche, ciascuno con gli argomenti in cui compare. I numeri sono numeri di argomento; i titoli sono nell'indice del README e nella [struttura](../../../../spec/structure.md). Per definizioni brevi con un argomento di origine, cfr. argomento 12.1, ", "Framework e modelli", "Metriche",
+        "Nomi delle metriche come compaiono nella tabella delle definizioni di ciascun argomento. Le voci complete sono nell'appendice 12.2 (cfr. argomento 12.2, ", "Concetti", "I concetti sono i termini che gli argomenti collegano a Wikipedia come contesto. Il primo numero è di solito l'argomento che spiega il concetto più a fondo."),
+  FWA={}),
+"tr": dict(
+  dir="konular", S_DEF="Metrik tanımları", S_GAME="Manipülasyon yolları ve koruma önlemleri",
+  S_REF="Kaynaklar ve ileri okuma", FIRST="Metrik", PART="Bölüm", TOPIC="konu", AND_OTHERS="ve diğerleri",
+  CITED="atıf yapılan konular:", SRC="Kaynak konu",
+  HDR="| Metrik | Tanım | Formül | Birim | Veri kaynağı | ITIL uygulaması | Çevik karşılığı | Sıklık | Manipülasyon yolu | Koruma önlemi |",
+  T122="Metrik tanımları ve formülleri başvurusu",
+  H122=lambda t: ("# " + t(12.2) + "\n\nBu ek, içerik konularında tanımlanan her metriği bölüme ve konuya göre gruplayarak listeler. Her girdi, kaynak konunun tanımını, formülünü, birimini, veri kaynağını, ilgili ITIL uygulamasını, çevik karşılığını ve sıklığını, eşleştirilmiş manipülasyon yolu ve koruma önlemiyle birlikte verir. Her konunun \"Metrik tanımları\" ve \"Manipülasyon yolları ve koruma önlemleri\" bölümlerinden üretilir; dolayısıyla kaynak konu esastır: buradaki bir girdi konusundan farklıysa konu geçerlidir ve bu ek yeniden üretilir.\n\n"
+    "## Bu başvuru nasıl kullanılır\n\n"
+    "- **Benimsemeden önce danışın.** Bir metriği panoya eklemeden önce girdisini, manipülasyon yolu ve koruma önlemi dahil okuyun ve koruma önlemini metrikle birlikte benimseyin (bkz. Konu 1.3, “" + t("1.3") + "”).\n"
+    "- **Takımları, hizmetleri ve sistemleri ölçün.** Hiçbir girdi bireyleri sıralamak için tasarlanmamıştır (bkz. Konu 1.2, “" + t("1.2") + "”).\n"
+    "- **Yargı için kaynak konuyu tercih edin.** Buradaki formüller kısadır. Terimlerin tanımları, örnekleme uyarıları ve çalışılmış örnekler kaynak konudadır.\n"
+    "- **Kendi değişikliklerinizi kaydedin.** Kurumunuz bir tanımı değiştirirse, değişikliği ve gerekçesini metrik kataloğunuza kaydedin (bkz. Konu 1.4, “" + t("1.4") + "”). Metrik kartları yardımcı olur (bkz. Konu 12.4, “" + t("12.4") + "”).\n"
+    "- **Açıklayıcı rakamlar işaretlenmiştir.** Bu ek karşılaştırma değeri içermez. Her sayı sizin kendi başlangıç ölçümünüzden gelir.\n"),
+  T126="Kaynaklar ve ileri okuma",
+  H126=("Bu ek, içerik konularında atıf yapılan kaynakları, her birine atıf yapan konularla birlikte toplar. Girdiler yazar veya kuruma göre alfabetik sıralıdır. Bir kaynağın nasıl kullanıldığını görmek için başvurulacak yer kaynak konudur.",
+        "Doğrulama hakkında", "Bu kitaptaki Vikipedi bağlantılarının çalıştığı doğrulanmıştır. Kitaplar, makaleler, standartlar ve kılavuz belgeler yazarlar tarafından hafızadan anılmıştır ve hepsi henüz özgün kaynaklarla karşılaştırılmamıştır. Bibliyografik ayrıntıları (yıllar, baskılar, başlıklar) resmî çalışmalarda dayanmadan önce doğrulanması gereken ipuçları olarak değerlendirin. Düzeltmeleri bakım becerisi aracılığıyla bildirin.",
+        "Kitaplar, makaleler, standartlar ve kılavuzlar", "Vikipedi makaleleri"),
+  H127=("Dizin", "Kavramlar, çerçeveler ve metrikler; her biri göründüğü konularla birlikte. Sayılar konu numaralarıdır; başlıklar README'deki içindekiler tablosunda ve [yapıda](../../../../spec/structure.md) yer alır. Kaynak konulu kısa tanımlar için bkz. Konu 12.1, ", "Çerçeveler ve modeller", "Metrikler",
+        "Her konunun tanım tablosunda göründüğü haliyle metrik adları. Tam girdiler Ek 12.2'dedir (bkz. Konu 12.2, ", "Kavramlar", "Kavramlar, konuların bağlam olarak Vikipedi'ye bağladığı terimlerdir. İlk numara genellikle kavramı en ayrıntılı açıklayan konudur."),
+  FWA={}),
+"th": dict(
+  dir="หัวข้อ", S_DEF="นิยามตัวชี้วัด", S_GAME="ช่องทางการบิดเบือนและมาตรการป้องกัน",
+  S_REF="เอกสารอ้างอิงและแหล่งอ่านเพิ่มเติม", FIRST="ตัวชี้วัด", PART="ส่วนที่", TOPIC="หัวข้อ", AND_OTHERS="และอื่นๆ",
+  CITED="อ้างถึงใน", SRC="หัวข้อต้นทาง",
+  HDR="| ตัวชี้วัด | นิยาม | สูตร | หน่วย | แหล่งข้อมูล | แนวปฏิบัติ ITIL | สิ่งที่เทียบเท่าแบบคล่องตัว | ความถี่ | ช่องทางการบิดเบือน | มาตรการป้องกัน |",
+  T122="อ้างอิงนิยามและสูตรของตัวชี้วัด",
+  H122=lambda t: ("# " + t(12.2) + "\n\nภาคผนวกนี้รวบรวมตัวชี้วัดทุกตัวที่นิยามไว้ในหัวข้อเนื้อหา จัดกลุ่มตามส่วนและหัวข้อ แต่ละรายการมีนิยาม สูตร หน่วย แหล่งข้อมูล แนวปฏิบัติ ITIL ที่เกี่ยวข้อง สิ่งที่เทียบเท่าแบบคล่องตัว และความถี่จากหัวข้อต้นทาง พร้อมช่องทางการบิดเบือนและมาตรการป้องกันที่จับคู่กัน สร้างขึ้นจากส่วน \"นิยามตัวชี้วัด\" และ \"ช่องทางการบิดเบือนและมาตรการป้องกัน\" ของแต่ละหัวข้อ หัวข้อต้นทางจึงเป็นที่ยึด หากรายการในที่นี้ต่างจากหัวข้อของตน ให้ถือหัวข้อเป็นหลักและสร้างภาคผนวกนี้ใหม่\n\n"
+    "## วิธีใช้ข้อมูลอ้างอิงนี้\n\n"
+    "- **ตรวจดูก่อนนำไปใช้** ก่อนเพิ่มตัวชี้วัดลงในแดชบอร์ด ให้อ่านรายการของตัวชี้วัดนั้น รวมทั้งช่องทางการบิดเบือนและมาตรการป้องกัน และนำมาตรการป้องกันมาใช้คู่กัน (ดูหัวข้อ 1.3 “" + t("1.3") + "”)\n"
+    "- **วัดทีม บริการ และระบบ** ไม่มีรายการใดออกแบบมาเพื่อจัดอันดับบุคคล (ดูหัวข้อ 1.2 “" + t("1.2") + "”)\n"
+    "- **ใช้หัวข้อต้นทางประกอบการตัดสินใจ** สูตรในที่นี้สั้น ส่วนนิยามของคำศัพท์ ข้อควรระวังเรื่องการสุ่มตัวอย่าง และตัวอย่างประกอบอยู่ในหัวข้อต้นทาง\n"
+    "- **บันทึกการปรับเปลี่ยนของคุณเอง** หากองค์กรเปลี่ยนนิยามใด ให้บันทึกการเปลี่ยนแปลงและเหตุผลในแคตตาล็อกตัวชี้วัดขององค์กร (ดูหัวข้อ 1.4 “" + t("1.4") + "”) การ์ดตัวชี้วัดช่วยได้ (ดูหัวข้อ 12.4 “" + t("12.4") + "”)\n"
+    "- **ตัวเลขประกอบการอธิบายมีป้ายกำกับ** ภาคผนวกนี้ไม่มีค่าเปรียบเทียบ ตัวเลขทุกตัวมาจากค่าฐานของคุณเอง\n"),
+  T126="เอกสารอ้างอิงและแหล่งอ่านเพิ่มเติม",
+  H126=("ภาคผนวกนี้รวบรวมเอกสารอ้างอิงที่อ้างถึงในหัวข้อเนื้อหา พร้อมหัวข้อที่อ้างถึงแต่ละรายการ รายการเรียงตามตัวอักษรของผู้เขียนหรือหน่วยงาน หัวข้อต้นทางยังคงเป็นที่ที่ใช้ดูว่าแหล่งอ้างอิงถูกนำไปใช้อย่างไร",
+        "เรื่องการตรวจสอบ", "ลิงก์วิกิพีเดียในหนังสือเล่มนี้ได้รับการตรวจสอบแล้วว่าเข้าถึงได้ ส่วนหนังสือ บทความ มาตรฐาน และเอกสารแนวปฏิบัติ ผู้เขียนอ้างจากความจำและยังไม่ได้เทียบกับต้นฉบับทั้งหมด โปรดถือรายละเอียดบรรณานุกรม (ปี ฉบับ ชื่อเรื่อง) เป็นเบาะแสที่ต้องยืนยันก่อนนำไปอ้างอิงในงานทางการ แจ้งการแก้ไขผ่านทักษะสำหรับผู้ดูแล",
+        "หนังสือ บทความ มาตรฐาน และแนวปฏิบัติ", "บทความวิกิพีเดีย"),
+  H127=("ดัชนี", "แนวคิด กรอบการทำงาน และตัวชี้วัด พร้อมหัวข้อที่ปรากฏ ตัวเลขคือหมายเลขหัวข้อ ชื่อหัวข้ออยู่ในสารบัญของ README และใน[โครงสร้าง](../../../../spec/structure.md) สำหรับนิยามสั้นพร้อมหัวข้อต้นทาง ดูหัวข้อ 12.1 ", "กรอบการทำงานและแบบจำลอง", "ตัวชี้วัด",
+        "ชื่อตัวชี้วัดตามที่ปรากฏในตารางนิยามของแต่ละหัวข้อ รายการฉบับเต็มอยู่ในภาคผนวก 12.2 (ดูหัวข้อ 12.2 ", "แนวคิด", "แนวคิดคือคำศัพท์ที่หัวข้อต่างๆ ลิงก์ไปยังวิกิพีเดียเป็นบริบท หมายเลขแรกมักเป็นหัวข้อที่อธิบายแนวคิดนั้นละเอียดที่สุด"),
+  FWA={}),
+}[lang]
+
+rows = [l.rstrip("\n").split("\t") for l in open(f"{root}/spec/topics.tsv")][1:]
+slugs = {}
+for l in open(f"{root}/locales/{L}/slugs.tsv", encoding="utf-8"):
+    p = l.rstrip("\n").split("\t")
+    if len(p) >= 3:
+        slugs[p[0]] = (p[1], p[2])
+base = f"{root}/locales/{L}/{X['dir']}"
+S_DEF, S_GAME, S_REF, FIRST = X["S_DEF"], X["S_GAME"], X["S_REF"], X["FIRST"]
+
+
+def nk(n):
+    return [int(x) for x in n.split(".")]
+
+
+def read(num):
+    return open(f"{base}/{slugs[num][0]}/index.md", encoding="utf-8").read()
+
+
+def title(num):
+    return slugs[str(num)][1]
+
+
+def sec(t, n):
+    m = re.search(rf"^## {re.escape(n)}\n(.*?)(?=^## |\Z)", t, re.M | re.S)
+    return m.group(1) if m else ""
+
+
+def table(s, first):
+    out = []
+    for l in s.splitlines():
+        if l.startswith("|") and not l.startswith("| ---") and not l.startswith(f"| {first} |"):
+            out.append([x.strip() for x in l.strip().strip("|").split(" | ")])
+    return out
+
+
+def fmt(ns):
+    return ", ".join(sorted(set(ns), key=nk))
+
+
+part_title = {}
+for part, num, slug, pt in rows:
+    if num.endswith(".0") and int(part) < 12:
+        part_title[part] = read(num).splitlines()[0].split(": ", 1)[1]
+
+content = [(p, n, s, pt) for p, n, s, pt in rows if int(p) < 12]
+texts = {n: read(n) for _, n, _, _ in content}
+
+o = []
+total = 0
+miss = []
+cur = None
+for part, num, slug, pt in content:
+    if num.endswith(".0"):
+        continue
+    t = texts[num]
+    md = table(sec(t, S_DEF), FIRST)
+    gv = {c[0]: c for c in table(sec(t, S_GAME), FIRST) if len(c) == 3}
+    if part != cur:
+        o.append(f"\n## {X['PART']} {part}: {part_title[part]}\n")
+        cur = part
+    o.append(f"### {num} {title(num)}\n")
+    o.append(f"{X['SRC']}: {num}, {title(num)}.\n")
+    o.append(X["HDR"] + "\n" + "| " + " | ".join(["---"] * 10) + " |")
+    for c in md:
+        if len(c) != 8:
+            miss.append((num, c[0], len(c)))
+            continue
+        g = gv.get(c[0])
+        if not g:
+            miss.append((num, c[0], "nogaming"))
+            continue
+        o.append("| " + " | ".join(c[:8] + [g[1], g[2]]) + " |")
+        total += 1
+    o.append("")
+print("12.2 entries", total, "missing", miss, file=sys.stderr)
+open(f"{base}/{slugs['12.2'][0]}/index.md", "w", encoding="utf-8").write(X["H122"](title) + "\n".join(o))
+
+refs = {}
+wiki = {}
+for part, num, slug, pt in content:
+    m = re.search(rf"^## {re.escape(S_REF)}\n(.*?)\Z", texts[num], re.M | re.S)
+    if not m:
+        continue
+    for l in m.group(1).splitlines():
+        mm = re.match(r"\d+\. (.*)", l)
+        if not mm:
+            continue
+        r = mm.group(1).strip()
+        wm = re.match(r"(?:Wikipedia|Vikipedi|วิกิพีเดีย), \[(.*)\]\((.*)\)\.?$", r)
+        if wm:
+            wiki.setdefault(wm.group(2), [wm.group(1), []])[1].append(num)
+        else:
+            refs.setdefault(r, []).append(num)
+
+
+def key(r):
+    return re.sub(r"[^\w ]", "", r.lower())
+
+
+h = X["H126"]
+o = ["# " + X["T126"], "", h[0], "", "## " + h[1], "", h[2], "", "## " + h[3], ""]
+for i, r in enumerate(sorted(refs, key=key), 1):
+    o.append(f"{i}. {r} ({X['CITED']} {fmt(refs[r])})")
+o += ["", "## " + h[4], ""]
+wname = {"it": "Wikipedia", "tr": "Vikipedi", "th": "วิกิพีเดีย"}[lang]
+for i, (u, (ti, ns)) in enumerate(sorted(wiki.items(), key=lambda kv: kv[1][0].lower()), 1):
+    o.append(f"{i}. {wname}, [{ti}]({u}) ({X['CITED']} {fmt(ns)})")
+open(f"{base}/{slugs['12.6'][0]}/index.md", "w", encoding="utf-8").write("\n".join(o) + "\n")
+print("12.6", len(refs), len(wiki), file=sys.stderr)
+
+metrics = {}
+concepts = {}
+for num, t in texts.items():
+    if num.endswith(".0"):
+        continue
+    for c in table(sec(t, S_DEF), FIRST):
+        metrics.setdefault(c[0], []).append(num)
+    body = t.split(f"## {S_REF}")[0]
+    for m in re.finditer(r"\[([^\]]+)\]\((https://en\.wikipedia\.org/wiki/[^)\s]+(?:\([^)]*\))?)\)", body):
+        label, url = m.group(1), m.group(2)
+        ent = concepts.setdefault(url, [label, set()])
+        ent[1].add(num)
+FW = ["ITIL", "DORA", "SPACE", "DevEx", "OKR", "GQM", "COBIT", "ISO/IEC 20000", "ISO/IEC 27001", "NIST", "Cynefin",
+      "HEART", "Four Keys", "Westrum", "CMMI", "FinOps", "COPC", "Team Topologies"]
+fw = {}
+for f in FW:
+    ns = [n for n, t in texts.items() if re.search(rf"\b{re.escape(f)}\b", t.split(f"## {S_REF}")[0])]
+    if ns:
+        fw[f] = sorted(ns, key=nk)
+g = X["H127"]
+o = ["# " + g[0], "", g[1] + title("12.1") + ".", "", "## " + g[2], ""]
+for f in sorted(fw, key=str.lower):
+    ns = fw[f]
+    o.append(f"- **{f}**: {fmt(ns) if len(ns) <= 12 else fmt(ns[:12]) + ', ' + X['AND_OTHERS']}")
+o += ["", "## " + g[3], "", g[4] + title("12.2") + ").", ""]
+for k in sorted(metrics, key=str.lower):
+    o.append(f"- **{k}**: {fmt(metrics[k])}")
+o += ["", "## " + g[5], "", g[6], ""]
+for url, (label, ns) in sorted(concepts.items(), key=lambda kv: unquote(kv[0].rsplit("/", 1)[1]).replace("_", " ").lower()):
+    en = unquote(url.rsplit("/", 1)[1]).replace("_", " ")
+    shown = label if label.lower() == en.lower() else f"{label} ({en})"
+    o.append(f"- **{shown}**: {fmt(ns)}")
+open(f"{base}/{slugs['12.7'][0]}/index.md", "w", encoding="utf-8").write("\n".join(o) + "\n")
+print("12.7", len(fw), len(metrics), len(concepts), file=sys.stderr)
