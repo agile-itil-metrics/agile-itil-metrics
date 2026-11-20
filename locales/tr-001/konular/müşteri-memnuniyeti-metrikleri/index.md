@@ -1,0 +1,3 @@
+# Müşteri memnuniyeti metrikleri
+
+<!-- stub -->

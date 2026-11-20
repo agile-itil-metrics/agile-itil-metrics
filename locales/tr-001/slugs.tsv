@@ -1,0 +1,88 @@
+1.0	bölüm-1-girişi-ölçümün-temelleri	Bölüm 1 Girişi: Ölçümün Temelleri
+1.1	çevik-itil-neden-ölçülür	Çevik ITIL neden ölçülür
+1.2	goodhart-yasası-ve-metriklerin-psikolojisi	Goodhart yasası ve metriklerin psikolojisi
+1.3	çıktıdan-çok-sonuç-neyi-ölçeceğimizi-seçmek	Çıktıdan çok sonuç: neyi ölçeceğimizi seçmek
+1.4	metrik-yönetişimi-ve-sahipliği	Metrik yönetişimi ve sahipliği
+1.5	veri-kaynakları-ve-enstrümantasyon	Veri kaynakları ve enstrümantasyon
+1.6	hizmet-metrikleri-için-istatistik-okuryazarlığı	Hizmet metrikleri için istatistik okuryazarlığı
+1.7	ölçüm-çerçeveleri	Ölçüm çerçeveleri
+2.0	bölüm-2-girişi-akış-ve-sürekli-teslimat-metrikleri	Bölüm 2 Girişi: Akış ve Sürekli Teslimat Metrikleri
+2.1	akış-ölçümleri	Akış ölçümleri
+2.2	teslim-süresi-çevrim-süresi-ve-akış-verimliliği	Teslim süresi, çevrim süresi ve akış verimliliği
+2.3	devam-eden-iş-ve-kuyruklar	Devam eden iş ve kuyruklar
+2.4	değer-akışı-metrikleri	Değer akışı metrikleri
+2.5	teslimat-tahmini-ve-planlama-metrikleri	Teslimat tahmini ve planlama metrikleri
+2.6	birikim-listesi-ve-iyileştirme-metrikleri	Birikim listesi ve iyileştirme metrikleri
+2.7	çekme-isteği-ve-kod-inceleme-metrikleri	Çekme isteği ve kod inceleme metrikleri
+2.8	dora-metrikleri	DORA metrikleri
+2.9	operasyonel-iş-ve-plansız-iş	Operasyonel iş ve plansız iş
+3.0	bölüm-3-girişi-hizmet-masası-olay-ve-talep-metrikleri	Bölüm 3 Girişi: Hizmet Masası, Olay ve Talep Metrikleri
+3.1	hizmet-masası-metrikleri	Hizmet masası metrikleri
+3.2	olay-hacmi-ve-önceliği	Olay hacmi ve önceliği
+3.3	olaya-yanıt-ve-çözüm-süresi	Olaya yanıt ve çözüm süresi
+3.4	büyük-olay-metrikleri	Büyük olay metrikleri
+3.5	hizmet-talebi-karşılama-metrikleri	Hizmet talebi karşılama metrikleri
+3.6	bilgi-yönetimi-metrikleri	Bilgi yönetimi metrikleri
+3.7	self-servis-ve-otomasyon-metrikleri	Self servis ve otomasyon metrikleri
+4.0	bölüm-4-girişi-sorun-değişiklik-ve-yayın-metrikleri	Bölüm 4 Girişi: Sorun, Değişiklik ve Yayın Metrikleri
+4.1	sorun-yönetimi-metrikleri	Sorun yönetimi metrikleri
+4.2	olay-sonrası-inceleme-ve-öğrenme-metrikleri	Olay sonrası inceleme ve öğrenme metrikleri
+4.3	değişiklik-yetkilendirme-metrikleri	Değişiklik yetkilendirme metrikleri
+4.4	değişiklik-başarısızlığı-ve-yeniden-iş	Değişiklik başarısızlığı ve yeniden iş
+4.5	yayın-ve-dağıtım-metrikleri	Yayın ve dağıtım metrikleri
+4.6	teknik-borç-ve-bilinen-hatalar	Teknik borç ve bilinen hatalar
+5.0	bölüm-5-girişi-hizmet-düzeyi-kullanılabilirlik-ve-güvenilirlik-metrikleri	Bölüm 5 Girişi: Hizmet Düzeyi, Kullanılabilirlik ve Güvenilirlik Metrikleri
+5.1	sla-ola-ve-xla-metrikleri	SLA, OLA ve XLA metrikleri
+5.2	sli-slo-ve-hata-bütçeleri	SLI, SLO ve hata bütçeleri
+5.3	kullanılabilirlik-metrikleri	Kullanılabilirlik metrikleri
+5.4	kapasite-ve-performans-metrikleri	Kapasite ve performans metrikleri
+5.5	izleme-ve-uyarı-kalitesi-metrikleri	İzleme ve uyarı kalitesi metrikleri
+5.6	hizmet-sürekliliği-metrikleri	Hizmet sürekliliği metrikleri
+5.7	angarya-ve-nöbet-metrikleri	Angarya ve nöbet metrikleri
+6.0	bölüm-6-girişi-müşteri-ve-deneyim-metrikleri	Bölüm 6 Girişi: Müşteri ve Deneyim Metrikleri
+6.1	müşteri-memnuniyeti-metrikleri	Müşteri memnuniyeti metrikleri
+6.2	deneyim-düzeyi-anlaşmaları	Deneyim düzeyi anlaşmaları
+6.3	hizmet-benimsenmesi-ve-katalog-metrikleri	Hizmet benimsenmesi ve katalog metrikleri
+6.4	kullanıcı-ve-çalışan-deneyimi	Kullanıcı ve çalışan deneyimi
+6.5	değer-gerçekleştirme-ve-iş-sonuçları	Değer gerçekleştirme ve iş sonuçları
+7.0	bölüm-7-girişi-varlık-yapılandırma-ve-finansal-metrikler	Bölüm 7 Girişi: Varlık, Yapılandırma ve Finansal Metrikler
+7.1	bt-varlık-yönetimi-metrikleri	BT varlık yönetimi metrikleri
+7.2	yazılım-varlığı-ve-lisans-metrikleri	Yazılım varlığı ve lisans metrikleri
+7.3	donanım-varlığı-yaşam-döngüsü-metrikleri	Donanım varlığı yaşam döngüsü metrikleri
+7.4	yapılandırma-ve-cmdb-kalitesi-metrikleri	Yapılandırma ve CMDB kalitesi metrikleri
+7.5	hizmet-maliyeti-ve-birim-ekonomisi	Hizmet maliyeti ve birim ekonomisi
+7.6	finops-ve-bulut-maliyeti-metrikleri	FinOps ve bulut maliyeti metrikleri
+7.7	yatırım-getirisi-ve-iş-gerekçesi	Yatırım getirisi ve iş gerekçesi
+8.0	bölüm-8-girişi-güvenlik-risk-uyum-ve-tedarikçi-metrikleri	Bölüm 8 Girişi: Güvenlik, Risk, Uyum ve Tedarikçi Metrikleri
+8.1	güvenlik-olayı-ve-zafiyet-metrikleri	Güvenlik olayı ve zafiyet metrikleri
+8.2	risk-ve-kontrol-metrikleri	Risk ve kontrol metrikleri
+8.3	uyum-ve-denetim-metrikleri	Uyum ve denetim metrikleri
+8.4	tedarikçi-ve-sözleşme-metrikleri	Tedarikçi ve sözleşme metrikleri
+8.5	düzenlemeye-tabi-ve-kamuya-yönelik-raporlama	Düzenlemeye tabi ve kamuya yönelik raporlama
+9.0	bölüm-9-girişi-insan-takım-ve-iyileştirme-metrikleri	Bölüm 9 Girişi: İnsan, Takım ve İyileştirme Metrikleri
+9.1	takım-sağlığı-ve-geliştirici-deneyimi	Takım sağlığı ve geliştirici deneyimi
+9.2	memnuniyet-ve-iyi-oluş-metrikleri	Memnuniyet ve iyi oluş metrikleri
+9.3	iş-birliği-ve-devir-teslim-metrikleri	İş birliği ve devir teslim metrikleri
+9.4	beceri-ve-öğrenme-metrikleri	Beceri ve öğrenme metrikleri
+9.5	sürekli-iyileştirme-metrikleri	Sürekli iyileştirme metrikleri
+9.6	kurumsal-değişim-ve-benimseme-metrikleri	Kurumsal değişim ve benimseme metrikleri
+10.0	bölüm-10-girişi-yapay-zekâ-çağında-metrikler	Bölüm 10 Girişi: Yapay Zekâ Çağında Metrikler
+10.1	hizmet-yönetimi-ölçümünde-yapay-zekâ	Hizmet yönetimi ölçümünde yapay zekâ
+10.2	yapay-zekâ-destekli-işi-ölçmek	Yapay zekâ destekli işi ölçmek
+10.3	yapay-zekâ-ajanı-ve-sohbet-botu-metrikleri	Yapay zekâ ajanı ve sohbet botu metrikleri
+10.4	metrik-enflasyonu-ve-kalite-seyrelmesi	Metrik enflasyonu ve kalite seyrelmesi
+10.5	yapay-zekâ-yönetişimi-ve-risk-metrikleri	Yapay zekâ yönetişimi ve risk metrikleri
+11.0	bölüm-11-girişi-metrik-programı-kurmak	Bölüm 11 Girişi: Metrik Programı Kurmak
+11.1	hizmet-metrikleri-panosu-tasarlamak	Hizmet metrikleri panosu tasarlamak
+11.2	araç-manzarası	Araç manzarası
+11.3	korku-yaratmadan-metrikleri-devreye-almak	Korku yaratmadan metrikleri devreye almak
+11.4	metrik-programları-için-olgunluk-modeli	Metrik programları için olgunluk modeli
+11.5	artımlı-benimseme-yol-haritası	Artımlı benimseme yol haritası
+12.0	ekler	Ekler
+12.1	sözlük	Sözlük
+12.2	metrik-tanımları-ve-formülleri-başvurusu	Metrik tanımları ve formülleri başvurusu
+12.3	kontrol-listeleri	Kontrol listeleri
+12.4	şablonlar	Şablonlar
+12.5	olgunluk-öz-değerlendirmesi	Olgunluk öz değerlendirmesi
+12.6	kaynaklar-ve-ileri-okuma	Kaynaklar ve ileri okuma
+12.7	dizin	Dizin

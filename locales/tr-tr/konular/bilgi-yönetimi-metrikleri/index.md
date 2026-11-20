@@ -1,0 +1,3 @@
+# Bilgi yönetimi metrikleri
+
+<!-- stub -->

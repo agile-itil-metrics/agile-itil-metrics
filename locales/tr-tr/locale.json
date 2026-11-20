@@ -1,0 +1,15 @@
+{
+  "name": "Türkçe (Türkiye)",
+  "dirs": {
+    "topics": "konular",
+    "contents": "içindekiler"
+  },
+  "strings": {
+    "title": "Çevik ITIL Metrikleri",
+    "tagline": "Çevik BT hizmetlerini işi bozmadan ölçün.",
+    "intro": "Çevik BT hizmet yönetimini iyi ölçmek için uygulamalı bir kılavuz: 12 bölüm ve 88 konu. Her metrik, nasıl manipüle edilebileceğini ve bunu yakalayan koruma önlemini belirtir. Metrikler takımları, hizmetleri ve sistemleri tanımlar; insanları sıralamak için asla kullanılmaz.",
+    "contents": "İçindekiler",
+    "read": "Web'de oku",
+    "part_fmt": "Bölüm {n}"
+  }
+}

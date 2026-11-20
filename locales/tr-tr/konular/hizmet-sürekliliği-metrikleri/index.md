@@ -1,0 +1,3 @@
+# Hizmet sürekliliği metrikleri
+
+<!-- stub -->

@@ -1,0 +1,15 @@
+{
+  "name": "Italiano (mondo)",
+  "dirs": {
+    "topics": "argomenti",
+    "contents": "indice"
+  },
+  "strings": {
+    "title": "Metriche ITIL agili",
+    "tagline": "Misura i servizi IT agili senza distorcere il lavoro.",
+    "intro": "Un manuale pratico per misurare bene la gestione agile dei servizi IT: 12 parti e 88 argomenti. Ogni metrica indica come può essere manipolata e quale protezione lo rileva. Le metriche descrivono team, servizi e sistemi, e non servono mai a classificare le persone.",
+    "contents": "Indice",
+    "read": "Leggi sul web",
+    "part_fmt": "Parte {n}"
+  }
+}
