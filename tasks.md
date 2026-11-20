@@ -36,3 +36,6 @@ Live checklist. Update in the same commit as the work. Backlog detail is in `spe
 - [x] hi-in (88/88, `bin/check-locales hi-in` clean) and hi-001 (copy), published
 - [x] cy-gb (88/88, `bin/check-locales cy-gb` clean) and cy-001 (copy), published
 - [x] ar-001 (88/88, `bin/check-locales ar-001` clean), published
+- [x] it-it (88/88, `bin/check-locales it-it` clean) and it-001 (copy), published; machine-translated, awaiting native-speaker review
+- [x] tr-tr (88/88, `bin/check-locales tr-tr` clean) and tr-001 (copy), published; machine-translated, awaiting native-speaker review
+- [x] th-th (88/88, `bin/check-locales th-th` clean) and th-001 (copy), published; machine-translated, awaiting native-speaker review
